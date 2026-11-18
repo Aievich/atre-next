@@ -1,0 +1,431 @@
+{
+  "schemaVersion": 1,
+  "sourceProject": "atre-site (read-only reference)",
+  "createdAt": "2026-11-18",
+  "publicFiles": [
+    {
+      "href": "/materials/cod-2026/cod-2026.pdf",
+      "sourcePath": "content/reports/cod-2026/package/files/cod-2026.pdf",
+      "sha256": "b31e06c87ebeb92c2e00dceccca94237957a7e76d3e5921f8a749dfa8bb631fb",
+      "bytes": 1496079,
+      "reportId": "cod-2026",
+      "publicationBasis": "Исходный PDF опубликованного доклада из существующего каталога."
+    },
+    {
+      "href": "/covers/cod-2026.webp",
+      "sourcePath": "content/reports/cod-2026/package/files/cover.webp",
+      "sha256": "3acc7b2c21c654a93df982f0fa186cc2a72b17d7357b47e51d9f8834a2dafc36",
+      "bytes": 21870,
+      "reportId": "cod-2026",
+      "publicationBasis": "Обложка открытого публикационного пакета."
+    },
+    {
+      "href": "/materials/cod-2026/territories.csv",
+      "sourcePath": "content/reports/cod-2026/package/data/territories.csv",
+      "sha256": "e5c440d382d21d9e05ca62d0d4a82c93ba935c67a4c736fa7f074bd56e41c59e",
+      "bytes": 1386,
+      "reportId": "cod-2026",
+      "publicationBasis": "Открытая числовая проекция, поставляемая с публикационным пакетом."
+    },
+    {
+      "href": "/materials/sport-2026/sport-ekonomika.pdf",
+      "sourcePath": "content/reports/sport-2026/sources/sport-ekonomika.pdf",
+      "sha256": "e0a5034f3da685c50f6c572cc218b15f65e98adc7b6c4bbc49df32894ceab6c3",
+      "bytes": 3805990,
+      "reportId": "sport-2026",
+      "publicationBasis": "Исходный PDF опубликованного доклада из существующего каталога."
+    },
+    {
+      "href": "/covers/sport-2026.webp",
+      "sourcePath": "content/reports/sport-2026/package/files/cover.webp",
+      "sha256": "d7a2748ac359aa24a016d908aea1ad418d705415b599c0b1e2b268224d422043",
+      "bytes": 60100,
+      "reportId": "sport-2026",
+      "publicationBasis": "Обложка открытого публикационного пакета."
+    },
+    {
+      "href": "/materials/sport-2026/sport-spending.csv",
+      "sourcePath": "content/reports/sport-2026/package/data/sport-spending.csv",
+      "sha256": "f587afbf96dce3bc127e5de8b98594a2337f0338506ec3a195720db0eb7ac455",
+      "bytes": 1189,
+      "reportId": "sport-2026",
+      "publicationBasis": "Открытая числовая проекция, поставляемая с публикационным пакетом."
+    },
+    {
+      "href": "/materials/sport-2026/fitness-estimates.csv",
+      "sourcePath": "content/reports/sport-2026/package/data/fitness-estimates.csv",
+      "sha256": "aa0e3fc90220df63d778432e869e2ca8f400bc34978e57195e8f50764a1cb1f8",
+      "bytes": 576,
+      "reportId": "sport-2026",
+      "publicationBasis": "Открытая числовая проекция, поставляемая с публикационным пакетом."
+    },
+    {
+      "href": "/materials/sport-2026/fitness-market.csv",
+      "sourcePath": "content/reports/sport-2026/package/data/fitness-market.csv",
+      "sha256": "fb25ce97ed3919d89c892c5db896ca5a2c461c30da5522795e579108931d85d4",
+      "bytes": 197,
+      "reportId": "sport-2026",
+      "publicationBasis": "Открытая числовая проекция, поставляемая с публикационным пакетом."
+    },
+    {
+      "href": "/materials/sport-2026/fitness-studios.csv",
+      "sourcePath": "content/reports/sport-2026/package/data/fitness-studios.csv",
+      "sha256": "ecc0a0b8509bbde35d064a5b53f287be0872f621a3ae5ed4ee30811ca157fd2c",
+      "bytes": 468,
+      "reportId": "sport-2026",
+      "publicationBasis": "Открытая числовая проекция, поставляемая с публикационным пакетом."
+    },
+    {
+      "href": "/materials/sport-2026/race-organizers.csv",
+      "sourcePath": "content/reports/sport-2026/package/data/race-organizers.csv",
+      "sha256": "53d7b749ac6d84e5ae0c5c7844521b7a7e6406a5eae5dae7e4404208489c84f3",
+      "bytes": 991,
+      "reportId": "sport-2026",
+      "publicationBasis": "Открытая числовая проекция, поставляемая с публикационным пакетом."
+    },
+    {
+      "href": "/materials/sport-2026/rpl-clubs.csv",
+      "sourcePath": "content/reports/sport-2026/package/data/rpl-clubs.csv",
+      "sha256": "30b0f643058717e470ab9943f1a431dce4340a2e7bc197bbf66b55219a54bcb0",
+      "bytes": 1957,
+      "reportId": "sport-2026",
+      "publicationBasis": "Открытая числовая проекция, поставляемая с публикационным пакетом."
+    },
+    {
+      "href": "/materials/sport-2026/rpl-selected.csv",
+      "sourcePath": "content/reports/sport-2026/package/data/rpl-selected.csv",
+      "sha256": "cd7583f4a4aa56d9e86dfe8b288fc373ac38936ab95f87dc03eeba6ad9dd07be",
+      "bytes": 336,
+      "reportId": "sport-2026",
+      "publicationBasis": "Открытая числовая проекция, поставляемая с публикационным пакетом."
+    },
+    {
+      "href": "/materials/sport-2026/event-results.csv",
+      "sourcePath": "content/reports/sport-2026/package/data/event-results.csv",
+      "sha256": "9ead0056a0e51eccc9f37ba4ad5bbab71e2dca87737ddaa8ccfe905e99804ed8",
+      "bytes": 1341,
+      "reportId": "sport-2026",
+      "publicationBasis": "Открытая числовая проекция, поставляемая с публикационным пакетом."
+    },
+    {
+      "href": "/materials/sport-2026/vfla-finance.csv",
+      "sourcePath": "content/reports/sport-2026/package/data/vfla-finance.csv",
+      "sha256": "9dcab017ca3b319489a1ae0bf368d53ab6f6347d1a8cd1781e6d04b3beae86b5",
+      "bytes": 1710,
+      "reportId": "sport-2026",
+      "publicationBasis": "Открытая числовая проекция, поставляемая с публикационным пакетом."
+    },
+    {
+      "href": "/materials/sport-2026/money-routes.csv",
+      "sourcePath": "content/reports/sport-2026/package/data/money-routes.csv",
+      "sha256": "919b65ba6e3ecdff743592c61d28a049007e1c4daf0b78c11d535b2ffa36501a",
+      "bytes": 1746,
+      "reportId": "sport-2026",
+      "publicationBasis": "Открытая числовая проекция, поставляемая с публикационным пакетом."
+    },
+    {
+      "href": "/materials/sport-2026/club-league.csv",
+      "sourcePath": "content/reports/sport-2026/package/data/club-league.csv",
+      "sha256": "999db1830342991c198275f9ad47831ce11473e79c3980d25068f8d0bbe001f2",
+      "bytes": 1125,
+      "reportId": "sport-2026",
+      "publicationBasis": "Открытая числовая проекция, поставляемая с публикационным пакетом."
+    },
+    {
+      "href": "/materials/sport-2026/sports-media.csv",
+      "sourcePath": "content/reports/sport-2026/package/data/sports-media.csv",
+      "sha256": "0b3fe0676c673a8a10c5d2770f5a0b027294107c30a0e5a9ebd405bafc11d9fa",
+      "bytes": 1195,
+      "reportId": "sport-2026",
+      "publicationBasis": "Открытая числовая проекция, поставляемая с публикационным пакетом."
+    },
+    {
+      "href": "/materials/sport-2026/ironstar-operating.csv",
+      "sourcePath": "content/reports/sport-2026/package/data/ironstar-operating.csv",
+      "sha256": "5c0353aed572fe84f6f6b6bc1249e868a6b4fd079fa15dd4191385e571cfbbcd",
+      "bytes": 74,
+      "reportId": "sport-2026",
+      "publicationBasis": "Открытая числовая проекция, поставляемая с публикационным пакетом."
+    },
+    {
+      "href": "/materials/sport-2026/rpl-revenue.csv",
+      "sourcePath": "content/reports/sport-2026/package/data/rpl-revenue.csv",
+      "sha256": "d427ce68d6b24aa0f1890f4fa4835ec90b3495c78f814dcf2655e1daccb7c142",
+      "bytes": 227,
+      "reportId": "sport-2026",
+      "publicationBasis": "Открытая числовая проекция, поставляемая с публикационным пакетом."
+    },
+    {
+      "href": "/materials/sport-2026/khl-distribution.csv",
+      "sourcePath": "content/reports/sport-2026/package/data/khl-distribution.csv",
+      "sha256": "6411b105bb9aba458e2b28a434dff123163eaf03788cc093b522f1b45be72bb7",
+      "bytes": 73,
+      "reportId": "sport-2026",
+      "publicationBasis": "Открытая числовая проекция, поставляемая с публикационным пакетом."
+    },
+    {
+      "href": "/materials/sport-2026/bundesliga-revenue.csv",
+      "sourcePath": "content/reports/sport-2026/package/data/bundesliga-revenue.csv",
+      "sha256": "1c113a14515389b21f5daf1588d8fc08923fb52a6203e89e5a1a669d2d945de1",
+      "bytes": 148,
+      "reportId": "sport-2026",
+      "publicationBasis": "Открытая числовая проекция, поставляемая с публикационным пакетом."
+    },
+    {
+      "href": "/materials/ved-platezhi-2026/ved-platezhi-2026.pdf",
+      "sourcePath": "content/reports/ved-platezhi-2026/sources/ved-platezhi-2026.pdf",
+      "sha256": "38c7e907ed7edd31fc3661703e4abe836a24c3bf9e891b1d5d4479ac8a668c7a",
+      "bytes": 1013612,
+      "reportId": "ved-platezhi-2026",
+      "publicationBasis": "Исходный PDF опубликованного доклада из существующего каталога."
+    },
+    {
+      "href": "/materials/polimery-2026/polimery-2026.pdf",
+      "sourcePath": "content/reports/polimery-2026/sources/polimery-2026.pdf",
+      "sha256": "ef53381e5dd51569ce2dde54c084b9fc87f6dc0778ffe53c944e7d015c394544",
+      "bytes": 3127491,
+      "reportId": "polimery-2026",
+      "publicationBasis": "Исходный PDF опубликованного доклада из существующего каталога."
+    },
+    {
+      "href": "/materials/seraya-zanyatost/seraya-zanyatost.pdf",
+      "sourcePath": "content/reports/seraya-zanyatost/sources/seraya-zanyatost.pdf",
+      "sha256": "e52209285bf8356a30a8ed0dafe0c11fad95b92d9f35a51b6c7a9f69962a5883",
+      "bytes": 2299822,
+      "reportId": "seraya-zanyatost",
+      "publicationBasis": "Исходный PDF опубликованного доклада из существующего каталога."
+    },
+    {
+      "href": "/materials/volna-preemstvennosti/volna-preemstvennosti.pdf",
+      "sourcePath": "content/reports/volna-preemstvennosti/sources/volna-preemstvennosti.pdf",
+      "sha256": "55304af87b0fe141dc7a7e353147e2b27ca03467ea1c71dacee51b8d4bbd042f",
+      "bytes": 11144159,
+      "reportId": "volna-preemstvennosti",
+      "publicationBasis": "Исходный PDF опубликованного доклада из существующего каталога."
+    },
+    {
+      "href": "/materials/ved-platezhi-2025/ved-platezhi-2025.pdf",
+      "sourcePath": "content/reports/ved-platezhi-2025/sources/ved-platezhi-2025.pdf",
+      "sha256": "92a690b5acb9e8deb14c2559f47ae6b8b0602843dfd4c16b1b8f075feac3d20f",
+      "bytes": 959972,
+      "reportId": "ved-platezhi-2025",
+      "publicationBasis": "Исходный PDF опубликованного доклада из существующего каталога."
+    },
+    {
+      "href": "/materials/lokalizaciya-taksi/lokalizaciya-taksi.pdf",
+      "sourcePath": "content/reports/lokalizaciya-taksi/sources/lokalizaciya-taksi.pdf",
+      "sha256": "7bf8782900b5af59825a5e6fea38399d1a20c5ca7f8c86e7abad415838a7344c",
+      "bytes": 1365247,
+      "reportId": "lokalizaciya-taksi",
+      "publicationBasis": "Исходный PDF опубликованного доклада из существующего каталога."
+    },
+    {
+      "href": "/materials/peredacha-biznesa/peredacha-biznes-aktivov.pdf",
+      "sourcePath": "content/reports/peredacha-biznesa/sources/peredacha-biznes-aktivov.pdf",
+      "sha256": "bcf25d8e3a2a259ab2a7cfbbb8ed1ddfdda22073e1c09c6d139a194283a93b4f",
+      "bytes": 815428,
+      "reportId": "peredacha-biznesa",
+      "publicationBasis": "Исходный PDF опубликованного доклада из существующего каталога."
+    },
+    {
+      "href": "/materials/porty-baltiki/baltika-rost-eksportnogo-potenciala.pdf",
+      "sourcePath": "content/reports/porty-baltiki/sources/baltika-rost-eksportnogo-potenciala.pdf",
+      "sha256": "b33334049a6b985d9ca948f239d0f1c0ff945afad832448be9f53d3d82a417e0",
+      "bytes": 1433690,
+      "reportId": "porty-baltiki",
+      "publicationBasis": "Исходный PDF опубликованного доклада из существующего каталога."
+    },
+    {
+      "href": "/materials/porty-baltiki/baltika-infrastruktura.pdf",
+      "sourcePath": "content/reports/porty-baltiki/sources/baltika-infrastruktura.pdf",
+      "sha256": "3597778e5a08b7f0a7ab2155b87bdd289accb8186fad900a7ff56551ada8466f",
+      "bytes": 770410,
+      "reportId": "porty-baltiki",
+      "publicationBasis": "Исходный PDF опубликованного доклада из существующего каталога."
+    },
+    {
+      "href": "/materials/porty-baltiki/baltika-otraslevye-prioritety.pdf",
+      "sourcePath": "content/reports/porty-baltiki/sources/baltika-otraslevye-prioritety.pdf",
+      "sha256": "e2f88312b5f0608f75b375a5dcb5a674025c72f3bb3281575781c2ed0e4bdb62",
+      "bytes": 1263997,
+      "reportId": "porty-baltiki",
+      "publicationBasis": "Исходный PDF опубликованного доклада из существующего каталога."
+    },
+    {
+      "href": "/materials/porog-1000-evro/povyshenie-poroga-besposhlinnogo-vvoza-tovarov.pdf",
+      "sourcePath": "content/reports/porog-1000-evro/sources/povyshenie-poroga-besposhlinnogo-vvoza-tovarov.pdf",
+      "sha256": "e51e78464771c20502b4e3f8b3d2b14d66de163bcc2ec2eaf3159dce43e71574",
+      "bytes": 8053809,
+      "reportId": "porog-1000-evro",
+      "publicationBasis": "Исходный PDF опубликованного доклада из существующего каталога."
+    },
+    {
+      "href": "/materials/farma-suverenitet/tekhnologicheskij-suverenitet-v-farmacevticheskoj-promyshlennosti.pdf",
+      "sourcePath": "content/reports/farma-suverenitet/sources/tekhnologicheskij-suverenitet-v-farmacevticheskoj-promyshlennosti.pdf",
+      "sha256": "81c3e2d9ffb9e97502614c49fb05cbc27b6e60d74f444f83ad4a4cdb7b87b256",
+      "bytes": 1550406,
+      "reportId": "farma-suverenitet",
+      "publicationBasis": "Исходный PDF опубликованного доклада из существующего каталога."
+    },
+    {
+      "href": "/covers/tobacco-market-2026-07.webp",
+      "sourcePath": "content/analytics/tobacco-market-2026-07/package/files/cover.webp",
+      "sha256": "8f978a77681f71aa172111674e351cf3664cc5661ae28eab4642cc4096b47d7c",
+      "bytes": 66770,
+      "reportId": "tobacco-market-2026-07",
+      "publicationBasis": "Обложка открытого публикационного пакета."
+    },
+    {
+      "href": "/materials/tobacco-market-2026-07/kz-price-indices.csv",
+      "sourcePath": "content/analytics/tobacco-market-2026-07/package/data/kz-price-indices.csv",
+      "sha256": "22b1eb8babe3d663ecabeff2935c25b018e3ccd99d3e339bff4385166c56eb75",
+      "bytes": 192,
+      "reportId": "tobacco-market-2026-07",
+      "publicationBasis": "Открытая числовая проекция, поставляемая с публикационным пакетом."
+    },
+    {
+      "href": "/materials/tobacco-market-2026-07/ru-cigarettes-2026.csv",
+      "sourcePath": "content/analytics/tobacco-market-2026-07/package/data/ru-cigarettes-2026.csv",
+      "sha256": "5fb483433a2d3a462b224cce16c6eca1a3bf1ebd611f40095c8a32535329b859",
+      "bytes": 251,
+      "reportId": "tobacco-market-2026-07",
+      "publicationBasis": "Открытая числовая проекция, поставляемая с публикационным пакетом."
+    },
+    {
+      "href": "/brand/logo-full-dark.svg",
+      "sourcePath": "packages/render/assets/logo/logo-full-dark.svg",
+      "sha256": "ef8fa29cb3bfa9e1625e983b5fb7c4fce069c1cf8a16dd7a0430ad74a67cf7e2",
+      "bytes": 7027,
+      "reportId": null,
+      "publicationBasis": "Фирменный знак АТРЭ из существующего проекта."
+    },
+    {
+      "href": "/brand/logo-full-light.svg",
+      "sourcePath": "packages/render/assets/logo/logo-full-light.svg",
+      "sha256": "28e4a7448aee51b36c0e25622ebaddae8dcff18aa7125bd60207fa88c94e6cbb",
+      "bytes": 7004,
+      "reportId": null,
+      "publicationBasis": "Фирменный знак АТРЭ из существующего проекта."
+    },
+    {
+      "href": "/brand/logo-mark-dark.svg",
+      "sourcePath": "packages/render/assets/logo/logo-mark-dark.svg",
+      "sha256": "e9eab474c940b5d6abbe532ad343eb6a5edcd2ad508177505d85873daa45025a",
+      "bytes": 7026,
+      "reportId": null,
+      "publicationBasis": "Фирменный знак АТРЭ из существующего проекта."
+    },
+    {
+      "href": "/brand/logo-mark-light.svg",
+      "sourcePath": "packages/render/assets/logo/logo-mark-light.svg",
+      "sha256": "4034e18385007573ecb9288617742f57256bcb8b96b733431d9b385c15235be7",
+      "bytes": 7003,
+      "reportId": null,
+      "publicationBasis": "Фирменный знак АТРЭ из существующего проекта."
+    },
+    {
+      "href": "/fonts/raleway-cyr-lat.woff2",
+      "sourcePath": "packages/render/fonts/raleway-cyr-lat.woff2",
+      "sha256": "2f20c972a974682b03f9af25ae84db47ef3804ba0a327f6c298ca963a88fd9c3",
+      "bytes": 92488,
+      "reportId": null,
+      "publicationBasis": "Локальная копия Raleway, лицензия SIL Open Font License прилагается."
+    },
+    {
+      "href": "/fonts/OFL.txt",
+      "sourcePath": "packages/render/fonts/OFL.txt",
+      "sha256": "addc95800c691f7588d52ca373ecaee4c6365af73b04403318fcded7eecc8d01",
+      "bytes": 4402,
+      "reportId": null,
+      "publicationBasis": "Лицензия шрифта Raleway."
+    }
+  ],
+  "materialMetadata": [
+    {
+      "metadataPath": "content/reports/cod-2026/package/manifest.json",
+      "sourceVersion": 1,
+      "publicationBasis": "Опубликованный доклад/открытая проекция существующего каталога; повторное использование по поручению владельца.",
+      "materialId": "cod-2026"
+    },
+    {
+      "metadataPath": "content/reports/sport-2026/package/manifest.json",
+      "sourceVersion": 1,
+      "publicationBasis": "Опубликованный доклад/открытая проекция существующего каталога; повторное использование по поручению владельца.",
+      "materialId": "sport-2026"
+    },
+    {
+      "metadataPath": "content/migrated/reports-legacy.json",
+      "sourceVersion": null,
+      "publicationBasis": "Опубликованный доклад/открытая проекция существующего каталога; повторное использование по поручению владельца.",
+      "materialId": "ved-platezhi-2026"
+    },
+    {
+      "metadataPath": "content/migrated/reports-legacy.json",
+      "sourceVersion": null,
+      "publicationBasis": "Опубликованный доклад/открытая проекция существующего каталога; повторное использование по поручению владельца.",
+      "materialId": "polimery-2026"
+    },
+    {
+      "metadataPath": "content/migrated/reports-legacy.json",
+      "sourceVersion": null,
+      "publicationBasis": "Опубликованный доклад/открытая проекция существующего каталога; повторное использование по поручению владельца.",
+      "materialId": "seraya-zanyatost"
+    },
+    {
+      "metadataPath": "content/migrated/reports-legacy.json",
+      "sourceVersion": null,
+      "publicationBasis": "Опубликованный доклад/открытая проекция существующего каталога; повторное использование по поручению владельца.",
+      "materialId": "volna-preemstvennosti"
+    },
+    {
+      "metadataPath": "content/migrated/reports-legacy.json",
+      "sourceVersion": null,
+      "publicationBasis": "Опубликованный доклад/открытая проекция существующего каталога; повторное использование по поручению владельца.",
+      "materialId": "ved-platezhi-2025"
+    },
+    {
+      "metadataPath": "content/migrated/reports-legacy.json",
+      "sourceVersion": null,
+      "publicationBasis": "Опубликованный доклад/открытая проекция существующего каталога; повторное использование по поручению владельца.",
+      "materialId": "lokalizaciya-taksi"
+    },
+    {
+      "metadataPath": "content/migrated/reports-legacy.json",
+      "sourceVersion": null,
+      "publicationBasis": "Опубликованный доклад/открытая проекция существующего каталога; повторное использование по поручению владельца.",
+      "materialId": "peredacha-biznesa"
+    },
+    {
+      "metadataPath": "content/migrated/reports-legacy.json",
+      "sourceVersion": null,
+      "publicationBasis": "Опубликованный доклад/открытая проекция существующего каталога; повторное использование по поручению владельца.",
+      "materialId": "porty-baltiki"
+    },
+    {
+      "metadataPath": "content/migrated/reports-legacy.json",
+      "sourceVersion": null,
+      "publicationBasis": "Опубликованный доклад/открытая проекция существующего каталога; повторное использование по поручению владельца.",
+      "materialId": "porog-1000-evro"
+    },
+    {
+      "metadataPath": "content/migrated/reports-legacy.json",
+      "sourceVersion": null,
+      "publicationBasis": "Опубликованный доклад/открытая проекция существующего каталога; повторное использование по поручению владельца.",
+      "materialId": "farma-suverenitet"
+    },
+    {
+      "metadataPath": "content/analytics/tobacco-market-2026-07/package/manifest.json",
+      "sourceVersion": 1,
+      "publicationBasis": "Опубликованный доклад/открытая проекция существующего каталога; повторное использование по поручению владельца.",
+      "materialId": "tobacco-market-2026-07"
+    }
+  ],
+  "atlasSource": "apps/site/public/variant-3-assets/data.js; content/reports/cod-2026/package/data/territories.csv; PDF p.4 table2",
+  "sportScenarioSource": "content/reports/sport-2026/source-map.json scenario; PDF pp.21–23",
+  "pdfExtraction": {
+    "source": "content/search/pdf-pages.json",
+    "extractor": "pypdf+tesseract-rus-eng",
+    "ocrVerified": false
+  },
+  "publicationPolicy": "Only published report files and explicit open analytical projections were copied. No internal databases, credentials, private CMS files, or employee records were included."
+}
