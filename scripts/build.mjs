@@ -7,7 +7,7 @@ const largePdf=Buffer.concat(await Promise.all([1,2,3].map(i=>readFile('data/ass
 if(createHash('sha256').update(largePdf).digest('hex')!=='55304af87b0fe141dc7a7e353147e2b27ca03467ea1c71dacee51b8d4bbd042f')throw Error('Original PDF checksum mismatch');
 await mkdir('dist/materials/volna-preemstvennosti',{recursive:true});
 await writeFile('dist/materials/volna-preemstvennosti/volna-preemstvennosti.pdf',largePdf);
-for(const [from,to] of [['index.html','dist/index.html'],['src/app.js','dist/app.js'],['src/style.css','dist/style.css'],['src/lib.mjs','dist/lib.mjs']])await copyFile(from,to);
+for(const [from,to] of [['src/report-reading.mjs','dist/report-reading.mjs'],['src/polymer-report.mjs','dist/polymer-report.mjs'],['src/polymer-report.css','dist/polymer-report.css'],['index.html','dist/index.html'],['src/data-model.mjs','dist/data-model.mjs'],['src/dataset-sources.mjs','dist/dataset-sources.mjs'],['src/geo-experience.mjs','dist/geo-experience.mjs'],['src/annotations.mjs','dist/annotations.mjs'],['src/annotations.css','dist/annotations.css'],['src/app.js','dist/app.js'],['src/style.css','dist/style.css'],['src/experience.css','dist/experience.css'],['src/lib.mjs','dist/lib.mjs'],['src/experience.mjs','dist/experience.mjs']])await copyFile(from,to);
 await mkdir('dist/data',{recursive:true});
 await copyFile('data/source-corpus.json','dist/data/source-corpus.json');
 await copyFile('data/provenance.json','dist/data/provenance.json');

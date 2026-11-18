@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import {sourceBlocks,readingSections} from '../src/report-reading.mjs';
+const data=JSON.parse(fs.readFileSync(new URL('../public/materials/polimery-2026/digital.json',import.meta.url)));
+test('readability grouping preserves every character of all 44 original pages',()=>{for(const page of data.sections.flatMap(s=>s.pages)){assert.equal(sourceBlocks(page.text).map(b=>b.text).join(''),page.text,'page '+page.page);}assert.equal(data.sections.flatMap(s=>s.pages).length,44);});
+test('reading order begins with conclusions summary and retains all source sections exactly once',()=>{const ordered=readingSections(data.sections);assert.equal(ordered[0].id,'summary');assert.deepEqual(ordered.map(s=>s.id).sort(),data.sections.map(s=>s.id).sort());assert.deepEqual(ordered.flatMap(s=>s.pages.map(p=>p.page)).sort((a,b)=>a-b),Array.from({length:44},(_,i)=>i+1));});

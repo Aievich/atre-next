@@ -1,0 +1,6 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {rewriteAssetPaths} from '../scripts/pages-paths.mjs';
+test('project Pages adapts new modules, fonts and digital report assets, preserving routes and external sources',()=>{
+ const input=`fetch('/materials/polimery-2026/digital.json'); const pdf='/materials/polimery-2026/polimery-2026.pdf'; const route='/atlas'; const link='#/study/polimery-2026'; const image="/covers/a.webp"; url('/fonts/a.woff2'); href="/polymer-report.css"; src="/vendor/d3.js"; const source='https://stat.gov.kz/';`;
+ const out=rewriteAssetPaths(input,'/atre-next/');assert.match(out,/fetch\('\/atre-next\/materials/);assert.match(out,/href="\/atre-next\/polymer-report.css/);assert.match(out,/\/atre-next\/fonts/);assert.match(out,/route='\/atlas'/);assert.match(out,/#\/study\/polimery-2026/);assert.match(out,/https:\/\/stat.gov.kz/);assert.equal(rewriteAssetPaths(out,'/atre-next/'),out);
+});
+test('nested JSON image paths and markdown source links are adapted',()=>{const value={image:'/materials/polimery-2026/pages/page-30.jpg',text:'[PDF](/materials/polimery-2026/polimery-2026.pdf#page=30)'};const out=JSON.parse(rewriteAssetPaths(JSON.stringify(value),'/atre-next/'));assert.match(out.image,/^\/atre-next\//);assert.match(out.text,/\(\/atre-next\/materials/);});
