@@ -1,51 +1,43 @@
 import {parseVoiceCommand,commandHash,createSpeechSession} from './voice-commands.mjs';
 
+const mic='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v1a7 7 0 0 0 14 0v-1M12 18v4M8 22h8"/></svg>';
+export const voiceButton=(mode='auto',label='Голосовое управление')=>`<button type="button" class="voice-launch" data-voice-open data-voice-mode="${mode}" aria-pressed="false" aria-controls="voice-feedback" aria-label="${label}" title="${label}">${mic}</button>`;
+
 export function installVoiceControl(){
-  const mic='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v1a7 7 0 0 0 14 0v-1M12 18v4M8 22h8"/></svg>';
-  const dialog=document.createElement('dialog');dialog.className='voice-dialog';dialog.id='voice-dialog';dialog.setAttribute('aria-labelledby','voice-title');
-  dialog.innerHTML=`<div class="voice-heading"><div><p class="eyebrow">ГОЛОСОВОЕ УПРАВЛЕНИЕ</p><h2 id="voice-title">Скажите, что найти.</h2></div><button type="button" class="voice-close" aria-label="Закрыть голосовое управление">×</button></div>
-  <p>Переходите между разделами, ищите материалы и задавайте вопросы помощнику.</p>
-  <label class="voice-label" for="voice-mode">Действие</label><select id="voice-mode"><option value="auto">Определить по фразе</option><option value="navigate">Открыть раздел</option><option value="search">Найти в материалах</option><option value="assistant">Спросить помощника</option></select>
-  <div class="voice-examples"><span>«Открой атлас данных»</span><span>«Найди полимеры»</span><span>«Спроси помощника: что такое ЦОД?»</span></div>
-  <div class="voice-record"><button type="button" class="button dark" id="voice-record">${mic}<span>Начать запись</span></button><p id="voice-status" role="status" aria-live="polite"></p></div>
-  <p class="voice-privacy">Микрофон включается только по кнопке. Речь может передаваться сервису браузера; может понадобиться интернет. Сайт не сохраняет аудио.</p>
-  <form id="voice-form"><label class="voice-label" for="voice-text">Ваша фраза <span>— можно отредактировать или ввести вручную</span></label><textarea id="voice-text" rows="3" maxlength="4000" placeholder="Например: открой конструктор данных"></textarea><p id="voice-preview" aria-live="polite"></p><div class="voice-submit"><button type="submit" class="button dark" id="voice-apply" disabled>Выполнить</button><span>Сначала проверьте распознанную фразу.</span></div></form>`;
-  document.body.append(dialog);
-  const $=s=>dialog.querySelector(s),mode=$('#voice-mode'),text=$('#voice-text'),status=$('#voice-status'),record=$('#voice-record'),apply=$('#voice-apply');
+  const panel=document.createElement('aside');panel.id='voice-feedback';panel.className='voice-feedback';panel.hidden=true;panel.setAttribute('aria-label','Голосовой ввод');
+  panel.innerHTML=`<div class="voice-feedback-head"><strong id="voice-status" role="status" aria-live="polite">Слушаю…</strong><button type="button" class="voice-close" aria-label="Закрыть голосовой ввод и остановить микрофон">×</button></div><label for="voice-transcript">Распознаваемая фраза</label><input id="voice-transcript" type="text" readonly placeholder="Говорите…"><p class="voice-note">Команда выполнится после распознавания. Повторное нажатие на микрофон останавливает запись.</p><small>Распознавание выполняет браузер, в том числе через свой сервис. Сайт не сохраняет аудио.</small>`;
+  document.body.append(panel);
+  const text=panel.querySelector('input'),status=panel.querySelector('#voice-status');
   const Recognition=window.SpeechRecognition||window.webkitSpeechRecognition;
-  const supported=!!Recognition&&window.isSecureContext;
-  let recording=false,opener;
-  function preview(){const hints={auto:'«Открой атлас данных» · «Найди полимеры» · «Спроси помощника: что такое ЦОД?»',navigate:'Назовите раздел: «Атлас данных», «Исследования» или «Конструктор данных».',search:'Произнесите поисковый запрос: название темы, показатель или число.',assistant:'Продиктуйте вопрос свободно. Выбранный контекст помощника будет сохранён.'};$('.voice-examples').textContent=hints[mode.value];const cmd=parseVoiceCommand(text.value,mode.value);apply.disabled=['empty','unknown'].includes(cmd.kind);$('#voice-preview').textContent=cmd.kind==='empty'?'':cmd.kind==='navigate'?'Открыть: '+cmd.label:cmd.kind==='unknown'?cmd.label:cmd.label;apply.textContent=cmd.kind==='search'?'Найти':cmd.kind==='assistant'?'Спросить помощника':'Открыть раздел';}
-  function idle(){recording=false;record.setAttribute('aria-pressed','false');record.querySelector('span').textContent='Начать запись';dialog.classList.remove('is-listening');text.readOnly=false;mode.disabled=false;preview();}
-  const session=supported?createSpeechSession(Recognition,event=>{
+  let recording=false,mode='auto',opener,timer;
+  function state(active){recording=active;panel.classList.toggle('is-listening',active);document.querySelectorAll('[data-voice-open]').forEach(b=>{b.setAttribute('aria-pressed',String(active));b.classList.toggle('is-recording',active);});}
+  function stop(){session?.stop();state(false);}
+  function close(){clearTimeout(timer);stop();panel.hidden=true;if(opener?.isConnected)opener.focus();}
+  function error(message){state(false);panel.classList.add('voice-error');status.textContent=message;}
+  const session=Recognition&&window.isSecureContext?createSpeechSession(Recognition,event=>{
     if(event.state==='starting'||event.state==='listening'){
-      recording=true;text.readOnly=true;mode.disabled=true;apply.disabled=true;record.setAttribute('aria-pressed','true');record.querySelector('span').textContent='Остановить запись';dialog.classList.add('is-listening');
-      status.textContent=event.state==='starting'?'Ожидаем доступ к микрофону…':'Слушаю… Произнесите одну фразу.';
-      text.value=event.text||'';
-    }else{idle();if(event.state==='ready'){text.value=event.text;status.textContent='Фраза распознана. Проверьте текст и выполните команду.';preview();text.focus();}else status.textContent=event.message;}
+      state(true);status.textContent=event.state==='starting'?'Включаю микрофон…':'Слушаю…';text.value=event.text||'';
+    }else if(event.state==='ready'){
+      state(false);text.value=event.text;
+      const command=parseVoiceCommand(event.text,mode),hash=commandHash(command,location.hash);
+      if(!hash){error(command.kind==='empty'?'Команда не распознана. Попробуйте ещё раз.':command.label);return;}
+      status.textContent=command.kind==='navigate'?'Открываю: '+command.label:command.kind==='search'?'Ищу по материалам…':'Передаю вопрос помощнику…';
+      if(hash===location.hash)window.dispatchEvent(new HashChangeEvent('hashchange'));else location.hash=hash;
+      timer=setTimeout(()=>{panel.hidden=true;},3500);
+    }else error(event.message);
   }):null;
-  function stop(){session?.stop();idle();}
-  record.disabled=!supported;record.setAttribute('aria-pressed','false');
-  function initialStatus(){status.textContent=supported?'Готов к записи на русском языке.':'Распознавание речи недоступно в этом браузере. Команду можно ввести ниже.';}
-  initialStatus();
-  record.addEventListener('click',()=>{if(recording){stop();status.textContent='Запись остановлена. Текст можно исправить и выполнить.';}else session?.start();});
-  text.addEventListener('input',preview);mode.addEventListener('change',preview);
-  $('#voice-form').addEventListener('submit',event=>{
-    event.preventDefault();if(recording)return;
-    const hash=commandHash(parseVoiceCommand(text.value,mode.value),location.hash);if(!hash){preview();return;}
-    stop();dialog.close();
-    if(hash===location.hash){document.querySelector('#main')?.focus();return;}
-    location.hash=hash;document.querySelector('#main')?.focus();
-  });
-  $('.voice-close').addEventListener('click',()=>dialog.close());
-  dialog.addEventListener('cancel',stop);
-  dialog.addEventListener('close',()=>{stop();if(opener?.isConnected)opener.focus();});
-  document.addEventListener('visibilitychange',()=>{if(document.hidden&&recording){stop();status.textContent='Запись остановлена при переключении вкладки.';}});
-  window.addEventListener('hashchange',()=>{if(dialog.open)dialog.close();});
+  panel.querySelector('.voice-close').addEventListener('click',close);
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!panel.hidden)close();});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden&&recording){stop();status.textContent='Микрофон выключен при переключении вкладки.';}});
+  window.addEventListener('hashchange',()=>{if(recording){stop();panel.hidden=true;}});
   document.addEventListener('click',event=>{
     const button=event.target.closest('[data-voice-open]');if(!button)return;
-    opener=button;const route=location.hash.split('?')[0];mode.value=route==='#/assistant'?'assistant':route==='#/search'?'search':'auto';
-    text.value='';initialStatus();preview();dialog.showModal();(supported?record:text).focus();
+    clearTimeout(timer);opener=button;panel.hidden=false;panel.classList.remove('voice-error');
+    if(recording){stop();status.textContent='Микрофон выключен. Нажмите ещё раз, чтобы повторить.';return;}
+    mode=button.dataset.voiceMode||'auto';
+    text.value='';
+    if(!session){error('Голосовой ввод недоступен в этом браузере. Воспользуйтесь текстовым поиском или полем вопроса помощнику.');return;}
+    session.start();
   });
-  return `<button type="button" class="voice-launch" data-voice-open aria-haspopup="dialog" aria-controls="voice-dialog" aria-label="Голосовое управление" title="Голосовое управление">${mic}</button>`;
+  return voiceButton();
 }

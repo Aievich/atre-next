@@ -1,0 +1,1870 @@
+{
+  "schemaVersion": 1,
+  "pdfSha256": "ef53381e5dd51569ce2dde54c084b9fc87f6dc0778ffe53c944e7d015c394544",
+  "dpi": 200,
+  "description": "Original PDF crops; no redrawing, invented values or edited report text.",
+  "items": [
+    {
+      "id": "panel-01-p06",
+      "kind": "panel",
+      "number": 1,
+      "page": 6,
+      "caption": "Таблица и данные оригинала без номера · страница 6",
+      "bbox": [
+        30,
+        245,
+        565,
+        365
+      ],
+      "image": "/materials/polimery-2026/visuals/panel-01-p06.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=6",
+      "width": 1488,
+      "height": 335,
+      "sha256": "73a4c10e6e8c210ad3603de584529e1b9d2a73766b2566f82df40d81d8069b3a",
+      "bytes": 33182
+    },
+    {
+      "id": "figure-01-p06",
+      "kind": "figure",
+      "number": 1,
+      "page": 6,
+      "caption": "Рисунок 1 – Индексы мирового потребления крупнотоннажных полимеров, мирового ВВП (по ППС в долл. 2021) и мирового населения, 2009=100% и 1985=100% (врезка)",
+      "bbox": [
+        30,
+        520,
+        565,
+        804
+      ],
+      "image": "/materials/polimery-2026/visuals/figure-01-p06.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=6",
+      "width": 1488,
+      "height": 790,
+      "sha256": "475eb63646cee457e8a8610f6a3211a72d3624f191174e379af2ff1c33428e76",
+      "bytes": 37148
+    },
+    {
+      "id": "figure-02-p07",
+      "kind": "figure",
+      "number": 2,
+      "page": 7,
+      "caption": "Рисунок 2 – Динамика мирового потребления крупнотоннажных полимеров и прирост потребления год к году (прав. ось)",
+      "bbox": [
+        30,
+        126,
+        565,
+        432
+      ],
+      "image": "/materials/polimery-2026/visuals/figure-02-p07.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=7",
+      "width": 1488,
+      "height": 851,
+      "sha256": "4c3d4ad2ca03b0e03759531816a6d5985a4bc1c7589e71bed403a8013e1426ab",
+      "bytes": 29172
+    },
+    {
+      "id": "figure-03-p08",
+      "kind": "figure",
+      "number": 3,
+      "page": 8,
+      "caption": "Рисунок 3 – Распределение спроса на крупнотоннажные полимеры по регионам мира за период с 2009 по 2024 год",
+      "bbox": [
+        30,
+        60,
+        565,
+        594
+      ],
+      "image": "/materials/polimery-2026/visuals/figure-03-p08.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=8",
+      "width": 1488,
+      "height": 1485,
+      "sha256": "a3269354e1fb6b98d9fc82bdf1d808ade242f4272a942577ffcacafd07bc5e8d",
+      "bytes": 68956
+    },
+    {
+      "id": "figure-04-p09",
+      "kind": "figure",
+      "number": 4,
+      "page": 9,
+      "caption": "Рисунок 4 – Секторальная структура потребления пяти ключевых крупнотоннажных полимеров",
+      "bbox": [
+        30,
+        65,
+        565,
+        415
+      ],
+      "image": "/materials/polimery-2026/visuals/figure-04-p09.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=9",
+      "width": 1488,
+      "height": 973,
+      "sha256": "26338de6a4606a07e42752c54f9974e1e2da346f0b6ed53606449314f6a08b89",
+      "bytes": 54652
+    },
+    {
+      "id": "table-01-p09",
+      "kind": "table",
+      "number": 1,
+      "page": 9,
+      "caption": "Таблица 1 – Сравнение долгосрочных прогнозов спроса на сырье в нефтехимической отрасли",
+      "bbox": [
+        30,
+        555,
+        565,
+        802
+      ],
+      "image": "/materials/polimery-2026/visuals/table-01-p09.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=9",
+      "width": 1488,
+      "height": 688,
+      "sha256": "883ff920044c79d5242d74512aca892aaa2f73ac0f3f366e9f0ebedf8b0e79ea",
+      "bytes": 60534
+    },
+    {
+      "id": "figure-05-p10",
+      "kind": "figure",
+      "number": 5,
+      "page": 10,
+      "caption": "Рисунок 5 – Основные элементы ЭЗЦ для пластиков",
+      "bbox": [
+        30,
+        260,
+        565,
+        592
+      ],
+      "image": "/materials/polimery-2026/visuals/figure-05-p10.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=10",
+      "width": 1488,
+      "height": 923,
+      "sha256": "2d9aecfe4d6187c3ec456d3706df39766808fbb1a3acb22edc7697bfd7cb5d7d",
+      "bytes": 37080
+    },
+    {
+      "id": "figure-06-p11",
+      "kind": "figure",
+      "number": 6,
+      "page": 11,
+      "caption": "Рисунок 6 – Объемы генерации и переработки полимерных отходов и доля вторичных полимеров в некоторых странах и регионах в 2024 году",
+      "bbox": [
+        30,
+        155,
+        565,
+        523
+      ],
+      "image": "/materials/polimery-2026/visuals/figure-06-p11.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=11",
+      "width": 1488,
+      "height": 1023,
+      "sha256": "dc16133d89278c55fc67f4cf650a33fb9302c58b39244943b284de433497a4e8",
+      "bytes": 38942
+    },
+    {
+      "id": "table-02-p13",
+      "kind": "table",
+      "number": 2,
+      "page": 13,
+      "caption": "Таблица 2 – Мощности и производство крупнотоннажных полимеров по странам в 2024 году",
+      "bbox": [
+        30,
+        169,
+        565,
+        545
+      ],
+      "image": "/materials/polimery-2026/visuals/table-02-p13.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=13",
+      "width": 1488,
+      "height": 1046,
+      "sha256": "6baebab5d50349b07532caebbf7367ffdd1cbaaa18c3b04a50fc834576320113",
+      "bytes": 82580
+    },
+    {
+      "id": "figure-07-p14",
+      "kind": "figure",
+      "number": 7,
+      "page": 14,
+      "caption": "Рисунок 7 – Динамика географической структуры производства крупнотоннажных полимеров",
+      "bbox": [
+        30,
+        65,
+        565,
+        394
+      ],
+      "image": "/materials/polimery-2026/visuals/figure-07-p14.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=14",
+      "width": 1488,
+      "height": 915,
+      "sha256": "068229257b7ec76d95d88c8db2620136f5529f0e89f4519477a803a33caa8c15",
+      "bytes": 27522
+    },
+    {
+      "id": "table-03-p14",
+      "kind": "table",
+      "number": 3,
+      "page": 14,
+      "caption": "Таблица 3 – Ключевые мировые проекты по производству крупнотоннажных полимеров",
+      "bbox": [
+        30,
+        483,
+        565,
+        791
+      ],
+      "image": "/materials/polimery-2026/visuals/table-03-p14.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=14",
+      "width": 1488,
+      "height": 857,
+      "sha256": "a0510c4c9c863b739c0a11640f492cef56c1299a4b5b548ef5ca87fa882d9590",
+      "bytes": 59154
+    },
+    {
+      "id": "table-03-p15",
+      "kind": "table",
+      "number": 3,
+      "page": 15,
+      "caption": "Таблица 3 — продолжение",
+      "bbox": [
+        30,
+        65,
+        565,
+        241
+      ],
+      "image": "/materials/polimery-2026/visuals/table-03-p15.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=15",
+      "width": 1488,
+      "height": 490,
+      "sha256": "23e7ee4e0c15530d02f6313ef4517429a32b876a9c02f0da5292ccba26eb7a1a",
+      "bytes": 47086
+    },
+    {
+      "id": "figure-08-p15",
+      "kind": "figure",
+      "number": 8,
+      "page": 15,
+      "caption": "Рисунок 8 – Динамика потребления сырья мировой отраслью производства полимеров",
+      "bbox": [
+        30,
+        394,
+        565,
+        685
+      ],
+      "image": "/materials/polimery-2026/visuals/figure-08-p15.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=15",
+      "width": 1488,
+      "height": 810,
+      "sha256": "f09e5539cfed83d53fcc00ec1c7e9a2f4dcfc62929c24c4879df1b8561ab8bec",
+      "bytes": 22396
+    },
+    {
+      "id": "figure-09-p16",
+      "kind": "figure",
+      "number": 9,
+      "page": 16,
+      "caption": "Рисунок 9 – Сырьевая корзина производства крупнотоннажных полимеров по крупнейшим производителям",
+      "bbox": [
+        30,
+        198,
+        565,
+        495
+      ],
+      "image": "/materials/polimery-2026/visuals/figure-09-p16.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=16",
+      "width": 1488,
+      "height": 826,
+      "sha256": "62430e6c04d60b0253980139314228f8e4e901f1a854e75b582bb0a0c7179a84",
+      "bytes": 28066
+    },
+    {
+      "id": "panel-02-p16",
+      "kind": "panel",
+      "number": 2,
+      "page": 16,
+      "caption": "Таблица и данные оригинала без номера · страница 16",
+      "bbox": [
+        30,
+        504,
+        565,
+        580
+      ],
+      "image": "/materials/polimery-2026/visuals/panel-02-p16.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=16",
+      "width": 1488,
+      "height": 212,
+      "sha256": "96f71490da11e3a50af6a897b17cf50caefd6dc5ac98a7297734a7f5f3379e9b",
+      "bytes": 21118
+    },
+    {
+      "id": "panel-03-p17",
+      "kind": "panel",
+      "number": 3,
+      "page": 17,
+      "caption": "Таблица и данные оригинала без номера · страница 17",
+      "bbox": [
+        30,
+        286,
+        565,
+        374
+      ],
+      "image": "/materials/polimery-2026/visuals/panel-03-p17.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=17",
+      "width": 1488,
+      "height": 246,
+      "sha256": "5fe1a15ca9d84dc7d5b8052fd1421090062ed7f8259a78450e0a06685885047e",
+      "bytes": 25698
+    },
+    {
+      "id": "panel-04-p17",
+      "kind": "panel",
+      "number": 4,
+      "page": 17,
+      "caption": "Таблица и данные оригинала без номера · страница 17",
+      "bbox": [
+        30,
+        609,
+        565,
+        685
+      ],
+      "image": "/materials/polimery-2026/visuals/panel-04-p17.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=17",
+      "width": 1488,
+      "height": 213,
+      "sha256": "7df0e34942a33b93ebb93b774b5c7c2745405f012c4d909b3da44d3e9487141c",
+      "bytes": 21708
+    },
+    {
+      "id": "table-04-p18",
+      "kind": "table",
+      "number": 4,
+      "page": 18,
+      "caption": "Таблица 4 – Меры государственной поддержки нефтехимии в ключевых странах-конкурентах России",
+      "bbox": [
+        30,
+        302,
+        565,
+        705
+      ],
+      "image": "/materials/polimery-2026/visuals/table-04-p18.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=18",
+      "width": 1488,
+      "height": 1120,
+      "sha256": "3906faf0d9c172f2ef62577a8b4a261f5c46cb3259b08e45dd6ea4a194d3249b",
+      "bytes": 104378
+    },
+    {
+      "id": "table-04-p19",
+      "kind": "table",
+      "number": 4,
+      "page": 19,
+      "caption": "Таблица 4 — продолжение",
+      "bbox": [
+        30,
+        65,
+        565,
+        546
+      ],
+      "image": "/materials/polimery-2026/visuals/table-04-p19.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=19",
+      "width": 1488,
+      "height": 1337,
+      "sha256": "f457ea23940a96705df97d3cb195309a1c746ad470f51e07ed35498ffd058c2b",
+      "bytes": 116280
+    },
+    {
+      "id": "table-05-p20",
+      "kind": "table",
+      "number": 5,
+      "page": 20,
+      "caption": "Таблица 5 – Стратегические приоритеты ключевых игроков",
+      "bbox": [
+        30,
+        180,
+        565,
+        700
+      ],
+      "image": "/materials/polimery-2026/visuals/table-05-p20.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=20",
+      "width": 1488,
+      "height": 1445,
+      "sha256": "2dbd6a19ce8abe12f3885c70a57c24b0e713e920ea8b714086c80646402a57c4",
+      "bytes": 130600
+    },
+    {
+      "id": "panel-05-p21",
+      "kind": "panel",
+      "number": 5,
+      "page": 21,
+      "caption": "Таблица и данные оригинала без номера · страница 21",
+      "bbox": [
+        30,
+        150,
+        565,
+        209
+      ],
+      "image": "/materials/polimery-2026/visuals/panel-05-p21.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=21",
+      "width": 1488,
+      "height": 165,
+      "sha256": "66548e6559797eb816b78349ac6f4bdd23dfa82778e336eac151e2dbce5947fd",
+      "bytes": 11246
+    },
+    {
+      "id": "panel-06-p21",
+      "kind": "panel",
+      "number": 6,
+      "page": 21,
+      "caption": "Таблица и данные оригинала без номера · страница 21",
+      "bbox": [
+        30,
+        291,
+        565,
+        406
+      ],
+      "image": "/materials/polimery-2026/visuals/panel-06-p21.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=21",
+      "width": 1488,
+      "height": 320,
+      "sha256": "4eb39916ecee5e4a24efb5e19ba45ccb759e500060c772319d0e1b0a4321430a",
+      "bytes": 27364
+    },
+    {
+      "id": "figure-10-p21",
+      "kind": "figure",
+      "number": 10,
+      "page": 21,
+      "caption": "Рисунок 10 – Потребление крупнотоннажных полимеров (ПЭ, ПП, ПВХ, ПЭТФ, ПС) в России, млн тонн",
+      "bbox": [
+        30,
+        510,
+        565,
+        807
+      ],
+      "image": "/materials/polimery-2026/visuals/figure-10-p21.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=21",
+      "width": 1488,
+      "height": 826,
+      "sha256": "aaf6292aef14a3c338f65df6c8090d84d20a8cfb40ba185185d929d658a7fbb2",
+      "bytes": 40146
+    },
+    {
+      "id": "table-06-p22",
+      "kind": "table",
+      "number": 6,
+      "page": 22,
+      "caption": "Таблица 6 – Динамика потребления крупнотоннажных полимеров в России по периодам",
+      "bbox": [
+        30,
+        126,
+        565,
+        382
+      ],
+      "image": "/materials/polimery-2026/visuals/table-06-p22.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=22",
+      "width": 1488,
+      "height": 712,
+      "sha256": "554e6703ab82e8d2ec55b9b82125495cba5c1dc2c024b192e0876e53bff76503",
+      "bytes": 70796
+    },
+    {
+      "id": "panel-07-p22",
+      "kind": "panel",
+      "number": 7,
+      "page": 22,
+      "caption": "Таблица и данные оригинала без номера · страница 22",
+      "bbox": [
+        30,
+        665,
+        565,
+        773
+      ],
+      "image": "/materials/polimery-2026/visuals/panel-07-p22.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=22",
+      "width": 1488,
+      "height": 301,
+      "sha256": "fea3285e6ad07a288cbfc97c30a1b991198913cb0e73656a8f1caea55126399e",
+      "bytes": 26200
+    },
+    {
+      "id": "figure-11-p23",
+      "kind": "figure",
+      "number": 11,
+      "page": 23,
+      "caption": "Рисунок 11 – Сопоставление подушевого ВВП (правая ось) и подушевого потребления крупнотоннажных полимеров (левая ось) в России и других странах",
+      "bbox": [
+        30,
+        438,
+        565,
+        802
+      ],
+      "image": "/materials/polimery-2026/visuals/figure-11-p23.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=23",
+      "width": 1488,
+      "height": 1013,
+      "sha256": "8e31f39975cbfa44020ff7f30350ee8f954bb61646d5bb8b56f2b348b4abe251",
+      "bytes": 46332
+    },
+    {
+      "id": "figure-12-p24",
+      "kind": "figure",
+      "number": 12,
+      "page": 24,
+      "caption": "Рисунок 12 – Структура потребления полимеров по отраслям в России, 2023 год, % от общего потребления",
+      "bbox": [
+        30,
+        130,
+        565,
+        440
+      ],
+      "image": "/materials/polimery-2026/visuals/figure-12-p24.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=24",
+      "width": 1488,
+      "height": 862,
+      "sha256": "ec7307970826bc35722cf03542950cf3f1e1e54e6f3a7bfb3203ee1316118182",
+      "bytes": 61784
+    },
+    {
+      "id": "figure-13-p24",
+      "kind": "figure",
+      "number": 13,
+      "page": 24,
+      "caption": "Рисунок 13 – Динамика цен на полиэтилен и полипропилен на Даляньской товарной бирже (Китай), юаней/тонну",
+      "bbox": [
+        30,
+        526,
+        565,
+        805
+      ],
+      "image": "/materials/polimery-2026/visuals/figure-13-p24.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=24",
+      "width": 1488,
+      "height": 776,
+      "sha256": "aaeb5dde7d0b2861d38eb3bd6e8edd9f708ab8db3e5aad0507c02c6a7a47aa3d",
+      "bytes": 60608
+    },
+    {
+      "id": "figure-14-p25",
+      "kind": "figure",
+      "number": 14,
+      "page": 25,
+      "caption": "Рисунок 14 – Динамика индекса ППИ-СТ, тыс. руб./тонну",
+      "bbox": [
+        30,
+        235,
+        565,
+        386
+      ],
+      "image": "/materials/polimery-2026/visuals/figure-14-p25.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=25",
+      "width": 1488,
+      "height": 421,
+      "sha256": "42cc993db390cbe4eca42670126ec77bed8d5d1b0c7b51394a84083d09bc9f21",
+      "bytes": 26554
+    },
+    {
+      "id": "figure-15-p26",
+      "kind": "figure",
+      "number": 15,
+      "page": 26,
+      "caption": "Рисунок 15 – Производство крупнотоннажных полимеров в первичных формах (по группам), млн тонн",
+      "bbox": [
+        30,
+        65,
+        565,
+        551
+      ],
+      "image": "/materials/polimery-2026/visuals/figure-15-p26.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=26",
+      "width": 1488,
+      "height": 1351,
+      "sha256": "b066f1d3f378977bc1d33c008518ceb713a7bd46b44c8b40186eabbee511d552",
+      "bytes": 69624
+    },
+    {
+      "id": "figure-16-p26",
+      "kind": "figure",
+      "number": 16,
+      "page": 26,
+      "caption": "Рисунок 16 – Общее производство крупнотоннажных полимеров в первичных формах, всего, млн тонн",
+      "bbox": [
+        30,
+        561,
+        565,
+        809
+      ],
+      "image": "/materials/polimery-2026/visuals/figure-16-p26.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=26",
+      "width": 1488,
+      "height": 690,
+      "sha256": "73c011353e0aa1464f2e86afaec1c930e46593510332aa7787f5eb9b69bbcadc",
+      "bytes": 27056
+    },
+    {
+      "id": "table-07-p27",
+      "kind": "table",
+      "number": 7,
+      "page": 27,
+      "caption": "Таблица 7 – Действующие проекты России в области нефтехимии (мощности по выпуску крупнотоннажных полимеров и базовых нефтехимических продуктов)",
+      "bbox": [
+        30,
+        227,
+        565,
+        795
+      ],
+      "image": "/materials/polimery-2026/visuals/table-07-p27.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=27",
+      "width": 1488,
+      "height": 1579,
+      "sha256": "f6bd086bd42ff68a67c89fb896373056edfc55b73777efb04c5529947cfdce4d",
+      "bytes": 112340
+    },
+    {
+      "id": "table-07-p28",
+      "kind": "table",
+      "number": 7,
+      "page": 28,
+      "caption": "Таблица 7 — продолжение",
+      "bbox": [
+        30,
+        65,
+        565,
+        369
+      ],
+      "image": "/materials/polimery-2026/visuals/table-07-p28.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=28",
+      "width": 1488,
+      "height": 846,
+      "sha256": "cf487c754fbfa984ab92f51fa4b903fb6e703ea06890ac8478345a875c9f1666",
+      "bytes": 72958
+    },
+    {
+      "id": "table-08-p28",
+      "kind": "table",
+      "number": 8,
+      "page": 28,
+      "caption": "Таблица 8 – Перспективные проекты России в области нефтехимии",
+      "bbox": [
+        30,
+        458,
+        565,
+        784
+      ],
+      "image": "/materials/polimery-2026/visuals/table-08-p28.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=28",
+      "width": 1488,
+      "height": 907,
+      "sha256": "2a97b97c573ee1bdb6b74b9a54948221e4bc11a69924b147a03199b1344d6e0d",
+      "bytes": 86506
+    },
+    {
+      "id": "figure-17-p29",
+      "kind": "figure",
+      "number": 17,
+      "page": 29,
+      "caption": "Рисунок 17 – Сопоставление фактических значений производства и потребления крупнотоннажных полимеров и стратегических планов, 2015-2025 годы, млн тонн",
+      "bbox": [
+        30,
+        366,
+        565,
+        626
+      ],
+      "image": "/materials/polimery-2026/visuals/figure-17-p29.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=29",
+      "width": 1488,
+      "height": 724,
+      "sha256": "dfbd114f6bf6aa48f152c6e2eeb018c036f4f2a34cee213591371c89c0e18938",
+      "bytes": 26426
+    },
+    {
+      "id": "table-09-p30",
+      "kind": "table",
+      "number": 9,
+      "page": 30,
+      "caption": "Таблица 9 – Баланс российского рынка крупнотоннажных полимеров в 2024 г., млн т",
+      "bbox": [
+        30,
+        177,
+        565,
+        375
+      ],
+      "image": "/materials/polimery-2026/visuals/table-09-p30.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=30",
+      "width": 1488,
+      "height": 551,
+      "sha256": "38d9fb1acdb6add2fe9dd531202aeb740a6169be2bc3ac7d75a10fe47228e1b8",
+      "bytes": 37604
+    },
+    {
+      "id": "panel-08-p30",
+      "kind": "panel",
+      "number": 8,
+      "page": 30,
+      "caption": "Таблица и данные оригинала без номера · страница 30",
+      "bbox": [
+        30,
+        520,
+        565,
+        580
+      ],
+      "image": "/materials/polimery-2026/visuals/panel-08-p30.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=30",
+      "width": 1488,
+      "height": 168,
+      "sha256": "48afd7935c445dd2767a346ad92e7644f7b73591b07533377c08ffc35beed2cd",
+      "bytes": 11664
+    },
+    {
+      "id": "figure-18-p31",
+      "kind": "figure",
+      "number": 18,
+      "page": 31,
+      "caption": "Рисунок 18 – Динамика экспорта крупнотоннажных полимеров из России, 2019-2024 гг., тыс. тонн",
+      "bbox": [
+        30,
+        103,
+        565,
+        737
+      ],
+      "image": "/materials/polimery-2026/visuals/figure-18-p31.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=31",
+      "width": 1488,
+      "height": 1762,
+      "sha256": "720cb011a46d6ef68a1b731835982a5299199bedde3a47229814a5fe968c90eb",
+      "bytes": 72302
+    },
+    {
+      "id": "panel-09-p32",
+      "kind": "panel",
+      "number": 9,
+      "page": 32,
+      "caption": "Таблица и данные оригинала без номера · страница 32",
+      "bbox": [
+        30,
+        64,
+        565,
+        312
+      ],
+      "image": "/materials/polimery-2026/visuals/panel-09-p32.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=32",
+      "width": 1488,
+      "height": 690,
+      "sha256": "1095d3de0dd1410f0513ddf39cc4a63746e40bff8d15c9e6af75e749a7bc5011",
+      "bytes": 46914
+    },
+    {
+      "id": "panel-10-p32",
+      "kind": "panel",
+      "number": 10,
+      "page": 32,
+      "caption": "Таблица и данные оригинала без номера · страница 32",
+      "bbox": [
+        30,
+        315,
+        565,
+        581
+      ],
+      "image": "/materials/polimery-2026/visuals/panel-10-p32.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=32",
+      "width": 1488,
+      "height": 740,
+      "sha256": "ad52b5f77661ef6262ae4807868a17c442bb6f118328f172382cfb698cf1413d",
+      "bytes": 58898
+    },
+    {
+      "id": "panel-11-p32",
+      "kind": "panel",
+      "number": 11,
+      "page": 32,
+      "caption": "Таблица и данные оригинала без номера · страница 32",
+      "bbox": [
+        30,
+        660,
+        565,
+        714
+      ],
+      "image": "/materials/polimery-2026/visuals/panel-11-p32.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=32",
+      "width": 1488,
+      "height": 151,
+      "sha256": "afb158e3b5ebc2e554f5f3cc162610072c6e152d49a58d9f962dfcb1417ce10a",
+      "bytes": 11198
+    },
+    {
+      "id": "figure-19-p33",
+      "kind": "figure",
+      "number": 19,
+      "page": 33,
+      "caption": "Рисунок 19 – Динамика импорта крупнотоннажных полимеров в Россию, 2017-2024 гг., тыс. тонн",
+      "bbox": [
+        30,
+        130,
+        565,
+        610
+      ],
+      "image": "/materials/polimery-2026/visuals/figure-19-p33.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=33",
+      "width": 1488,
+      "height": 1334,
+      "sha256": "025ba1a4135654cf9e5f4af70b009fc37e7dd20ddc0fe807981bbe1f54efec66",
+      "bytes": 51664
+    },
+    {
+      "id": "panel-12-p33",
+      "kind": "panel",
+      "number": 12,
+      "page": 33,
+      "caption": "Таблица и данные оригинала без номера · страница 33",
+      "bbox": [
+        30,
+        612,
+        565,
+        805
+      ],
+      "image": "/materials/polimery-2026/visuals/panel-12-p33.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=33",
+      "width": 1488,
+      "height": 537,
+      "sha256": "48faf0bd342bec6ec52ab333ae890eb75e61c039251a44f0909828ac92755d38",
+      "bytes": 26702
+    },
+    {
+      "id": "table-09-p35",
+      "kind": "table",
+      "number": 9,
+      "page": 35,
+      "caption": "Таблица 9 – Налоговые механизмы государственной поддержки нефтехимической отрасли России",
+      "bbox": [
+        30,
+        273,
+        565,
+        642
+      ],
+      "image": "/materials/polimery-2026/visuals/table-09-p35.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=35",
+      "width": 1488,
+      "height": 1026,
+      "sha256": "8ee3ecc8f004dce7bdd660175012bde163a319202de354ea19e461d4b55f7e26",
+      "bytes": 86252
+    },
+    {
+      "id": "panel-13-p35",
+      "kind": "panel",
+      "number": 13,
+      "page": 35,
+      "caption": "Таблица и данные оригинала без номера · страница 35",
+      "bbox": [
+        30,
+        706,
+        565,
+        803
+      ],
+      "image": "/materials/polimery-2026/visuals/panel-13-p35.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=35",
+      "width": 1488,
+      "height": 270,
+      "sha256": "3dac14447abc53cba2e035a173178e900367232d9b5c7fd34f13457f38e9880a",
+      "bytes": 33030
+    },
+    {
+      "id": "panel-14-p36",
+      "kind": "panel",
+      "number": 14,
+      "page": 36,
+      "caption": "Таблица и данные оригинала без номера · страница 36",
+      "bbox": [
+        30,
+        64,
+        565,
+        372
+      ],
+      "image": "/materials/polimery-2026/visuals/panel-14-p36.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=36",
+      "width": 1488,
+      "height": 857,
+      "sha256": "a03b142784aa51f34d7382f690eb49dcc23eba2dbe7edacb151fc78ff496de76",
+      "bytes": 80270
+    },
+    {
+      "id": "table-10-p37",
+      "kind": "table",
+      "number": 10,
+      "page": 37,
+      "caption": "Таблица 10 – Факторы, превратившие логистику в «узкое место» в России и мире",
+      "bbox": [
+        30,
+        297,
+        565,
+        770
+      ],
+      "image": "/materials/polimery-2026/visuals/table-10-p37.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=37",
+      "width": 1488,
+      "height": 1315,
+      "sha256": "ec65b5058dfba46dd98f4ed9fea631065b97e36c3ef821ceaffddee0b0dab530",
+      "bytes": 133318
+    },
+    {
+      "id": "figure-20-p38",
+      "kind": "figure",
+      "number": 20,
+      "page": 38,
+      "caption": "Рисунок 20 – Факторы реагирования на логистические риски экспорта крупнотоннажных полимеров",
+      "bbox": [
+        30,
+        352,
+        565,
+        721
+      ],
+      "image": "/materials/polimery-2026/visuals/figure-20-p38.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=38",
+      "width": 1488,
+      "height": 1027,
+      "sha256": "199d5a0f5ad24db6a56720d6d4ee3805e3d7dee9f47995028ace3ecc2623a4cd",
+      "bytes": 128268
+    },
+    {
+      "id": "table-11-p39",
+      "kind": "table",
+      "number": 11,
+      "page": 39,
+      "caption": "Таблица 11 – Ограничения в железнодорожных перевозках крупнотоннажных полимеров",
+      "bbox": [
+        30,
+        502,
+        565,
+        772
+      ],
+      "image": "/materials/polimery-2026/visuals/table-11-p39.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=39",
+      "width": 1488,
+      "height": 751,
+      "sha256": "b10fbf7974c5a64452a7e3fbd3864644e302243fb84d4d68bc5a544fbd227289",
+      "bytes": 55080
+    },
+    {
+      "id": "table-11-p40",
+      "kind": "table",
+      "number": 11,
+      "page": 40,
+      "caption": "Таблица 11 — продолжение",
+      "bbox": [
+        30,
+        65,
+        565,
+        333
+      ],
+      "image": "/materials/polimery-2026/visuals/table-11-p40.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=40",
+      "width": 1488,
+      "height": 746,
+      "sha256": "ebe8d3c82610e420ff3632b131e2ad53cd6b72999fc373aad75ee3b82792320a",
+      "bytes": 58228
+    },
+    {
+      "id": "panel-15-p40",
+      "kind": "panel",
+      "number": 15,
+      "page": 40,
+      "caption": "Таблица и данные оригинала без номера · страница 40",
+      "bbox": [
+        30,
+        579,
+        565,
+        666
+      ],
+      "image": "/materials/polimery-2026/visuals/panel-15-p40.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=40",
+      "width": 1488,
+      "height": 243,
+      "sha256": "cfcce2795b64082af2469a9cb7e058a8b4cfb7c5fa12b9ff25d6df2e5da729ff",
+      "bytes": 28374
+    },
+    {
+      "id": "panel-16-p40",
+      "kind": "panel",
+      "number": 16,
+      "page": 40,
+      "caption": "Таблица и данные оригинала без номера · страница 40",
+      "bbox": [
+        30,
+        696,
+        565,
+        800
+      ],
+      "image": "/materials/polimery-2026/visuals/panel-16-p40.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=40",
+      "width": 1488,
+      "height": 290,
+      "sha256": "3d10f9b57e47f37be6cc679a2340828ed30798b05b252a3364799d62d10ee05c",
+      "bytes": 32196
+    },
+    {
+      "id": "table-12-p41",
+      "kind": "table",
+      "number": 12,
+      "page": 41,
+      "caption": "Таблица 12 – Преимущества и системные проблемы МТК «Север–Юг»",
+      "bbox": [
+        30,
+        169,
+        565,
+        472
+      ],
+      "image": "/materials/polimery-2026/visuals/table-12-p41.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=41",
+      "width": 1488,
+      "height": 843,
+      "sha256": "8b626a68bcc5ff1a438fe365fd4dda4297878d53fc95a2a3921d2d94a855d0db",
+      "bytes": 104262
+    },
+    {
+      "id": "panel-17-p42",
+      "kind": "panel",
+      "number": 17,
+      "page": 42,
+      "caption": "Таблица и данные оригинала без номера · страница 42",
+      "bbox": [
+        30,
+        268,
+        565,
+        544
+      ],
+      "image": "/materials/polimery-2026/visuals/panel-17-p42.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=42",
+      "width": 1488,
+      "height": 768,
+      "sha256": "f0f1955e52beb10e2397d0d0ce5c3d52d9e21fab127ffd28571d564ba74ecf5a",
+      "bytes": 63042
+    },
+    {
+      "id": "panel-18-p43",
+      "kind": "panel",
+      "number": 18,
+      "page": 43,
+      "caption": "Таблица и данные оригинала без номера · страница 43",
+      "bbox": [
+        30,
+        64,
+        565,
+        418
+      ],
+      "image": "/materials/polimery-2026/visuals/panel-18-p43.webp",
+      "sourceHref": "/materials/polimery-2026/polimery-2026.pdf#page=43",
+      "width": 1488,
+      "height": 985,
+      "sha256": "4d7ea0b72d5fb57aa74b8a3e37f59f7dcd8316b4a725c869de3852d5d06a51be",
+      "bytes": 102776
+    }
+  ],
+  "pages": {
+    "6": {
+      "textSha256": "1275d7c6c6ef45fa8547d126ef3758256c5ff24077aa4db6814d10ee92133e83",
+      "runs": [
+        {
+          "start": 0,
+          "end": 939,
+          "visualId": null
+        },
+        {
+          "start": 939,
+          "end": 1328,
+          "visualId": "panel-01-p06"
+        },
+        {
+          "start": 1328,
+          "end": 1839,
+          "visualId": null
+        },
+        {
+          "start": 1839,
+          "end": 2261,
+          "visualId": "figure-01-p06"
+        }
+      ]
+    },
+    "7": {
+      "textSha256": "fe5aab1cf3b4e62481d68dafb4e3426a4e5fadd3ef08063886a2baa2205fcc39",
+      "runs": [
+        {
+          "start": 0,
+          "end": 233,
+          "visualId": null
+        },
+        {
+          "start": 233,
+          "end": 425,
+          "visualId": "figure-02-p07"
+        },
+        {
+          "start": 425,
+          "end": 1781,
+          "visualId": null
+        },
+        {
+          "start": 1781,
+          "end": 1984,
+          "visualId": "figure-02-p07"
+        }
+      ]
+    },
+    "8": {
+      "textSha256": "93d6d507e9bf0a0f82ccbce9c84d0900d7d40aed657ae4114f1a6f7f2181d11e",
+      "runs": [
+        {
+          "start": 0,
+          "end": 613,
+          "visualId": "figure-03-p08"
+        },
+        {
+          "start": 613,
+          "end": 1404,
+          "visualId": null
+        },
+        {
+          "start": 1404,
+          "end": 1671,
+          "visualId": "figure-03-p08"
+        }
+      ]
+    },
+    "9": {
+      "textSha256": "9ca2f620e52b1e6eb4004c6f758ec0ba42f61c2fd682dfe975d4479d07bd22d2",
+      "runs": [
+        {
+          "start": 0,
+          "end": 174,
+          "visualId": "figure-04-p09"
+        },
+        {
+          "start": 174,
+          "end": 593,
+          "visualId": null
+        },
+        {
+          "start": 593,
+          "end": 1410,
+          "visualId": "table-01-p09"
+        },
+        {
+          "start": 1410,
+          "end": 2047,
+          "visualId": "figure-04-p09"
+        }
+      ]
+    },
+    "10": {
+      "textSha256": "83b8f090ea7efa192d13e0fc83cdc7139510d70d4f2dc0cef9c2486cd9ff954a",
+      "runs": [
+        {
+          "start": 0,
+          "end": 782,
+          "visualId": null
+        },
+        {
+          "start": 782,
+          "end": 917,
+          "visualId": "figure-05-p10"
+        },
+        {
+          "start": 917,
+          "end": 1834,
+          "visualId": null
+        }
+      ]
+    },
+    "11": {
+      "textSha256": "24aff33df53f7e5af64e60fed7b41a7e270936d3e575a2a1ff54c1953def6b90",
+      "runs": [
+        {
+          "start": 0,
+          "end": 583,
+          "visualId": null
+        },
+        {
+          "start": 583,
+          "end": 859,
+          "visualId": "figure-06-p11"
+        },
+        {
+          "start": 859,
+          "end": 1806,
+          "visualId": null
+        },
+        {
+          "start": 1806,
+          "end": 2092,
+          "visualId": "figure-06-p11"
+        }
+      ]
+    },
+    "13": {
+      "textSha256": "eaf06db27e9e20d1924c9cc9c67c7db34eac6ec0354de2ee8a8e6b1e9a200bc7",
+      "runs": [
+        {
+          "start": 0,
+          "end": 323,
+          "visualId": null
+        },
+        {
+          "start": 323,
+          "end": 1409,
+          "visualId": "table-02-p13"
+        },
+        {
+          "start": 1409,
+          "end": 1872,
+          "visualId": null
+        }
+      ]
+    },
+    "14": {
+      "textSha256": "6fd40cfde028a9c92aecb85a098d5cdd856ae5daeb22ad60a522f375ebdef4d6",
+      "runs": [
+        {
+          "start": 0,
+          "end": 153,
+          "visualId": "figure-07-p14"
+        },
+        {
+          "start": 153,
+          "end": 404,
+          "visualId": null
+        },
+        {
+          "start": 404,
+          "end": 1277,
+          "visualId": "table-03-p14"
+        },
+        {
+          "start": 1277,
+          "end": 1532,
+          "visualId": "figure-07-p14"
+        }
+      ]
+    },
+    "15": {
+      "textSha256": "d7303cfd6ef957111cbaba3913a72fc18e58d69752913cf0a7aa0eb787a56e20",
+      "runs": [
+        {
+          "start": 0,
+          "end": 607,
+          "visualId": "table-03-p15"
+        },
+        {
+          "start": 607,
+          "end": 1176,
+          "visualId": null
+        },
+        {
+          "start": 1176,
+          "end": 1343,
+          "visualId": "figure-08-p15"
+        },
+        {
+          "start": 1343,
+          "end": 1823,
+          "visualId": null
+        },
+        {
+          "start": 1823,
+          "end": 1995,
+          "visualId": "figure-08-p15"
+        }
+      ]
+    },
+    "16": {
+      "textSha256": "8401a0678bc2292716385f48a87ddc177be913838690e1582d3c28d7651cec1b",
+      "runs": [
+        {
+          "start": 0,
+          "end": 571,
+          "visualId": null
+        },
+        {
+          "start": 571,
+          "end": 776,
+          "visualId": "figure-09-p16"
+        },
+        {
+          "start": 776,
+          "end": 981,
+          "visualId": "panel-02-p16"
+        },
+        {
+          "start": 981,
+          "end": 1953,
+          "visualId": null
+        },
+        {
+          "start": 1953,
+          "end": 2199,
+          "visualId": "figure-09-p16"
+        }
+      ]
+    },
+    "17": {
+      "textSha256": "7f9bf7b170c0522a50c92d6032def9822b9e05c0272c5c214df11d2b6e4695be",
+      "runs": [
+        {
+          "start": 0,
+          "end": 979,
+          "visualId": null
+        },
+        {
+          "start": 979,
+          "end": 1235,
+          "visualId": "panel-03-p17"
+        },
+        {
+          "start": 1235,
+          "end": 2483,
+          "visualId": null
+        },
+        {
+          "start": 2483,
+          "end": 2697,
+          "visualId": "panel-04-p17"
+        },
+        {
+          "start": 2697,
+          "end": 3108,
+          "visualId": null
+        }
+      ]
+    },
+    "18": {
+      "textSha256": "53bc7dfa5dcae86a7d954f07fce2e295d96d48296b41e971cc85ffd901fa04cb",
+      "runs": [
+        {
+          "start": 0,
+          "end": 1118,
+          "visualId": null
+        },
+        {
+          "start": 1118,
+          "end": 3090,
+          "visualId": "table-04-p18"
+        }
+      ]
+    },
+    "19": {
+      "textSha256": "7057297acda1715b08743d0256229cbf6c22e89d448cfcdae6937a4c18990d75",
+      "runs": [
+        {
+          "start": 0,
+          "end": 2407,
+          "visualId": "table-04-p19"
+        }
+      ]
+    },
+    "20": {
+      "textSha256": "2e6ee8dcb8b63a46f8dccf876f63bfa93f27968f37d5c2f41e93111d181bb623",
+      "runs": [
+        {
+          "start": 0,
+          "end": 528,
+          "visualId": null
+        },
+        {
+          "start": 528,
+          "end": 2891,
+          "visualId": "table-05-p20"
+        }
+      ]
+    },
+    "21": {
+      "textSha256": "f359159922b6e76a43eb1cd1a69d0e294085bd65dd053ea3e69d94d6c4a69531",
+      "runs": [
+        {
+          "start": 0,
+          "end": 410,
+          "visualId": null
+        },
+        {
+          "start": 410,
+          "end": 536,
+          "visualId": "panel-05-p21"
+        },
+        {
+          "start": 536,
+          "end": 980,
+          "visualId": null
+        },
+        {
+          "start": 980,
+          "end": 1362,
+          "visualId": "panel-06-p21"
+        },
+        {
+          "start": 1362,
+          "end": 1703,
+          "visualId": null
+        },
+        {
+          "start": 1703,
+          "end": 2476,
+          "visualId": "figure-10-p21"
+        }
+      ]
+    },
+    "22": {
+      "textSha256": "e5229db3d4fb25071072189a2a0be117e533a1183200010cab3be0e95f508d71",
+      "runs": [
+        {
+          "start": 0,
+          "end": 165,
+          "visualId": null
+        },
+        {
+          "start": 165,
+          "end": 1374,
+          "visualId": "table-06-p22"
+        },
+        {
+          "start": 1374,
+          "end": 2976,
+          "visualId": null
+        },
+        {
+          "start": 2976,
+          "end": 3398,
+          "visualId": "panel-07-p22"
+        }
+      ]
+    },
+    "23": {
+      "textSha256": "5d37d36b55b6d5fc6aa9b483a4c4c97b8219eaa88a8f10593ca9f5a682da1f23",
+      "runs": [
+        {
+          "start": 0,
+          "end": 1882,
+          "visualId": null
+        },
+        {
+          "start": 1882,
+          "end": 2588,
+          "visualId": "figure-11-p23"
+        }
+      ]
+    },
+    "24": {
+      "textSha256": "d3c12370b8eb97d7d79ccc48b8f25ccd1fc7d45a32bc77134c0e6f02dff630c6",
+      "runs": [
+        {
+          "start": 0,
+          "end": 117,
+          "visualId": null
+        },
+        {
+          "start": 117,
+          "end": 821,
+          "visualId": "figure-12-p24"
+        },
+        {
+          "start": 821,
+          "end": 1312,
+          "visualId": null
+        },
+        {
+          "start": 1312,
+          "end": 1900,
+          "visualId": "figure-13-p24"
+        },
+        {
+          "start": 1900,
+          "end": 2022,
+          "visualId": "figure-12-p24"
+        },
+        {
+          "start": 2022,
+          "end": 2199,
+          "visualId": "figure-13-p24"
+        }
+      ]
+    },
+    "25": {
+      "textSha256": "6ed2b7a0c9bf8223f4ff5b932cca482c0a171964ee5a8275326bdef778cec51f",
+      "runs": [
+        {
+          "start": 0,
+          "end": 1051,
+          "visualId": null
+        },
+        {
+          "start": 1051,
+          "end": 1242,
+          "visualId": "figure-14-p25"
+        },
+        {
+          "start": 1242,
+          "end": 2626,
+          "visualId": null
+        },
+        {
+          "start": 2626,
+          "end": 2712,
+          "visualId": "figure-14-p25"
+        }
+      ]
+    },
+    "26": {
+      "textSha256": "b2b3c38190d40ffbd2b88f7b9b4895458e4b0ca9efca360040c771c0284039ea",
+      "runs": [
+        {
+          "start": 0,
+          "end": 979,
+          "visualId": "figure-15-p26"
+        },
+        {
+          "start": 979,
+          "end": 1258,
+          "visualId": "figure-16-p26"
+        },
+        {
+          "start": 1258,
+          "end": 1530,
+          "visualId": "figure-15-p26"
+        },
+        {
+          "start": 1530,
+          "end": 1656,
+          "visualId": "figure-16-p26"
+        }
+      ]
+    },
+    "27": {
+      "textSha256": "7a582a1ab3f4faa9b9f4f018cca7795eb668c354f80d447c16188492c78016e6",
+      "runs": [
+        {
+          "start": 0,
+          "end": 695,
+          "visualId": null
+        },
+        {
+          "start": 695,
+          "end": 2697,
+          "visualId": "table-07-p27"
+        }
+      ]
+    },
+    "28": {
+      "textSha256": "cf771dd43cb73d2a4815488532b1fcb9fa4e173a0fc646a5c9aa59b91afc678c",
+      "runs": [
+        {
+          "start": 0,
+          "end": 1193,
+          "visualId": "table-07-p28"
+        },
+        {
+          "start": 1193,
+          "end": 1671,
+          "visualId": null
+        },
+        {
+          "start": 1671,
+          "end": 2972,
+          "visualId": "table-08-p28"
+        }
+      ]
+    },
+    "29": {
+      "textSha256": "57f51cd348e339b349390f6c5d224fc576729d7a7125b560738a6c021f7d0ddf",
+      "runs": [
+        {
+          "start": 0,
+          "end": 1257,
+          "visualId": null
+        },
+        {
+          "start": 1257,
+          "end": 1534,
+          "visualId": "figure-17-p29"
+        },
+        {
+          "start": 1534,
+          "end": 2437,
+          "visualId": null
+        },
+        {
+          "start": 2437,
+          "end": 2574,
+          "visualId": "figure-17-p29"
+        }
+      ]
+    },
+    "30": {
+      "textSha256": "479f6ece5c9b06a358cefa16f61f29fce5dda3e4ce40ffb07d719d8797737a11",
+      "runs": [
+        {
+          "start": 0,
+          "end": 516,
+          "visualId": null
+        },
+        {
+          "start": 516,
+          "end": 915,
+          "visualId": "table-09-p30"
+        },
+        {
+          "start": 915,
+          "end": 1537,
+          "visualId": null
+        },
+        {
+          "start": 1537,
+          "end": 1649,
+          "visualId": "panel-08-p30"
+        },
+        {
+          "start": 1649,
+          "end": 2887,
+          "visualId": null
+        }
+      ]
+    },
+    "31": {
+      "textSha256": "90a80233ac65b34f194d8ba0b54dc8bf53ed4f7998800ba336a809a56f74305e",
+      "runs": [
+        {
+          "start": 0,
+          "end": 140,
+          "visualId": null
+        },
+        {
+          "start": 140,
+          "end": 1161,
+          "visualId": "figure-18-p31"
+        }
+      ]
+    },
+    "32": {
+      "textSha256": "5d3a657a722307b104e3f776beaae5d0885185161fa77a5d6642210279998b23",
+      "runs": [
+        {
+          "start": 0,
+          "end": 734,
+          "visualId": "panel-09-p32"
+        },
+        {
+          "start": 734,
+          "end": 1650,
+          "visualId": "panel-10-p32"
+        },
+        {
+          "start": 1650,
+          "end": 1912,
+          "visualId": null
+        },
+        {
+          "start": 1912,
+          "end": 2021,
+          "visualId": "panel-11-p32"
+        },
+        {
+          "start": 2021,
+          "end": 2577,
+          "visualId": null
+        }
+      ]
+    },
+    "33": {
+      "textSha256": "e6a2f44d2ca4d538f09537a975023f8d190d7203b889eace5711a7d4ef027d0b",
+      "runs": [
+        {
+          "start": 0,
+          "end": 321,
+          "visualId": null
+        },
+        {
+          "start": 321,
+          "end": 523,
+          "visualId": "figure-19-p33"
+        },
+        {
+          "start": 523,
+          "end": 939,
+          "visualId": "panel-12-p33"
+        },
+        {
+          "start": 939,
+          "end": 1613,
+          "visualId": "figure-19-p33"
+        }
+      ]
+    },
+    "35": {
+      "textSha256": "f7b60e4b8b9a868896d5b35e096686225f668addd72a4ae2410c31d682d8c23f",
+      "runs": [
+        {
+          "start": 0,
+          "end": 875,
+          "visualId": null
+        },
+        {
+          "start": 875,
+          "end": 2308,
+          "visualId": "table-09-p35"
+        },
+        {
+          "start": 2308,
+          "end": 2539,
+          "visualId": null
+        },
+        {
+          "start": 2539,
+          "end": 2939,
+          "visualId": "panel-13-p35"
+        }
+      ]
+    },
+    "36": {
+      "textSha256": "a447adc429aaa85f8816ccf7786f98b3484c2049c3d916f1d0a86595feaee0e6",
+      "runs": [
+        {
+          "start": 0,
+          "end": 1103,
+          "visualId": "panel-14-p36"
+        },
+        {
+          "start": 1103,
+          "end": 2655,
+          "visualId": null
+        }
+      ]
+    },
+    "37": {
+      "textSha256": "0dc895241637c6f86d516234a939fac6f5728bfe19cb58f4bbc7d69bf5290b39",
+      "runs": [
+        {
+          "start": 0,
+          "end": 1186,
+          "visualId": null
+        },
+        {
+          "start": 1186,
+          "end": 3365,
+          "visualId": "table-10-p37"
+        },
+        {
+          "start": 3365,
+          "end": 3647,
+          "visualId": null
+        }
+      ]
+    },
+    "38": {
+      "textSha256": "da6471eef1b93a851411b3e6b0d759858028745e364d90732c5987e3ce7aadd9",
+      "runs": [
+        {
+          "start": 0,
+          "end": 1435,
+          "visualId": null
+        },
+        {
+          "start": 1435,
+          "end": 1685,
+          "visualId": "figure-20-p38"
+        },
+        {
+          "start": 1685,
+          "end": 1874,
+          "visualId": null
+        }
+      ]
+    },
+    "39": {
+      "textSha256": "70b72b6f24a10854e2aeb13a1b6944c89e2dc57b76e86c80c03dc393809925e5",
+      "runs": [
+        {
+          "start": 0,
+          "end": 2218,
+          "visualId": null
+        },
+        {
+          "start": 2218,
+          "end": 3126,
+          "visualId": "table-11-p39"
+        }
+      ]
+    },
+    "40": {
+      "textSha256": "73649e0c73156f77df39eb1478bfaa8dbea533b72c45dfcbe9bf786ec08749de",
+      "runs": [
+        {
+          "start": 0,
+          "end": 956,
+          "visualId": "table-11-p40"
+        },
+        {
+          "start": 956,
+          "end": 2014,
+          "visualId": null
+        },
+        {
+          "start": 2014,
+          "end": 2333,
+          "visualId": "panel-15-p40"
+        },
+        {
+          "start": 2333,
+          "end": 2374,
+          "visualId": null
+        },
+        {
+          "start": 2374,
+          "end": 2728,
+          "visualId": "panel-16-p40"
+        }
+      ]
+    },
+    "41": {
+      "textSha256": "a3ea2413e9378ea779dd4e21796c6465780366a40f235c838474bec02ed7d839",
+      "runs": [
+        {
+          "start": 0,
+          "end": 591,
+          "visualId": null
+        },
+        {
+          "start": 591,
+          "end": 2136,
+          "visualId": "table-12-p41"
+        },
+        {
+          "start": 2136,
+          "end": 3105,
+          "visualId": null
+        }
+      ]
+    },
+    "42": {
+      "textSha256": "030582f4102ab6c8cf9b5da694e7e8a9a085c5426bed0bdae4beaf1c471e15ce",
+      "runs": [
+        {
+          "start": 0,
+          "end": 943,
+          "visualId": null
+        },
+        {
+          "start": 943,
+          "end": 1909,
+          "visualId": "panel-17-p42"
+        },
+        {
+          "start": 1909,
+          "end": 2702,
+          "visualId": null
+        }
+      ]
+    },
+    "43": {
+      "textSha256": "22d834ea5d3c24afa6ce728829b64027004b1dfcaae2c30286b6bd9b9a83aaaa",
+      "runs": [
+        {
+          "start": 0,
+          "end": 1861,
+          "visualId": "panel-18-p43"
+        },
+        {
+          "start": 1861,
+          "end": 3156,
+          "visualId": null
+        }
+      ]
+    }
+  }
+}

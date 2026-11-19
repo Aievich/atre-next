@@ -5,14 +5,14 @@ import {parseVoiceCommand as parse,commandHash,recognitionError,createSpeechSess
 test('Russian section and report commands use allowlisted internal routes',()=>{
   for(const [phrase,route] of [['Открой атлас данных.','/atlas'],['Перейди в конструктор данных','/constructor'],['Открой главную страницу','/'],['Открой доклад о полимерах','/study/polimery-2026'],['Покажи исследования','/studies'],['Сотрудникам','/employee'],['Открой клиентскую зону','/client']]) assert.equal(parse(phrase).route,route,phrase);
   assert.equal(parse('открой https://example.com','navigate').kind,'unknown');
-  assert.equal(commandHash(parse('javascript:alert(1)')),'#/search?q=javascript%3Aalert(1)');
+  assert.equal(commandHash(parse('javascript:alert(1)')),null);
 });
 test('search and assistant queries preserve payload and encode URL characters',()=>{
   assert.deepEqual(parse('Найди Полимеры & газ'),{kind:'search',query:'Полимеры & газ',label:'Поиск по материалам'});
   const q=parse('Спроси помощника: что такое ЦОД?');assert.equal(q.kind,'assistant');assert.equal(q.query,'что такое ЦОД');
   assert.equal(parse('Сравни потребление','assistant').kind,'assistant');
   assert.equal(parse('Атлас данных','search').kind,'search');
-  assert.equal(parse('316,5 млрд').query,'316,5 млрд');
+  assert.equal(parse('316,5 млрд').kind,'unknown');assert.equal(parse('316,5 млрд','search').query,'316,5 млрд');
   assert.equal(commandHash(parse('  ')),null);
 });
 test('voice assistant preserves current scope and dataset slice only on assistant route',()=>{

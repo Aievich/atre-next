@@ -16,10 +16,10 @@ const destinations = [
   [/^(?:доклад (?:по |о )?)?(?:полимеры|полимерах|полимерам)$/, '/study/polimery-2026', 'Доклад о полимерах']
 ];
 
-// Only internal, allowlisted destinations. Unmarked phrases become corpus search queries.
+// Only internal, allowlisted destinations. Unknown global commands never navigate.
 export function parseVoiceCommand(input, mode='auto') {
   const text=clean(input).replace(/[.!?]+$/,'').trim();
-  if(!text) return {kind:'empty',label:'Произнесите или введите команду.'};
+  if(!text) return {kind:'empty',label:'Произнесите или воспользуйтесь текстовым поиском.'};
   if(mode==='search') return {kind:'search',query:text,label:'Поиск по материалам'};
   if(mode==='assistant') return {kind:'assistant',query:text,label:'Вопрос помощнику'};
   const lower=text.toLocaleLowerCase('ru');
@@ -31,7 +31,7 @@ export function parseVoiceCommand(input, mode='auto') {
   if(search) return {kind:'search',query:search[1],label:'Поиск по материалам'};
   const ask=text.match(/^(?:спроси(?:ть)?(?: у)? (?:атрэ|помощника)|помощник[,:]?|вопрос помощнику|задай вопрос(?: помощнику)?)\s*[:—-]?\s+(.+)$/iu);
   if(ask) return {kind:'assistant',query:ask[1],label:'Вопрос помощнику'};
-  return {kind:'search',query:text,label:'Поиск по материалам'};
+  return {kind:'unknown',label:'Команда не распознана. Скажите «Открой атлас данных», «Найди …» или «Спроси помощника …».'};
 }
 
 export function commandHash(command,currentHash='') {
@@ -51,7 +51,7 @@ export function recognitionError(code) {
     'service-not-allowed':'Сервис распознавания недоступен в этом браузере. Введите команду или используйте другой браузер.',
     'audio-capture':'Микрофон не найден или занят другим приложением.',
     'network':'Не удалось подключиться к сервису распознавания. Проверьте соединение или введите команду.',
-    'no-speech':'Речь не распознана. Попробуйте ещё раз или введите команду.',
+    'no-speech':'Команда не распознана: речь не обнаружена. Нажмите микрофон и попробуйте ещё раз.',
     'language-not-supported':'Распознавание русской речи недоступно в этом браузере.',
     'aborted':'Запись остановлена.'})[code] || 'Не удалось распознать речь. Попробуйте ещё раз или введите команду.';
 }
