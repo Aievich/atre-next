@@ -6,8 +6,9 @@ function fixture(t,mode='auto',hash='#/'){
   const events=new Map(),listeners={},instances=[],timers=[];
   const classes=new Set(),classList={add:v=>classes.add(v),remove:v=>classes.delete(v),toggle:(v,on)=>on?classes.add(v):classes.delete(v)};
   const attrs={},button={dataset:{voiceMode:mode},setAttribute:(k,v)=>attrs[k]=v,classList,isConnected:true,focus(){}};
-  const input={value:''},status={textContent:''},close={addEventListener:(event,fn)=>listeners.close=fn};
-  const panel={hidden:true,classList,setAttribute(){},querySelector:s=>s==='input'?input:s==='#voice-status'?status:close};
+  const input={value:'',addEventListener:(event,fn)=>listeners.input=fn},status={textContent:''},close={addEventListener:(event,fn)=>listeners.close=fn};
+  const form={addEventListener:(event,fn)=>listeners.submit=fn},retry={addEventListener:(event,fn)=>listeners.retry=fn};
+  const panel={hidden:true,classList,setAttribute(){},querySelector:s=>s==='input'?input:s==='#voice-status'?status:s==='form'?form:s==='.voice-retry'?retry:close};
   class Recognition{constructor(){instances.push(this)}start(){this.onstart()}abort(){this.aborted=true;this.onend?.()}stop(){this.onend?.()}}
   const win={SpeechRecognition:Recognition,isSecureContext:true,addEventListener:(name,fn)=>events.set('window:'+name,fn),dispatchEvent:event=>events.get('window:'+event.type)?.(event)};
   const doc={hidden:false,body:{append(){}},createElement:()=>panel,querySelectorAll:()=>[button],addEventListener:(name,fn)=>events.set(name,fn)};
@@ -41,4 +42,17 @@ test('global microphone can navigate away from assistant while its inline microp
 test('closing feedback and hiding the document stop active capture',t=>{
   const f=fixture(t);f.click();f.listeners.close();assert.equal(f.instances[0].aborted,true);assert.equal(f.panel.hidden,true);
   f.click();document.hidden=true;f.events.get('visibilitychange')();assert.equal(f.instances[1].aborted,true);assert.equal(f.attrs['aria-pressed'],'false');
+});
+
+test('network failure allows typed commands and ignores late recognition results',t=>{
+  const f=fixture(t);f.click();const old=f.instances[0];old.onerror({error:'network'});
+  assert.equal(old.aborted,true);assert.equal(f.attrs['aria-pressed'],'false');
+  old.onresult({results:[f.result('Открой исследования',true)]});old.onend();assert.equal(location.hash,'#/');
+  f.input.value='Открой атлас данных';f.listeners.submit({preventDefault(){}});assert.equal(location.hash,'#/atlas');
+});
+
+test('retry starts a fresh session and typed search preserves the microphone mode',t=>{
+  const f=fixture(t,'search');f.click();f.instances[0].onerror({error:'network'});f.listeners.retry();assert.equal(f.instances.length,2);
+  f.input.value='316,5';f.listeners.input();assert.equal(f.instances[1].aborted,true);
+  f.listeners.submit({preventDefault(){}});assert.equal(location.hash,'#/search?q=316%2C5');
 });

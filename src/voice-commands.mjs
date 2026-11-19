@@ -50,7 +50,7 @@ export function recognitionError(code) {
   return ({'not-allowed':'Доступ к микрофону не разрешён. Разрешите его в настройках сайта или введите команду.',
     'service-not-allowed':'Сервис распознавания недоступен в этом браузере. Введите команду или используйте другой браузер.',
     'audio-capture':'Микрофон не найден или занят другим приложением.',
-    'network':'Не удалось подключиться к сервису распознавания. Проверьте соединение или введите команду.',
+    'network':'Браузер не подключился к сервису распознавания речи. Введите команду ниже или повторите запись. Если ошибка повторяется, попробуйте другой браузер.',
     'no-speech':'Команда не распознана: речь не обнаружена. Нажмите микрофон и попробуйте ещё раз.',
     'language-not-supported':'Распознавание русской речи недоступно в этом браузере.',
     'aborted':'Запись остановлена.'})[code] || 'Не удалось распознать речь. Попробуйте ещё раз или введите команду.';
@@ -75,7 +75,7 @@ export function createSpeechSession(Recognition,notify,{schedule=setTimeout,canc
         }
         notify({state:'listening',text:(final+interim).trim()});
       };
-      rec.onerror=event=>{if(active()){failed=true;notify({state:'error',message:recognitionError(event.error)});}};
+      rec.onerror=event=>{if(active()){failed=true;current=null;cancel(timeout);rec.abort();notify({state:'error',message:recognitionError(event.error)});}};
       rec.onend=()=>{if(!active())return;current=null;cancel(timeout);if(!failed)notify(final.trim()?{state:'ready',text:final.trim()}:{state:'error',message:recognitionError('no-speech')});};
       notify({state:'starting',text:''});
       try{rec.start();if(active())timeout=schedule(()=>{if(active())rec.stop();},20000);}
