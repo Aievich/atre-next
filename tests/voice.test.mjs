@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {parseVoiceCommand as parse,commandHash,recognitionError,createSpeechSession} from '../src/voice-commands.mjs';
+import {readFileSync} from 'node:fs';
+import {parseVoiceCommand as parse,commandHash,recognitionError,createSpeechSession,createVoiceContentRoutes} from '../src/voice-commands.mjs';
 
 test('Russian section and report commands use allowlisted internal routes',()=>{
   for(const [phrase,route] of [['Открой атлас данных.','/atlas'],['Перейди в конструктор данных','/constructor'],['Открой главную страницу','/'],['Открой доклад о полимерах','/study/polimery-2026'],['Покажи исследования','/studies'],['Сотрудникам','/employee'],['Открой клиентскую зону','/client']]) assert.equal(parse(phrase).route,route,phrase);
@@ -15,11 +16,55 @@ test('search and assistant queries preserve payload and encode URL characters',(
   assert.equal(parse('316,5 млрд').kind,'unknown');assert.equal(parse('316,5 млрд','search').query,'316,5 млрд');
   assert.equal(commandHash(parse('  ')),null);
 });
+test('commands resolve news, current materials and the published vocabulary',()=>{
+  const {materials}=JSON.parse(readFileSync(new URL('../data/source-corpus.json',import.meta.url)));
+  const {items}=JSON.parse(readFileSync(new URL('../data/news.json',import.meta.url)));
+  const content=createVoiceContentRoutes(materials,items);
+  const resolve=phrase=>commandHash(parse(phrase,'auto',content));
+  assert.equal(resolve('Открой новости'),'#/news');
+  assert.equal(resolve('Покажи актуальное'),'#/?section=actual');
+  assert.equal(resolve('Открой новость о Лотусе'),'#/news/lotus-platform');
+  assert.equal(resolve('Открой доклад ВЭД 2026'),'#/study/ved-platezhi-2026');
+  assert.equal(resolve('Покажи тег трансграничные расчеты'),'#/studies?tag='+encodeURIComponent('Трансграничные расчёты'));
+  assert.equal(resolve('Найди в новостях цифровой паспорт'),'#/search?q='+encodeURIComponent('цифровой паспорт')+'&type=news');
+  assert.equal(resolve('Покажи тег ничего подобного'),null);
+});
 test('voice assistant preserves current scope and dataset slice only on assistant route',()=>{
   const c=parse('Сравни значения','assistant');
   const p=new URLSearchParams(commandHash(c,'#/assistant?material=cod-2026&dataset=territories&columns=cons&filter=Москва&question=old').split('?')[1]);
   assert.equal(p.get('dataset'),'territories');assert.equal(p.get('filter'),'Москва');assert.equal(p.get('question'),'Сравни значения');
   assert.equal(commandHash(c,'#/atlas?metric=2'),'#/assistant?question='+encodeURIComponent(c.query).replaceAll('%20','+'));
+});
+test('voice filters combine with active catalog filters and validate dates',()=>{
+  const topics=[{id:'industry-analysis',short:'Анализ отраслей'}];
+  const resolve=(phrase,hash)=>commandHash(parse(phrase,'auto',{filters:{topics}}),hash);
+  const format=resolve('Выбери формат PDF','#/studies?query=ЦОД');
+  const topic=resolve('Направление анализ отраслей',format);
+  const range=resolve('Дата публикации с 1 октября 2026 по 31.10.2026',topic);
+  const params=new URLSearchParams(range.split('?')[1]);
+  assert.deepEqual(Object.fromEntries(params),{
+    query:'ЦОД',format:'pdf',topic:'industry-analysis',from:'2026-10-01',to:'2026-10-31'
+  });
+  assert.equal(resolve('Покажи публикации за 2025 год','#/news'),'#/studies?from=2025-01-01&to=2025-12-31');
+  assert.equal(resolve('Дата публикации с 31.02.2026 по 01.03.2026',range),null);
+  assert.equal(resolve('Сбрось фильтры',range),'#/studies');
+});
+
+test('voice atlas filters retain the active slice and respect the selected layer',()=>{
+  const layers=[
+    {id:'cod',title:'Энергетика',metrics:[{label:'Максимальная нагрузка',value:'1'}]},
+    {id:'polymers',title:'Полимеры',metrics:[{label:'Производство',value:'production'}]}
+  ];
+  const resolve=(phrase,hash)=>commandHash(parse(phrase,'auto',{filters:{layers}}),hash);
+  const metric=resolve('Показатель максимальная нагрузка','#/atlas?view=rank&regions=moscow');
+  assert.equal(metric,'#/atlas?view=rank&regions=moscow&metric=1');
+  assert.equal(resolve('Вид таблица',metric),'#/atlas?view=table&regions=moscow&metric=1');
+  const layer=resolve('Слой полимеры',metric);
+  assert.equal(layer,'#/atlas?layer=polymers');
+  assert.equal(resolve('Показатель производство',layer),'#/atlas?layer=polymers&column=production');
+  assert.equal(resolve('Режим полимеры',layer),null);
+  assert.equal(resolve('Вид рейтинг',layer),null);
+  assert.equal(resolve('Сбрось фильтры',layer),'#/atlas');
 });
 function harness(){
   const events=[],instances=[],timers=[];

@@ -3,9 +3,9 @@ import {parseVoiceCommand,commandHash,createSpeechSession} from './voice-command
 const mic='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v1a7 7 0 0 0 14 0v-1M12 18v4M8 22h8"/></svg>';
 export const voiceButton=(mode='auto',label='Голосовое управление')=>`<button type="button" class="voice-launch" data-voice-open data-voice-mode="${mode}" aria-pressed="false" aria-controls="voice-feedback" aria-label="${label}" title="${label}">${mic}</button>`;
 
-export function installVoiceControl(){
+export function installVoiceControl(content){
   const panel=document.createElement('aside');panel.id='voice-feedback';panel.className='voice-feedback';panel.hidden=true;panel.setAttribute('aria-label','Голосовой ввод');
-  panel.innerHTML=`<div class="voice-feedback-head"><strong id="voice-status" role="status" aria-live="polite">Слушаю…</strong><button type="button" class="voice-close" aria-label="Закрыть голосовой ввод и остановить микрофон">×</button></div><form><label for="voice-transcript">Команда или вопрос</label><input id="voice-transcript" type="text" placeholder="Например: открой атлас данных" autocomplete="off"><div class="voice-actions"><button type="submit" class="button dark">Выполнить</button><button type="button" class="button voice-retry">Повторить запись</button></div></form><p class="voice-note">После распознавания команда выполнится автоматически. Также можно ввести её и нажать «Выполнить». Повторное нажатие на микрофон останавливает запись.</p><small>Распознавание выполняет браузер, в том числе через свой сервис. Сайт не сохраняет аудио.</small>`;
+  panel.innerHTML=`<div class="voice-feedback-head"><strong id="voice-status" role="status" aria-live="polite">Слушаю…</strong><button type="button" class="voice-close" aria-label="Закрыть голосовой ввод и остановить микрофон">×</button></div><form><label for="voice-transcript">Команда или вопрос</label><input id="voice-transcript" type="text" placeholder="Например: открой новости или покажи тег Экспорт" autocomplete="off"><div class="voice-actions"><button type="submit" class="button dark">Выполнить</button><button type="button" class="button voice-retry">Повторить запись</button></div></form><p class="voice-note">После распознавания команда выполнится автоматически. Также можно ввести её и нажать «Выполнить». Повторное нажатие на микрофон останавливает запись.</p><small>Распознавание выполняет браузер, в том числе через свой сервис. Сайт не сохраняет аудио.</small>`;
   document.body.append(panel);
   const text=panel.querySelector('input'),status=panel.querySelector('#voice-status');
   const Recognition=window.SpeechRecognition||window.webkitSpeechRecognition;
@@ -16,9 +16,9 @@ export function installVoiceControl(){
   function error(message){state(false);panel.classList.add('voice-error');status.textContent=message;}
   function execute(value){
       clearTimeout(timer);stop();panel.classList.remove('voice-error');
-      const command=parseVoiceCommand(value,mode),hash=commandHash(command,location.hash);
-      if(!hash){error(command.kind==='empty'?'Введите команду или вопрос.':command.label);return;}
-      status.textContent=command.kind==='navigate'?'Открываю: '+command.label:command.kind==='search'?'Ищу по материалам…':'Передаю вопрос помощнику…';
+      const command=parseVoiceCommand(value,mode,content),hash=commandHash(command,location.hash);
+      if(!hash){error(command.kind==='empty'?'Введите команду или вопрос.':command.kind==='filter'?'Этот фильтр недоступен для выбранного слоя.':command.label);return;}
+      status.textContent=command.kind==='filter'?'Применяю фильтры…':command.kind==='navigate'?'Открываю: '+command.label:command.kind==='search'?'Ищу по материалам…':'Передаю вопрос помощнику…';
       if(hash===location.hash)window.dispatchEvent(new HashChangeEvent('hashchange'));else location.hash=hash;
       timer=setTimeout(()=>{panel.hidden=true;},3500);
   }
@@ -42,6 +42,10 @@ export function installVoiceControl(){
     clearTimeout(timer);opener=button;panel.hidden=false;panel.classList.remove('voice-error');
     if(recording){stop();status.textContent='Микрофон выключен. Нажмите ещё раз, чтобы повторить.';return;}
     mode=button.dataset.voiceMode||'auto';
+    const currentPage=location.hash.split('?')[0];
+    text.placeholder=mode==='auto'?(currentPage==='#/studies'?'Например: формат PDF или публикации за 2026 год':
+      currentPage==='#/atlas'?'Например: показатель максимальная нагрузка или вид таблица':
+        'Например: открой новости или покажи тег Экспорт'):'Введите запрос';
     text.value='';
     if(!session){error('Голосовой ввод недоступен в этом браузере. Воспользуйтесь текстовым поиском или полем вопроса помощнику.');return;}
     session.start();
