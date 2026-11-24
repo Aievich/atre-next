@@ -17,7 +17,7 @@ export function installVoiceControl(content){
   function execute(value){
       clearTimeout(timer);stop();panel.classList.remove('voice-error');
       const command=parseVoiceCommand(value,mode,content),hash=commandHash(command,location.hash);
-      if(!hash){error(command.kind==='empty'?'Введите команду или вопрос.':command.kind==='filter'?'Этот фильтр недоступен для выбранного слоя.':command.label);return;}
+      if(!hash){error(command.kind==='empty'?'Введите команду или вопрос.':command.kind==='filter'?'Это условие недоступно для выбранного набора или раздела.':command.label);return;}
       status.textContent=command.kind==='filter'?'Применяю фильтры…':command.kind==='navigate'?'Открываю: '+command.label:command.kind==='search'?'Ищу по материалам…':'Передаю вопрос помощнику…';
       if(hash===location.hash)window.dispatchEvent(new HashChangeEvent('hashchange'));else location.hash=hash;
       timer=setTimeout(()=>{panel.hidden=true;},3500);
@@ -44,7 +44,7 @@ export function installVoiceControl(content){
     mode=button.dataset.voiceMode||'auto';
     const currentPage=location.hash.split('?')[0];
     text.placeholder=mode==='auto'?(currentPage==='#/studies'?'Например: формат PDF или публикации за 2026 год':
-      currentPage==='#/atlas'?'Например: показатель максимальная нагрузка или вид таблица':
+      ['#/atlas','#/geoanalytics'].includes(currentPage)?'Например: набор бюджеты регионов или вид таблица':
         'Например: открой новости или покажи тег Экспорт'):'Введите запрос';
     text.value='';
     if(!session){error('Голосовой ввод недоступен в этом браузере. Воспользуйтесь текстовым поиском или полем вопроса помощнику.');return;}

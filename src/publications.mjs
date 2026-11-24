@@ -1,21 +1,24 @@
 import {esc as e, norm} from './lib.mjs';
 
-export function renderTags(material) {
+export function renderTags(material, filters) {
   const tags = material.tags || [];
   if (!tags.length) return '';
-  return `<ul class="publication-tags" aria-label="Ключевые слова">${tags.map(tag =>
-    `<li><a href="#/studies?tag=${encodeURIComponent(tag)}">${e(tag)}</a></li>`
-  ).join('')}</ul>`;
+  return `<ul class="publication-tags" aria-label="Ключевые слова">${tags.map(tag=>{
+    const params = new URLSearchParams(filters);
+    params.set('tag',tag);
+    return `<li><a href="#/studies?${e(params)}">${e(tag)}</a></li>`;
+  }).join('')}</ul>`;
 }
 
 export function filterPublications(materials, {query = '', format = 'all', topic = '', tag = '', from = '', to = ''}) {
   const keyword = norm(query);
+  const tagKey = norm(tag);
   return materials.filter(material =>
     (format === 'all' || material.format === format) &&
     (!topic || material.topics.includes(topic)) &&
-    (!tag || material.tags?.includes(tag)) &&
+    (!tag || material.tags?.some(keyword=>norm(keyword)===tagKey)) &&
     (!(from || to) || (material.date && (!from || material.date >= from) && (!to || material.date <= to))) &&
-    (!keyword || norm([material.title, material.summary, ...(material.tags || [])].join(' ')).includes(keyword))
+    (!keyword || norm([material.title, material.shortTitle, material.summary, ...(material.tags || [])].join(' ')).includes(keyword))
   );
 }
 
@@ -82,7 +85,7 @@ export function carouselIconButton(icon, label, attributes) {
   return `<button class="carousel-icon" type="button" ${attributes} aria-label="${e(label)}" title="${e(label)}">${carouselIcons[icon]}</button>`;
 }
 
-function carouselControls(previous, next, size) {
+export function carouselControls(previous, next, size) {
   if (size < 2) return '';
   return `<div class="carousel-controls">
     ${carouselIconButton('pause','Приостановить автосмену','data-carousel-pause')}
@@ -91,7 +94,7 @@ function carouselControls(previous, next, size) {
   </div>`;
 }
 
-function slideAttributes(index) {
+export function slideAttributes(index) {
   return index ? 'data-carousel-slide inert aria-hidden="true"' : 'data-carousel-slide data-active aria-hidden="false"';
 }
 
@@ -106,7 +109,7 @@ function renderDate(item, formatter = longDate) {
 
 export function renderCurrentMaterials(news, materials) {
   const articles = news.items.slice(0, 3);
-  const reports = [...materials].filter(item => item.type === 'report')
+  const reports = materials.filter(item => item.type === 'report' && !featuredReports.some(report=>report.id===item.id))
     .sort((a, b) => (b.date || '').localeCompare(a.date || '')).slice(0, 2);
   const slides = articles.flatMap((item, index) => [
     {item, label: 'Новость', href: newsHref(item)},
@@ -136,7 +139,7 @@ export function renderCurrentMaterials(news, materials) {
   </section>`;
 }
 
-export function enhanceHomeCarousels(main) {
+export function enhancePageCarousels(main) {
   const cleanups = [...main.querySelectorAll('[data-carousel]')].map(enhanceCarousel);
   return () => cleanups.forEach(cleanup => cleanup());
 }

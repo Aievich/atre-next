@@ -66,6 +66,18 @@ test('voice atlas filters retain the active slice and respect the selected layer
   assert.equal(resolve('Вид рейтинг',layer),null);
   assert.equal(resolve('Сбрось фильтры',layer),'#/atlas');
 });
+test('Geoanalytics voice controls retain the other panel when changing the main slice',()=>{
+ const layers=[{id:'regional-budgets',title:'Бюджеты регионов',metrics:[{label:'Доходы бюджета',value:'revenue'}]}];
+ const resolve=(phrase,hash)=>commandHash(parse(phrase,'auto',{filters:{layers}}),hash);
+ assert.equal(resolve('Открой Геоаналитику','#/'),'#/geoanalytics');
+ const current='#/geoanalytics?dataset=regional-budgets&period=2026&beside=sport-spending&beside-period=2025';
+ const result=new URLSearchParams(resolve('Показатель доходы бюджета',current).split('?')[1]);
+ assert.equal(result.get('columns'),'revenue');
+ assert.equal(result.get('period'),'2026');
+ assert.equal(result.get('beside-period'),'2025');
+ assert.match(resolve('Вид график',current),/view=chart/);
+ assert.match(resolve('Доступ открытые',current),/access=open/);
+});
 function harness(){
   const events=[],instances=[],timers=[];
   class Recognition{constructor(){instances.push(this)}start(){this.onstart()}abort(){this.onend?.()}stop(){this.onend?.()}}

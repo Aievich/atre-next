@@ -2,6 +2,16 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile,access} from 'node:fs/promises';
 import {norm,search,sportScenario,csvRows,buildSearchIndex} from '../src/lib.mjs';
+
+test('search indexes report fragments by their own title and text',()=>{
+ const index=buildSearchIndex({
+  materials:[{id:'demo',type:'report',title:'Северные инвестиции',sections:[{id:'ports',title:'Инфраструктура',text:'Грузовые причалы'}]}],
+  pdfPages:[{reportId:'demo',page:7,text:'Производство тепла',sourceHref:'/demo.pdf#page=7'}]
+ });
+ assert.deepEqual(search(index,'северные инвестиции').map(item=>item.id),['demo']);
+ assert.ok(search(index,'грузовые причалы').some(item=>item.sectionId==='ports'));
+ assert.ok(search(index,'производство тепла').some(item=>item.page===7));
+});
 const corpus=JSON.parse(await readFile(new URL('../data/source-corpus.json',import.meta.url),'utf8'));
 test('energy comparison and CSV retain source values and forecast base',()=>{
  const r=corpus.atlas.territories;assert.equal(r.length,5);

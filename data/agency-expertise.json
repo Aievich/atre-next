@@ -1,0 +1,1604 @@
+{
+  "source": {
+    "title": "АТРЭ. Опыт и команда",
+    "pptxSha256": "2255ea8ce4ca805e65b7d07ee03ed08dc2511d9df3bc55e51184d24ec273c3c1",
+    "pdfSha256": "dc1372375b8e4ebe74fa2b30eca7b64d98765e7f623ab229a8f428f9b9b71d3f"
+  },
+  "practices": [
+    {
+      "id": "strategy",
+      "title": "Стратегия и развитие",
+      "slide": 11,
+      "directions": [
+        {
+          "title": "Анализ среды",
+          "description": "Исследование рынка, конкурентов и внутреннего потенциала"
+        },
+        {
+          "title": "Разработка стратегии",
+          "description": "Миссия, цели и планы развития"
+        },
+        {
+          "title": "Управление портфелем",
+          "description": "Анализ и оптимизация портфеля бизнесов компании"
+        },
+        {
+          "title": "Реализация стратегии",
+          "description": "Помощь в реализации стратегии"
+        }
+      ]
+    },
+    {
+      "id": "operations",
+      "title": "Операционная эффективность",
+      "slide": 12,
+      "directions": [
+        {
+          "title": "Оптимизация процессов",
+          "description": "Улучшение и автоматизация бизнес-процессов"
+        },
+        {
+          "title": "Анализ отраслей и рынков",
+          "description": "Маркетинговые исследования и прогнозирование"
+        },
+        {
+          "title": "Повышение эффективности",
+          "description": "Системы контроля качества и показатели эффективности"
+        },
+        {
+          "title": "Управление поставками",
+          "description": "Оптимизация логистики, запасов и работы с поставщиками"
+        }
+      ]
+    },
+    {
+      "id": "investment",
+      "title": "Финансы и инвестиции",
+      "slide": 13,
+      "directions": [
+        {
+          "title": "Финансовый анализ",
+          "description": "Комплексная оценка финансового состояния, планирование и прогнозирование"
+        },
+        {
+          "title": "Управление стоимостью",
+          "description": "Расчет рыночной стоимости компании и стратегия роста"
+        },
+        {
+          "title": "Инвестиционный анализ",
+          "description": "Due diligence и оценка эффективности проектов"
+        },
+        {
+          "title": "Управление рисками",
+          "description": "Идентификация, оценка и минимизация рисков"
+        }
+      ]
+    },
+    {
+      "id": "regulation",
+      "title": "Регулирование и GR",
+      "slide": 14,
+      "directions": [
+        {
+          "title": "Регуляторная аналитика",
+          "description": "Анализ законодательства и правоприменительной практики"
+        },
+        {
+          "title": "Доказательная политика",
+          "description": "Анализ отрасли, моделирование регуляторного воздействия"
+        },
+        {
+          "title": "Господдержка бизнеса",
+          "description": "Оценка эффективности и сопровождение мер поддержки"
+        },
+        {
+          "title": "Тарифное регулирование",
+          "description": "Расчет и обоснование тарифов"
+        },
+        {
+          "title": "Стратегическое планирование",
+          "description": "Разработка НПА, отраслевых стратегий и госпрограмм"
+        },
+        {
+          "title": "GR-сопровождение",
+          "description": "Взаимодействие с органами власти и институтами развития"
+        }
+      ]
+    },
+    {
+      "id": "digital-transformation",
+      "title": "Цифровая трансформация и ИТ",
+      "slide": 17,
+      "directions": [
+        {
+          "title": "Цифровая трансформация",
+          "description": "Стратегия внедрения цифровых технологий"
+        },
+        {
+          "title": "IT-стратегия",
+          "description": "Планирование IT-архитектуры и инфраструктуры"
+        },
+        {
+          "title": "Управление данными",
+          "description": "Сбор, обработка данных и аналитические решения"
+        },
+        {
+          "title": "Автоматизация",
+          "description": "Автоматизация и цифровизация бизнес-процессов"
+        },
+        {
+          "title": "Государственные IT-системы",
+          "description": "Разработка и внедрение государственных информационных систем"
+        }
+      ]
+    },
+    {
+      "id": "climate",
+      "title": "Климат и устойчивое развитие",
+      "slide": 15,
+      "directions": [
+        {
+          "title": "Стратегия",
+          "description": "Разработка стратегии устойчивого развития"
+        },
+        {
+          "title": "Менеджмент",
+          "description": "Управление климатическими рисками и отходами"
+        },
+        {
+          "title": "Трансформация управления",
+          "description": "Интеграция ESG-принципов в корпоративное управление"
+        },
+        {
+          "title": "Финансирование",
+          "description": "Привлечение зеленых инвестиций и устойчивые бизнес-модели"
+        },
+        {
+          "title": "Отчетность",
+          "description": "Подготовка ESG-отчетности и рейтингов"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "title": "Международное развитие",
+      "slide": 16,
+      "directions": [
+        {
+          "title": "Международная экспансия",
+          "description": "Анализ зарубежных рынков и стратегии выхода"
+        },
+        {
+          "title": "Подготовка выхода",
+          "description": "Юридическая поддержка и финансовое планирование"
+        },
+        {
+          "title": "Адаптация к рынкам",
+          "description": "Адаптация продуктов и операционной модели"
+        },
+        {
+          "title": "Регуляторное сопровождение",
+          "description": "Международное юридическое сопровождение и GR"
+        }
+      ]
+    },
+    {
+      "id": "organization",
+      "title": "Организационная эффективность",
+      "slide": 18,
+      "directions": [
+        {
+          "title": "Построение структуры",
+          "description": "Проектирование эффективной организационной структуры"
+        },
+        {
+          "title": "Корпоративное управление",
+          "description": "Системы корпоративного управления и акционерные соглашения"
+        },
+        {
+          "title": "Управление эффективностью",
+          "description": "Системы мотивации и управления производительностью персонала"
+        },
+        {
+          "title": "Управление HR-процессами",
+          "description": "Кадровая политика, программы развития и обучения"
+        },
+        {
+          "title": "Управление изменениями",
+          "description": "Сопровождение организационных трансформаций"
+        }
+      ]
+    },
+    {
+      "id": "innovation",
+      "title": "Инновации и технологии",
+      "slide": 19,
+      "directions": [
+        {
+          "title": "Управление инновациями",
+          "description": "Стратегия инноваций и внедрение инновационных процессов"
+        },
+        {
+          "title": "Технологический трансфер",
+          "description": "Поиск и адаптация новых технологических решений"
+        },
+        {
+          "title": "Инновационная среда",
+          "description": "Формирование системы генерации и реализации идей"
+        },
+        {
+          "title": "Цифровизация производства",
+          "description": "Внедрение smart-технологий и решений Индустрии 4.0"
+        },
+        {
+          "title": "Прогнозирование трендов",
+          "description": "Анализ технологических трендов и меры адаптации"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "appendix-11-01",
+      "title": "Стратегия развития крупного венчурного технологического фонда (ПСБ)",
+      "practice": "strategy",
+      "sectors": [
+        "finance",
+        "hightech"
+      ],
+      "slide": 11
+    },
+    {
+      "id": "appendix-11-02",
+      "title": "Стратегия развития (ВЭБ.РФ)",
+      "practice": "strategy",
+      "sectors": [
+        "finance"
+      ],
+      "slide": 11
+    },
+    {
+      "id": "appendix-11-03",
+      "title": "Стратегия развития (ГК «Автодор»)",
+      "practice": "strategy",
+      "sectors": [
+        "transport",
+        "infrastructure"
+      ],
+      "slide": 11
+    },
+    {
+      "id": "appendix-11-04",
+      "title": "Стратегические инициативы для России до 2030 года (ВЭБ.РФ)",
+      "practice": "strategy",
+      "sectors": [
+        "government"
+      ],
+      "slide": 11
+    },
+    {
+      "id": "appendix-11-05",
+      "title": "Стратегия транспортно-логистического блока (РЖД)",
+      "practice": "strategy",
+      "sectors": [
+        "transport"
+      ],
+      "slide": 11
+    },
+    {
+      "id": "appendix-11-06",
+      "title": "Энергетическая стратегия (г. Москва)",
+      "practice": "strategy",
+      "sectors": [
+        "energy",
+        "government"
+      ],
+      "slide": 11
+    },
+    {
+      "id": "appendix-11-07",
+      "title": "Стратегия развития агломерации (Саратовская агломерация)",
+      "practice": "strategy",
+      "sectors": [
+        "government"
+      ],
+      "slide": 11
+    },
+    {
+      "id": "appendix-11-08",
+      "title": "Стратегия развития города (Реутов)",
+      "practice": "strategy",
+      "sectors": [
+        "government"
+      ],
+      "slide": 11
+    },
+    {
+      "id": "appendix-11-09",
+      "title": "Стратегические инициативы для 10 крупных регионов (ВЭБ.РФ)",
+      "practice": "strategy",
+      "sectors": [
+        "government"
+      ],
+      "slide": 11
+    },
+    {
+      "id": "appendix-11-10",
+      "title": "Стратегия декарбонизации транспорта в России (Международный банк развития)",
+      "practice": "strategy",
+      "sectors": [
+        "transport",
+        "environment"
+      ],
+      "slide": 11
+    },
+    {
+      "id": "appendix-12-01",
+      "title": "Оптимизация бизнес-процессов (ГК «Автодор»)",
+      "practice": "operations",
+      "sectors": [
+        "transport",
+        "infrastructure"
+      ],
+      "slide": 12
+    },
+    {
+      "id": "appendix-12-02",
+      "title": "Повышение эффективности производства (Segezha Group)",
+      "practice": "operations",
+      "sectors": [
+        "industry"
+      ],
+      "slide": 12
+    },
+    {
+      "id": "appendix-12-03",
+      "title": "Анализ рынка информ. безопасности (Positive Technologies)",
+      "practice": "operations",
+      "sectors": [
+        "hightech"
+      ],
+      "slide": 12
+    },
+    {
+      "id": "appendix-12-04",
+      "title": "Оптимизация механизма финансирования закупок медицинского оборудования (ВЭБ Лизинг)",
+      "practice": "operations",
+      "sectors": [
+        "health",
+        "finance"
+      ],
+      "slide": 12
+    },
+    {
+      "id": "appendix-12-05",
+      "title": "Повышение эффективности производственных процессов (НПП «Пэт-Плюс»)",
+      "practice": "operations",
+      "sectors": [
+        "industry"
+      ],
+      "slide": 12
+    },
+    {
+      "id": "appendix-12-06",
+      "title": "Перспективы развития платных бытовых услуг (Институт Гайдара)",
+      "practice": "operations",
+      "sectors": [
+        "consumer"
+      ],
+      "slide": 12
+    },
+    {
+      "id": "appendix-12-07",
+      "title": "Анализ последствий санкций для грузовой базы (РЖД)",
+      "practice": "operations",
+      "sectors": [
+        "transport"
+      ],
+      "slide": 12
+    },
+    {
+      "id": "appendix-12-08",
+      "title": "Эффекты санкций от разрыва логистических цепочек (ПСБ)",
+      "practice": "operations",
+      "sectors": [
+        "transport",
+        "finance"
+      ],
+      "slide": 12
+    },
+    {
+      "id": "appendix-12-09",
+      "title": "Анализ ипотечного рынка и сценарии развития (Минэкономразвития России)",
+      "practice": "operations",
+      "sectors": [
+        "infrastructure",
+        "finance"
+      ],
+      "slide": 12
+    },
+    {
+      "id": "appendix-12-10",
+      "title": "Формирование прогноза ставок аренды грузовых вагонов (ФГК)",
+      "practice": "operations",
+      "sectors": [
+        "transport"
+      ],
+      "slide": 12
+    },
+    {
+      "id": "appendix-12-11",
+      "title": "Разработка реферальной программы (Mercury)",
+      "practice": "operations",
+      "sectors": [
+        "consumer"
+      ],
+      "slide": 12
+    },
+    {
+      "id": "appendix-12-12",
+      "title": "Исследование страхования ответственности водителей такси (Яндекс)",
+      "practice": "operations",
+      "sectors": [
+        "transport",
+        "finance"
+      ],
+      "slide": 12
+    },
+    {
+      "id": "appendix-13-01",
+      "title": "Разработка методики оценки социально-экономических эффектов проектов (АО «Трансмашхолдинг»)",
+      "practice": "investment",
+      "sectors": [
+        "transport",
+        "industry"
+      ],
+      "slide": 13
+    },
+    {
+      "id": "appendix-13-02",
+      "title": "ТЭО завершения строительства ГЭС (ПАО «РусГидро»)",
+      "practice": "investment",
+      "sectors": [
+        "energy",
+        "infrastructure"
+      ],
+      "slide": 13
+    },
+    {
+      "id": "appendix-13-03",
+      "title": "ТЭО фонда зеленого финансирования в одной из стран СНГ (ПРООН)",
+      "practice": "investment",
+      "sectors": [
+        "finance",
+        "environment"
+      ],
+      "slide": 13
+    },
+    {
+      "id": "appendix-13-04",
+      "title": "Финансово-экономические модели мобильных заводов СПГ (Дата Инструментс)",
+      "practice": "investment",
+      "sectors": [
+        "energy",
+        "industry"
+      ],
+      "slide": 13
+    },
+    {
+      "id": "appendix-13-05",
+      "title": "Создание и тестирование методики прогнозирования стоимости строительных проектов (ГК «Мединвестгрупп»)",
+      "practice": "investment",
+      "sectors": [
+        "infrastructure"
+      ],
+      "slide": 13
+    },
+    {
+      "id": "appendix-13-06",
+      "title": "Многосценарное моделирование тарифных условий в железнодорожных перевозках (АНО «ИПЕМ»)",
+      "practice": "investment",
+      "sectors": [
+        "transport"
+      ],
+      "slide": 13
+    },
+    {
+      "id": "appendix-13-07",
+      "title": "ФЭО создания производственного комплекса по переработке толуола (Концерн «Звезда»)",
+      "practice": "investment",
+      "sectors": [
+        "industry"
+      ],
+      "slide": 13
+    },
+    {
+      "id": "appendix-13-08",
+      "title": "Бизнес-план создания ЦОД (Радиоэлектронный технопарк РВ-1)",
+      "practice": "investment",
+      "sectors": [
+        "digital",
+        "infrastructure"
+      ],
+      "slide": 13
+    },
+    {
+      "id": "appendix-13-09",
+      "title": "Анализ рисков в условиях санкционного давления на экономику (Аналитический центр Москвы)",
+      "practice": "investment",
+      "sectors": [
+        "government"
+      ],
+      "slide": 13
+    },
+    {
+      "id": "appendix-14-01",
+      "title": "Оценка эффектов регулирования платформенной занятости (Яндекс, Ozon, Avito)",
+      "practice": "regulation",
+      "sectors": [
+        "digital",
+        "labor"
+      ],
+      "slide": 14
+    },
+    {
+      "id": "appendix-14-02",
+      "title": "Разработка мер поддержки малого бизнеса в кризисных условиях (Корпорация МСП)",
+      "practice": "regulation",
+      "sectors": [
+        "government"
+      ],
+      "slide": 14
+    },
+    {
+      "id": "appendix-14-03",
+      "title": "Макроэкономическая и бюджетная оценка проекта «Новый зерновой коридор»",
+      "practice": "regulation",
+      "sectors": [
+        "agriculture",
+        "transport"
+      ],
+      "slide": 14
+    },
+    {
+      "id": "appendix-14-04",
+      "title": "Роль маркетплейсов в экономике (Ozon)",
+      "practice": "regulation",
+      "sectors": [
+        "digital"
+      ],
+      "slide": 14
+    },
+    {
+      "id": "appendix-14-05",
+      "title": "Заключение по предельному уровню оптовой цены на газ",
+      "practice": "regulation",
+      "sectors": [
+        "energy"
+      ],
+      "slide": 14
+    },
+    {
+      "id": "appendix-14-06",
+      "title": "Оценка налогового эффекта инвест. проектов (НАО «Красная Поляна»)",
+      "practice": "regulation",
+      "sectors": [],
+      "slide": 14
+    },
+    {
+      "id": "appendix-14-07",
+      "title": "Антимонопольная экспертиза и анализ состояния конкуренции",
+      "practice": "regulation",
+      "sectors": [],
+      "slide": 14
+    },
+    {
+      "id": "appendix-14-08",
+      "title": "Разработка подходов по противодействию контрафакту на маркетплейсах (Ozon, Яндекс)",
+      "practice": "regulation",
+      "sectors": [
+        "digital"
+      ],
+      "slide": 14
+    },
+    {
+      "id": "appendix-14-09",
+      "title": "Методология анализа бюджетных рисков (ГКУ Москвы)",
+      "practice": "regulation",
+      "sectors": [
+        "government"
+      ],
+      "slide": 14
+    },
+    {
+      "id": "appendix-14-10",
+      "title": "Эффекты регулирования цифровых экосистем (Яндекс, Ozon, Avito)",
+      "practice": "regulation",
+      "sectors": [
+        "digital"
+      ],
+      "slide": 14
+    },
+    {
+      "id": "appendix-14-11",
+      "title": "Оценка регулирующего воздействия НПА в различных отраслях",
+      "practice": "regulation",
+      "sectors": [],
+      "slide": 14
+    },
+    {
+      "id": "appendix-14-12",
+      "title": "Анализ применимости мер поддержки для проекта «Парк Три вулкана»",
+      "practice": "regulation",
+      "sectors": [],
+      "slide": 14
+    },
+    {
+      "id": "appendix-15-01",
+      "title": "Разработка национального плана приумножения природы и климатической устойчивости (АСИ)",
+      "practice": "climate",
+      "sectors": [
+        "environment"
+      ],
+      "slide": 15
+    },
+    {
+      "id": "project-38",
+      "title": "Стратегия перехода РФ к экономике замкнутого цикла 2.0 (ППК РЭО)",
+      "practice": "climate",
+      "sectors": [
+        "environment",
+        "government"
+      ],
+      "slide": 15
+    },
+    {
+      "id": "appendix-15-03",
+      "title": "Сценарии и эффекты альтернатив углеродного регулирования для отраслей экономики",
+      "practice": "climate",
+      "sectors": [
+        "environment"
+      ],
+      "slide": 15
+    },
+    {
+      "id": "appendix-15-04",
+      "title": "Сопровождение развития ГИС «Экомониторинг» (РФИ Минприроды России)",
+      "practice": "climate",
+      "sectors": [
+        "environment",
+        "digital"
+      ],
+      "slide": 15
+    },
+    {
+      "id": "appendix-15-05",
+      "title": "Концепция низкоуглеродного развития Ленинградской области",
+      "practice": "climate",
+      "sectors": [
+        "environment",
+        "government"
+      ],
+      "slide": 15
+    },
+    {
+      "id": "appendix-15-06",
+      "title": "Концепция и стандарты декарбонизации сферы ТКО (ППК РЭО)",
+      "practice": "climate",
+      "sectors": [
+        "environment"
+      ],
+      "slide": 15
+    },
+    {
+      "id": "appendix-15-07",
+      "title": "Пакет инициатив по развитию экономики замкнутого цикла в России (ВЭБ.РФ)",
+      "practice": "climate",
+      "sectors": [
+        "environment",
+        "finance"
+      ],
+      "slide": 15
+    },
+    {
+      "id": "appendix-15-08",
+      "title": "Управление ТКО для устойчивого развития стран Ближнего Востока и Северной Африки",
+      "practice": "climate",
+      "sectors": [
+        "environment"
+      ],
+      "slide": 15
+    },
+    {
+      "id": "appendix-15-09",
+      "title": "Увеличение полезного использования осадков сточных вод (предприятие ЖКХ)",
+      "practice": "climate",
+      "sectors": [
+        "environment",
+        "energy"
+      ],
+      "slide": 15
+    },
+    {
+      "id": "appendix-15-10",
+      "title": "Моделирование систем обращения с ТКО (ППК РЭО)",
+      "practice": "climate",
+      "sectors": [
+        "environment"
+      ],
+      "slide": 15
+    },
+    {
+      "id": "appendix-16-01",
+      "title": "Концепция повышения энергетической связности стран Центральной Азии (ЭСКАТО)",
+      "practice": "international",
+      "sectors": [
+        "energy"
+      ],
+      "slide": 16
+    },
+    {
+      "id": "appendix-16-02",
+      "title": "Оценка динамики глобальных и региональных цепочек поставок СНГ (ЭСКАТО)",
+      "practice": "international",
+      "sectors": [
+        "transport"
+      ],
+      "slide": 16
+    },
+    {
+      "id": "appendix-16-03",
+      "title": "Стратегия развития на глобальных рынках в условиях санкций (Газпром нефть)",
+      "practice": "international",
+      "sectors": [
+        "energy"
+      ],
+      "slide": 16
+    },
+    {
+      "id": "appendix-16-04",
+      "title": "Исследование мирового рынка какао-бобов (Правительство РФ)",
+      "practice": "international",
+      "sectors": [
+        "agriculture"
+      ],
+      "slide": 16
+    },
+    {
+      "id": "appendix-16-05",
+      "title": "Транспортно-экономический баланс МТК «Север – Юг»",
+      "practice": "international",
+      "sectors": [
+        "transport"
+      ],
+      "slide": 16
+    },
+    {
+      "id": "appendix-16-06",
+      "title": "Анализ конкурентоспособности российского экспорта минтая на азиатских рынках (Тралком)",
+      "practice": "international",
+      "sectors": [
+        "agriculture"
+      ],
+      "slide": 16
+    },
+    {
+      "id": "appendix-16-07",
+      "title": "Сопровождение саммита Россия – Африка (Positive Technologies)",
+      "practice": "international",
+      "sectors": [
+        "hightech"
+      ],
+      "slide": 16
+    },
+    {
+      "id": "appendix-17-01",
+      "title": "Разработка и внедрение ГИИС ДМДК (Минфин России)",
+      "practice": "digital-transformation",
+      "sectors": [
+        "government",
+        "digital"
+      ],
+      "slide": 17
+    },
+    {
+      "id": "appendix-17-02",
+      "title": "Индекс цифровой зрелости ТЭК (Минэнерго России)",
+      "practice": "digital-transformation",
+      "sectors": [
+        "energy"
+      ],
+      "slide": 17
+    },
+    {
+      "id": "appendix-17-03",
+      "title": "Стратегия цифровой трансформации (ГК «Автодор»)",
+      "practice": "digital-transformation",
+      "sectors": [
+        "transport",
+        "infrastructure"
+      ],
+      "slide": 17
+    },
+    {
+      "id": "appendix-17-04",
+      "title": "Сопровождение разработки ФГИС «Экомониторинг» (РФИ Минприроды России)",
+      "practice": "digital-transformation",
+      "sectors": [
+        "environment",
+        "digital"
+      ],
+      "slide": 17
+    },
+    {
+      "id": "appendix-17-05",
+      "title": "Автоматизация бизнес-процессов (Росимущество)",
+      "practice": "digital-transformation",
+      "sectors": [
+        "government",
+        "digital"
+      ],
+      "slide": 17
+    },
+    {
+      "id": "project-29",
+      "title": "Анализ моделей распространения промышленных данных (Ассоциация больших данных)",
+      "practice": "digital-transformation",
+      "sectors": [
+        "industry",
+        "digital"
+      ],
+      "slide": 17
+    },
+    {
+      "id": "appendix-17-07",
+      "title": "Автоматизация прогноза товарных балансов (РЖД)",
+      "practice": "digital-transformation",
+      "sectors": [
+        "transport"
+      ],
+      "slide": 17
+    },
+    {
+      "id": "appendix-17-08",
+      "title": "Цифровая трансформация гос. услуг (Минцифры Кузбасса)",
+      "practice": "digital-transformation",
+      "sectors": [
+        "digital",
+        "government"
+      ],
+      "slide": 17
+    },
+    {
+      "id": "appendix-17-09",
+      "title": "Уточнение стратегии цифровой трансформации региона (Пермский край)",
+      "practice": "digital-transformation",
+      "sectors": [
+        "digital",
+        "government"
+      ],
+      "slide": 17
+    },
+    {
+      "id": "appendix-17-10",
+      "title": "Управленческий дашборд (Segezha Group)",
+      "practice": "digital-transformation",
+      "sectors": [
+        "industry",
+        "digital"
+      ],
+      "slide": 17
+    },
+    {
+      "id": "appendix-17-11",
+      "title": "Автоматизация процессов поддержки малого бизнеса (Корпорация МСП)",
+      "practice": "digital-transformation",
+      "sectors": [
+        "government",
+        "digital"
+      ],
+      "slide": 17
+    },
+    {
+      "id": "appendix-17-12",
+      "title": "Разработка цифровой платформы «Слепок территории – Кузбасс»",
+      "practice": "digital-transformation",
+      "sectors": [
+        "digital",
+        "government"
+      ],
+      "slide": 17
+    },
+    {
+      "id": "appendix-18-01",
+      "title": "Методика оценки эффективности проектов повышения производительности труда (ФЦК)",
+      "practice": "organization",
+      "sectors": [
+        "labor"
+      ],
+      "slide": 18
+    },
+    {
+      "id": "appendix-18-02",
+      "title": "Целевая операционная модель и портфель стратегических инициатив (РЖД)",
+      "practice": "organization",
+      "sectors": [
+        "transport"
+      ],
+      "slide": 18
+    },
+    {
+      "id": "appendix-18-03",
+      "title": "Оценка производительности труда и высокопроизводительных рабочих мест в ТЭК (Минэнерго России)",
+      "practice": "organization",
+      "sectors": [
+        "energy"
+      ],
+      "slide": 18
+    },
+    {
+      "id": "appendix-18-04",
+      "title": "Реформирование сети региональных центров (Росстандарт)",
+      "practice": "organization",
+      "sectors": [
+        "government"
+      ],
+      "slide": 18
+    },
+    {
+      "id": "appendix-18-05",
+      "title": "Оптимизация процессов подсчета и прогнозирования пассажиропотоков (Центральная ППК)",
+      "practice": "organization",
+      "sectors": [
+        "transport"
+      ],
+      "slide": 18
+    },
+    {
+      "id": "appendix-18-06",
+      "title": "Анализ и мониторинг системы мотивации персонала (РУСАЛ)",
+      "practice": "organization",
+      "sectors": [
+        "industry"
+      ],
+      "slide": 18
+    },
+    {
+      "id": "appendix-19-01",
+      "title": "Непрерывный автоматизированный технологический скаутинг передовых технологий (Segezha Group)",
+      "practice": "innovation",
+      "sectors": [
+        "industry"
+      ],
+      "slide": 19
+    },
+    {
+      "id": "appendix-19-02",
+      "title": "Методические рекомендации по типовым моделям применения беспилотных систем (ФЦ БАС)",
+      "practice": "innovation",
+      "sectors": [
+        "hightech"
+      ],
+      "slide": 19
+    },
+    {
+      "id": "appendix-19-03",
+      "title": "Оценка эффектов создания спутниковых систем связи нового поколения (ФГУП «Космическая связь»)",
+      "practice": "innovation",
+      "sectors": [
+        "hightech"
+      ],
+      "slide": 19
+    },
+    {
+      "id": "appendix-19-04",
+      "title": "Цифровой двойник производства и сырьевой базы (Segezha)",
+      "practice": "innovation",
+      "sectors": [
+        "industry",
+        "hightech"
+      ],
+      "slide": 19
+    },
+    {
+      "id": "appendix-19-05",
+      "title": "Подготовка предложений по развитию электронной и радиоэлектронной промышленности (ВНИИР)",
+      "practice": "innovation",
+      "sectors": [
+        "hightech",
+        "industry"
+      ],
+      "slide": 19
+    },
+    {
+      "id": "appendix-19-06",
+      "title": "Внедрение цифровых технологий на производстве (цифровой двойник, маркировка, электронная очередь)",
+      "practice": "innovation",
+      "sectors": [
+        "industry",
+        "digital"
+      ],
+      "slide": 19
+    },
+    {
+      "id": "appendix-19-07",
+      "title": "Разработка инновационных методик прогнозирования и моделирования (РЖД, ППК РЭО, Минтранс)",
+      "practice": "innovation",
+      "sectors": [
+        "transport",
+        "environment"
+      ],
+      "slide": 19
+    },
+    {
+      "id": "appendix-19-08",
+      "title": "Анализ потенциала металлоконструкций в строительстве (АРСС)",
+      "practice": "innovation",
+      "sectors": [
+        "infrastructure",
+        "industry"
+      ],
+      "slide": 19
+    },
+    {
+      "id": "appendix-19-09",
+      "title": "Разработка стратегии «Инновационные технологии» (ПСБ)",
+      "practice": "innovation",
+      "sectors": [
+        "finance",
+        "hightech"
+      ],
+      "slide": 19
+    },
+    {
+      "id": "appendix-19-10",
+      "title": "Индекс инновационного развития (Новосибирская область)",
+      "practice": "innovation",
+      "sectors": [
+        "government",
+        "hightech"
+      ],
+      "slide": 19
+    }
+  ],
+  "legacy": {
+    "project-256": {
+      "practices": [
+        "climate"
+      ],
+      "sectors": [
+        "environment"
+      ]
+    },
+    "project-19": {
+      "practices": [
+        "strategy"
+      ],
+      "sectors": [
+        "government",
+        "infrastructure"
+      ]
+    },
+    "project-26": {
+      "practices": [
+        "climate",
+        "regulation"
+      ],
+      "sectors": [
+        "environment"
+      ]
+    },
+    "project-27": {
+      "practices": [
+        "climate",
+        "strategy"
+      ],
+      "sectors": [
+        "energy",
+        "government"
+      ]
+    },
+    "project-28": {
+      "practices": [
+        "strategy"
+      ],
+      "sectors": [
+        "government"
+      ]
+    },
+    "project-29": {
+      "practices": [
+        "digital-transformation"
+      ],
+      "sectors": [
+        "industry",
+        "digital"
+      ]
+    },
+    "project-30": {
+      "practices": [
+        "operations"
+      ],
+      "sectors": [
+        "industry",
+        "infrastructure"
+      ]
+    },
+    "project-31": {
+      "practices": [
+        "strategy"
+      ],
+      "sectors": [
+        "transport",
+        "infrastructure"
+      ]
+    },
+    "project-32": {
+      "practices": [
+        "strategy"
+      ],
+      "sectors": [
+        "consumer"
+      ]
+    },
+    "project-33": {
+      "practices": [
+        "regulation"
+      ],
+      "sectors": [
+        "transport"
+      ]
+    },
+    "project-34": {
+      "practices": [
+        "investment",
+        "strategy"
+      ],
+      "sectors": [
+        "government"
+      ]
+    },
+    "project-35": {
+      "practices": [
+        "strategy"
+      ],
+      "sectors": [
+        "government"
+      ]
+    },
+    "project-36": {
+      "practices": [
+        "innovation",
+        "regulation"
+      ],
+      "sectors": [
+        "hightech",
+        "industry"
+      ]
+    },
+    "project-37": {
+      "practices": [
+        "regulation",
+        "international"
+      ],
+      "sectors": [
+        "digital",
+        "consumer"
+      ]
+    },
+    "project-38": {
+      "practices": [
+        "climate"
+      ],
+      "sectors": [
+        "environment",
+        "government"
+      ]
+    },
+    "project-39": {
+      "practices": [
+        "digital-transformation"
+      ],
+      "sectors": [
+        "digital"
+      ]
+    },
+    "project-40": {
+      "practices": [
+        "strategy",
+        "organization"
+      ],
+      "sectors": []
+    },
+    "project-41": {
+      "practices": [
+        "investment"
+      ],
+      "sectors": [
+        "transport",
+        "infrastructure"
+      ]
+    },
+    "project-42": {
+      "practices": [
+        "investment",
+        "regulation"
+      ],
+      "sectors": [
+        "health",
+        "agriculture"
+      ]
+    },
+    "project-43": {
+      "practices": [
+        "climate"
+      ],
+      "sectors": [
+        "environment"
+      ]
+    },
+    "project-44": {
+      "practices": [
+        "operations"
+      ],
+      "sectors": [
+        "energy"
+      ]
+    },
+    "project-45": {
+      "practices": [
+        "digital-transformation"
+      ],
+      "sectors": [
+        "digital"
+      ]
+    },
+    "project-46": {
+      "practices": [
+        "digital-transformation"
+      ],
+      "sectors": [
+        "government",
+        "digital"
+      ]
+    },
+    "project-47": {
+      "practices": [
+        "digital-transformation"
+      ],
+      "sectors": [
+        "transport",
+        "digital"
+      ]
+    },
+    "project-48": {
+      "practices": [
+        "investment",
+        "digital-transformation"
+      ],
+      "sectors": [
+        "transport",
+        "government"
+      ]
+    },
+    "project-49": {
+      "practices": [
+        "digital-transformation",
+        "operations"
+      ],
+      "sectors": [
+        "transport"
+      ]
+    },
+    "project-50": {
+      "practices": [
+        "digital-transformation",
+        "operations"
+      ],
+      "sectors": [
+        "transport"
+      ]
+    },
+    "project-51": {
+      "practices": [
+        "digital-transformation",
+        "regulation"
+      ],
+      "sectors": [
+        "transport",
+        "government"
+      ]
+    },
+    "project-17": {
+      "practices": [
+        "regulation"
+      ],
+      "sectors": [
+        "digital"
+      ]
+    },
+    "project-20": {
+      "practices": [
+        "investment"
+      ],
+      "sectors": [
+        "transport"
+      ]
+    }
+  },
+  "portraits": {
+    "onishchenko": {
+      "href": "/brand/team/onishchenko.png",
+      "slide": 6,
+      "entry": "ppt/media/image50.png",
+      "sha256": "8f491290787928afbbb3a93fe62cac6a28aa1ca1b5495b518b3d026f72ed732e"
+    },
+    "vasin": {
+      "href": "/brand/team/vasin.png",
+      "slide": 7,
+      "entry": "ppt/media/image51.png",
+      "sha256": "7223d40b00761131bdaa699931db7a7f51d417f986b1a2ddf8680e76f13bd104"
+    },
+    "nakoryakova": {
+      "href": "/brand/team/nakoryakova.png",
+      "slide": 7,
+      "entry": "ppt/media/image52.png",
+      "sha256": "0743ed7838ee9ed6285972b2e42cea8413a2a561e8ec00330e6f9b70c5612614"
+    },
+    "koksharova": {
+      "href": "/brand/team/koksharova.png",
+      "slide": 7,
+      "entry": "ppt/media/image53.png",
+      "sha256": "55cb1478ab9ecd84362eafd929786602655b9b64b6709f4e6508f1158e67b4fb"
+    },
+    "kaplinskaya": {
+      "href": "/brand/team/kaplinskaya.png",
+      "slide": 7,
+      "entry": "ppt/media/image54.png",
+      "sha256": "9ec769fc83320157116e0eabf41b028e547b7bf31dbb141ab3b6df8f86bd146c"
+    },
+    "pavlyushina": {
+      "href": "/brand/team/pavlyushina.png",
+      "slide": 8,
+      "entry": "ppt/media/image55.png",
+      "sha256": "9f5583ef01ae22d435a44f6c333250cd7c6cd18f7973f2e38489d6c51c84a672"
+    },
+    "klishina": {
+      "href": "/brand/team/klishina.png",
+      "slide": 8,
+      "entry": "ppt/media/image56.png",
+      "sha256": "acf5bbb325a1508b08e2bde64d25235db219936911f89e9955a22ae3cd5736e3"
+    },
+    "kovaleva": {
+      "href": "/brand/team/kovaleva.png",
+      "slide": 8,
+      "entry": "ppt/media/image57.png",
+      "sha256": "b44d9c68d2f3d6344107505f6e38bfc23d00bcd486f9a040c3a68e4063dc23fb"
+    },
+    "kostash": {
+      "href": "/brand/team/kostash.png",
+      "slide": 8,
+      "entry": "ppt/media/image58.png",
+      "sha256": "460914d62309c73a9acae3719ce20f9df79489e326dda431d48f01b5e78322a9"
+    }
+  },
+  "partners": [
+    {
+      "title": "Государство и регионы",
+      "slide": 4,
+      "organizations": [
+        {
+          "name": "Минцифры России",
+          "href": "/brand/partners/logo-19.png",
+          "entry": "ppt/media/image19.png",
+          "sha256": "4f7313ef12f9197b681dc7dfb623afadfdd61663cec908e56d54a1514ed865de"
+        },
+        {
+          "name": "Минприроды России",
+          "href": "/brand/partners/logo-20.png",
+          "entry": "ppt/media/image20.png",
+          "sha256": "7a65db0bef72564e181bf74e1675b63e48a6cdb446910b24a317fe35296ed688"
+        },
+        {
+          "name": "Минтранс России",
+          "href": "/brand/partners/logo-25.png",
+          "entry": "ppt/media/image25.png",
+          "sha256": "ec75045235331e558917ae99d4e1ad0df33873f9a5762e2efc57594732b41f5c"
+        },
+        {
+          "name": "Челябинская область",
+          "href": "/brand/partners/logo-21.png",
+          "entry": "ppt/media/image21.png",
+          "sha256": "e3f6789f3113fc654d992924fbc62f472c0668e0980f46ecc2fb51e18defa1a3"
+        },
+        {
+          "name": "Кемеровская область",
+          "href": "/brand/partners/logo-22.png",
+          "entry": "ppt/media/image22.png",
+          "sha256": "c34b24e6435b787b5381b6ea2bf5249122b65a7d38ff6227f8a3f04b3f2f79ea"
+        },
+        {
+          "name": "Приморский край",
+          "href": "/brand/partners/logo-24.png",
+          "entry": "ppt/media/image24.png",
+          "sha256": "d303f3c9d09041a425dee50dd601ee91ea418daadebf75d1c12bb8e48d754c6d"
+        },
+        {
+          "name": "Московская область",
+          "href": "/brand/partners/logo-23.png",
+          "entry": "ppt/media/image23.png",
+          "sha256": "4d730920002f684f189b449bb920127f3082537994ab1091981c1eff8de1f085"
+        },
+        {
+          "name": "Москва",
+          "href": "/brand/partners/moscow-crest.jpg",
+          "source": "https://www.mos.ru/upload/documents/heralddocs/Ofits.simvol_MSK_norm.akty_Zakon_o_gerbe_MSK.pdf",
+          "sourcePage": 5,
+          "sha256": "94399376ebcf4e7c0cb622f4ca716ccd0f73de353652a7dac75777e4a98c81a4"
+        }
+      ]
+    },
+    {
+      "title": "Институты развития и аналитика",
+      "slide": 4,
+      "organizations": [
+        {
+          "name": "ВЭБ.РФ",
+          "href": "/brand/partners/logo-27.png",
+          "entry": "ppt/media/image27.png",
+          "sha256": "ced5438c97dc0aeb725364b411594b76cff7c3a46f277bcb41ea28fdc5c00ff8"
+        },
+        {
+          "name": "Российское энергетическое агентство Минэнерго России",
+          "href": "/brand/partners/logo-30.png",
+          "entry": "ppt/media/image30.png",
+          "sha256": "5dffaa0686a2c675d2ddabd6b8571ca67bbc2f40d01b04acd5f5fec6bb66def3"
+        },
+        {
+          "name": "Корпорация МСП",
+          "href": "/brand/partners/logo-29.png",
+          "entry": "ppt/media/image29.png",
+          "sha256": "6b77ee29d394a95167958de47c984041b21fd8a8ec55ea453828f60802671d32"
+        },
+        {
+          "name": "МСП Банк",
+          "href": "/brand/partners/logo-46.png",
+          "entry": "ppt/media/image46.png",
+          "sha256": "036efe2650fa1dd514db4c7a654e62ffc8a07845eba8e67e60958afe1fa59fe8"
+        },
+        {
+          "name": "Агентство стратегических инициатив",
+          "href": "/brand/partners/logo-26.png",
+          "entry": "ppt/media/image26.png",
+          "sha256": "3776511503fcaa49cf3ae10b358f9f00b5e0bbaa1bf400f1589baca852538840"
+        },
+        {
+          "name": "Российский экологический оператор",
+          "href": "/brand/partners/logo-28.png",
+          "entry": "ppt/media/image28.png",
+          "sha256": "d5bda67f5d8380d13fd579133b9003bf4d8ffd5a792ea05421befd1b6402fed0"
+        },
+        {
+          "name": "Институт экономической политики имени Е. Т. Гайдара",
+          "href": "/brand/partners/logo-48.png",
+          "entry": "ppt/media/image48.png",
+          "sha256": "1f195ddc5b2a5c1a7c8327c3e5a89b834b57e9ec6c57927a43d92294e875bc29"
+        }
+      ]
+    },
+    {
+      "title": "Промышленность и инфраструктура",
+      "slide": 4,
+      "organizations": [
+        {
+          "name": "РЖД",
+          "href": "/brand/partners/logo-31.png",
+          "entry": "ppt/media/image31.png",
+          "sha256": "9f2491f183b351e7975eaf1c87c7abe564282ea1de8e77c811530dedba05bef4"
+        },
+        {
+          "name": "ЕвроХим",
+          "href": "/brand/partners/logo-35.png",
+          "entry": "ppt/media/image35.png",
+          "sha256": "ea3c82089d247b7629922bad3a4631c57c4870f154ec7a7fd5c29673def7dfd8"
+        },
+        {
+          "name": "Segezha Group",
+          "href": "/brand/partners/logo-34.png",
+          "entry": "ppt/media/image34.png",
+          "sha256": "cf8ffb7b1a931e87bcf62bad870f2e9340fb31de3f96dccf26b1997b8cae8ac5"
+        },
+        {
+          "name": "Трансмашхолдинг",
+          "href": "/brand/partners/logo-32.png",
+          "entry": "ppt/media/image32.png",
+          "sha256": "76d2412a22620760816794aa50c09c1e3797950b4d70fe5c7244ca70666ecf7d"
+        },
+        {
+          "name": "СГК",
+          "href": "/brand/partners/logo-36.png",
+          "entry": "ppt/media/image36.png",
+          "sha256": "752f437382107ac34dafd962c86aa2257a6b7dca28b5c3f9a485146376bd9bed"
+        },
+        {
+          "name": "Росатом",
+          "href": "/brand/partners/logo-33.png",
+          "entry": "ppt/media/image33.png",
+          "sha256": "5ef51f6d0e8a399507f861fc6e9c241467496156412e551423b68230279c6005"
+        },
+        {
+          "name": "ГК «Автодор»",
+          "href": "/brand/partners/logo-38.png",
+          "entry": "ppt/media/image38.png",
+          "sha256": "9b0f6ebcc43aabaea4feead3a700e20342379e3fd84471a36d50487d9127e34a"
+        },
+        {
+          "name": "ПСБ",
+          "href": "/brand/partners/logo-37.png",
+          "entry": "ppt/media/image37.png",
+          "sha256": "0f01c19c81419eac41f47c1a81d484f82e34fa7d384bad2962d6475eda974573"
+        },
+        {
+          "name": "Ассоциация инфраструктурных инвесторов и кредиторов",
+          "href": "/brand/partners/logo-49.svg",
+          "entry": "ppt/media/image49.svg",
+          "sha256": "b1226d101c9fe8e976ed21289093c401072d4d0962067ea7af1c27c482975110"
+        }
+      ]
+    },
+    {
+      "title": "Цифровая экономика и медиа",
+      "slide": 4,
+      "organizations": [
+        {
+          "name": "Ростелеком",
+          "href": "/brand/partners/logo-40.png",
+          "entry": "ppt/media/image40.png",
+          "sha256": "38d3311ce24c56414902048917bcb2b5610a4100743a315fd92a16bb2288f932"
+        },
+        {
+          "name": "Avito",
+          "href": "/brand/partners/logo-44.png",
+          "entry": "ppt/media/image44.png",
+          "sha256": "dd2e43b9612b60203f83a907bd5a3dee597f91913675d60eb9778d0d9a651560"
+        },
+        {
+          "name": "Яндекс",
+          "href": "/brand/partners/logo-42.png",
+          "entry": "ppt/media/image42.png",
+          "sha256": "f88aefd458277e276d05d762b1fa5922de53bda3eef4b756c195ff5d314451bb"
+        },
+        {
+          "name": "Ассоциация больших данных",
+          "href": "/brand/partners/logo-39.png",
+          "entry": "ppt/media/image39.png",
+          "sha256": "962be167959dd70e5d68119a994202696eb6050af086fd977e4126dd22bea12e"
+        },
+        {
+          "name": "РБК",
+          "href": "/brand/partners/logo-47.png",
+          "entry": "ppt/media/image47.png",
+          "sha256": "44402cfe476e0bdaf5b5140db9604af813d02767ba340a3b008ab7b2a2e80301"
+        },
+        {
+          "name": "Ozon",
+          "href": "/brand/partners/logo-43.png",
+          "entry": "ppt/media/image43.png",
+          "sha256": "e8d546d6bb28affe69ad7d10dc01bef144f22a48773fb5743c54e7be2ff62a22"
+        },
+        {
+          "name": "Ведомости",
+          "href": "/brand/partners/logo-41.png",
+          "entry": "ppt/media/image41.png",
+          "sha256": "781a18843088798801721e3c66cc9e4f27a0cd561c4bc605c40fcbb03e416aed"
+        },
+        {
+          "name": "Эксперт",
+          "href": "/brand/partners/logo-45.jpeg",
+          "entry": "ppt/media/image45.jpeg",
+          "sha256": "ae3644ce53dff21c457e67b583e7e341406b49be07086a97e86fd7a92bde6250"
+        }
+      ]
+    }
+  ]
+}

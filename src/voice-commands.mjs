@@ -3,13 +3,22 @@ import {norm} from './lib.mjs';
 const clean = s => String(s || '').normalize('NFKC').replace(/ё/g,'е').replace(/\s+/g,' ').trim();
 const destinations = [
   [/^(?:на )?главн(?:ая|ую)(?: страниц[ау])?$/, '/', 'Главная'],
+  [/^(?:для сми|сми|пресс-служба|пресс служба)$/, '/media', 'Для СМИ'],
+  [/^(?:об атрэ|о компании|о нас)$/, '/about', 'Об АТРЭ'],
+  [/^(?:геоэкономика|бюджеты регионов)$/, '/atlas?layer=regional-budgets', 'Бюджеты регионов'],
+  [/^геоаналитик[ау](?: атрэ)?$/, '/geoanalytics', 'Геоаналитика'],
   [/^(?:новости|лента новостей)$/, '/news', 'Новости'],
   [/^актуальное$/, '/?section=actual', 'Актуальное'],
   [/^(?:каталог(?: исследований| публикаций)?|исследования|публикации|доклады)$/, '/studies', 'Исследования'],
   [/^(?:атлас(?: данных)?|карт[ау])$/, '/atlas', 'Атлас данных'],
   [/^конструктор(?: данных)?$/, '/constructor', 'Конструктор данных'],
-  [/^проект[ыа]$/, '/projects', 'Проекты'],
+  [/^(?:проект[ыа]|проектный опыт)$/, '/about/projects', 'Проектный опыт'],
+  [/^(?:наша команда|команд[ау](?: атрэ)?)$/, '/about/team', 'Команда АТРЭ'],
+  [/^(?:клиенты и партн[её]ры|партн[её]ры атрэ)$/, '/about/partners', 'Клиенты и партнёры'],
   [/^направления$/, '/topics', 'Направления'],
+  [/^практики(?: атрэ)?$/, '/topics', 'Практики АТРЭ'],
+  [/^(?:секторы|отрасли)(?: атрэ)?$/, '/topics?view=sectors', 'Секторы'],
+  [/^темы исследований$/, '/topics?view=themes', 'Темы исследований'],
   [/^(?:помощник[ау]?|спросить атрэ)$/, '/assistant', 'Помощник'],
   [/^(?:поиск)$/, '/search', 'Поиск'],
   [/^(?:клиентам|клиентск(?:ая|ую) зон[ау]|кабинет клиента)$/, '/client', 'Клиентам'],
@@ -45,7 +54,8 @@ const catalogFormats = new Map([
   ['pdf','pdf'],['пдф','pdf'],['цифровые доклады','digital'],
   ['мониторинги','monitoring'],['все форматы','']
 ]);
-const atlasViews = new Map([['карта','map'],['карту','map'],['рейтинг','rank'],['таблица','table'],['таблицу','table']]);
+const atlasViews = new Map([['карта','map'],['карту','map'],['рейтинг','rank'],['таблица','table'],['таблицу','table'],['график','chart']]);
+const accessTypes = new Map([['все наборы',''],['открытые','open'],['платные','paid']]);
 const months = 'января февраля марта апреля мая июня июля августа сентября октября ноября декабря'.split(' ');
 
 function voiceDate(text) {
@@ -59,31 +69,47 @@ function voiceDate(text) {
   return Number.isFinite(+parsed) && parsed.toISOString().slice(0,10)===iso ? iso : '';
 }
 
-function parseVoiceFilter(nav, {topics = [], layers = []} = {}) {
+function parseVoiceFilter(nav, {topics = [], layers = [], sectors = [], practices = []} = {}) {
   const catalog = values => ({kind:'filter',route:'/studies',values,label:'Фильтры исследований'});
   const atlas = values => ({kind:'filter',route:'/atlas',values,label:'Фильтры атласа'});
+  const geo = values => ({...atlas(values),route:'/geoanalytics',label:'Фильтры Геоаналитики'});
+  if (/^сбрось(?:те)? фильтры геоаналитики$/u.test(nav)) return {...geo({}),reset:true};
   if (/^сбрось(?:те)? фильтры атласа$/u.test(nav)) return {...atlas({}),reset:true};
   if (/^сбрось(?:те)? фильтры(?: исследований| каталога)?$/u.test(nav)) {
     return {...catalog({}),reset:true,currentSection:nav.endsWith('фильтры')};
   }
   const phrase = nav.replace(/^(?:установи(?:те)?|выбери(?:те)?|примени(?:те)?|фильтр по)\s+/u,'');
-  const setting = phrase.match(/^(формат|направление|ключевое слово|слой данных|слой|показатель|представление|вид)\s*[:—-]?\s+(.+)$/u);
+  const setting = phrase.match(/^(формат|отрасль|сектор|направление|тема|практика|доступ|ключевое слово|набор данных|набор|период|база сравнения|слой данных|слой|показатель|представление|вид|фильтр строк)\s*[:—-]?\s+(.+)$/u);
   if (setting) {
     const [,field,value] = setting;
     const key = norm(value);
     if (field==='формат' && catalogFormats.has(key)) return catalog({format:catalogFormats.get(key)});
-    if (field==='направление') {
-      if (key==='все направления') return catalog({topic:''});
+    if (field==='направление'||field==='тема') {
+      if (['все направления','все темы'].includes(key)) return {...catalog({topic:''}),currentSection:true};
       const topic = topics.find(item => [item.short,item.title,item.name].some(name => norm(name)===key));
-      if (topic) return catalog({topic:topic.id});
+      if (topic) return {...catalog({topic:topic.id}),currentSection:true};
     }
+    if (field==='отрасль'||field==='сектор') {
+      if (['все отрасли','все секторы'].includes(key)) return {...catalog({sector:''}),currentSection:true};
+      const sector = sectors.find(([id,title])=>norm(title)===key||(id==='government'&&key==='государство'));
+      if (sector) return {...catalog({sector:sector[0]}),currentSection:true};
+    }
+    if (field==='практика') {
+      const practice = practices.find(item=>norm(item.title)===key);
+      if (practice||key==='все практики') return {kind:'filter',route:'/about/projects',values:{practice:practice?.id||''},label:'Фильтры проектов'};
+    }
+    if (field==='доступ' && accessTypes.has(key)) return geo({access:accessTypes.get(key)});
     if (field==='ключевое слово') return catalog({query:value});
-    if (field==='слой'||field==='слой данных') {
-      const layer = layers.find(item => [item.title,...(item.aliases||[])].some(name => norm(name)===key));
-      if (layer) return atlas({layer:layer.id});
+    const availableLayers = typeof layers==='function' ? layers() : layers;
+    if (field==='фильтр строк') return {...geo({filter:key==='все строки'?'':value}),layers:availableLayers};
+    if (field==='период'||field==='база сравнения') return {...geo({}),periodName:key.replace(/^(\d{4}) год[ау]?$/,'$1'),layers:availableLayers};
+    if (['слой','слой данных','набор','набор данных'].includes(field)) {
+      const titles = availableLayers.filter(item=>norm(item.title)===key);
+      const matches = titles.length ? titles : availableLayers.filter(item=>(item.aliases||[]).some(name=>norm(name)===key));
+      if (matches.length===1) return {...atlas({layer:matches[0].id}),layers:availableLayers};
     }
-    if (field==='показатель') return {...atlas({}),metricName:key, layers};
-    if (atlasViews.has(key) && (field==='представление'||field==='вид')) return atlas({view:atlasViews.get(key)});
+    if (field==='показатель') return {...atlas({}),metricName:key,layers:availableLayers};
+    if (atlasViews.has(key) && (field==='представление'||field==='вид')) return {...atlas({view:atlasViews.get(key)}),layers:availableLayers};
   }
   const year = phrase.match(/^(?:публикации|доклады|исследования) за (\d{4})(?: год[ау]?)?$/u);
   if (year) return catalog({from:year[1]+'-01-01',to:year[1]+'-12-31'});
@@ -116,7 +142,10 @@ export function parseVoiceCommand(input, mode='auto', content) {
   const search=text.match(/^(?:найди(?:те)?|найти|ищи|поиск(?: по материалам)?|поищи)\s*[:—-]?\s+(.+)$/iu);
   if(search){
     const inNews=search[1].match(/^(?:новость|новости|в новостях)\s+(?:про |о |об )?(.+)$/iu);
-    return inNews ? {kind:'search',query:inNews[1],type:'news',label:'Поиск по новостям'} : {kind:'search',query:search[1],label:'Поиск по материалам'};
+    const inDatasets=search[1].match(/^(?:в наборах данных|набор(?: данных)?|наборы данных)\s+(?:про |о |об )?(.+)$/iu);
+    if (inNews) return {kind:'search',query:inNews[1],type:'news',label:'Поиск по новостям'};
+    if (inDatasets) return {kind:'search',query:inDatasets[1],type:'dataset',label:'Поиск по наборам данных'};
+    return {kind:'search',query:search[1],label:'Поиск по материалам'};
   }
   const ask=text.match(/^(?:спроси(?:ть)?(?: у)? (?:атрэ|помощника)|помощник[,:]?|вопрос помощнику|задай вопрос(?: помощнику)?)\s*[:—-]?\s+(.+)$/iu);
   if(ask) return {kind:'assistant',query:ask[1],label:'Вопрос помощнику'};
@@ -126,9 +155,50 @@ export function parseVoiceCommand(input, mode='auto', content) {
 export function commandHash(command,currentHash='') {
   if(command.kind==='filter') {
     const [page,query] = currentHash.slice(1).split('?');
-    const route = command.currentSection && page==='/atlas' ? page : command.route;
+    if (command.route==='/geoanalytics' || (page==='/geoanalytics'&&command.currentSection) || (command.route==='/atlas'&&page!=='/atlas')) {
+      const next = new URLSearchParams(page==='/geoanalytics'&&!command.reset ? query : '');
+      const values = {...command.values};
+      if (values.layer) {
+        const id = values.layer==='cod' ? 'territories' : values.layer;
+        const layer = command.layers.find(item=>item.id===values.layer);
+        if (layer?.access && next.get('access') && next.get('access')!==layer.access) next.delete('access');
+        for (const field of ['sector','topic']) {
+          if (layer?.matchesScope && !layer.matchesScope({[field]:next.get(field)})) next.delete(field);
+        }
+        if (next.get('dataset')!==id) {
+          for (const key of ['columns','period','filter','view','regions','compare','focus','budgetRegion']) next.delete(key);
+        }
+        values.dataset = id;
+        delete values.layer;
+      }
+      const id = next.get('dataset') || 'regional-budgets';
+      const layer = command.layers?.find(item=>item.id===(id==='territories'?'cod':id));
+      if (layer?.access==='paid' && (values.view || 'filter' in values)) return null;
+      if (command.metricName) {
+        const metric = layer?.metrics.find(item=>norm(item.label)===command.metricName);
+        if (!metric) return null;
+        values.columns = layer.id==='cod' ? ['cons','peak','cap'][Number(metric.value)] : metric.value;
+      }
+      if (command.periodName) {
+        const period = layer?.periods?.find(([value,label])=>norm(value)===command.periodName||norm(label)===command.periodName);
+        if (!period) return null;
+        values.period = period[0];
+      }
+      if (values.view==='rank') values.view='chart';
+      if (values.view && layer?.views && !layer.views.includes(values.view)) return null;
+      if (values.dataset && values.dataset===next.get('beside')) {
+        next.delete('beside');
+        for (const key of ['columns','period','filter','view']) next.delete('beside-'+key);
+      }
+      for (const [key,value] of Object.entries(values)) {
+        if (value) next.set(key,value); else next.delete(key);
+      }
+      return '#/geoanalytics'+(next.size?'?'+next:'');
+    }
+    const route = command.currentSection && ['/atlas','/about/projects'].includes(page) ? page : command.route;
     const params = new URLSearchParams(page===route && !command.reset ? query : '');
     const values = {...command.values};
+    if (route==='/about/projects') params.delete('page');
     if (command.metricName) {
       const layer = command.layers.find(item=>item.id===(params.get('layer')||'cod'));
       const metric = layer?.metrics.find(item=>norm(item.label)===command.metricName);
@@ -152,7 +222,13 @@ export function commandHash(command,currentHash='') {
     }
     return '#'+command.route;
   }
-  if(command.kind==='search') return '#/search?q='+encodeURIComponent(command.query)+(command.type==='news'?'&type=news':'');
+  if(command.kind==='search') {
+    const [page,query]=currentHash.split('?');
+    const active=page==='#/search' ? new URLSearchParams(query).get('type') : '';
+    const type=command.type || active;
+    return '#/search?q='+encodeURIComponent(command.query)+
+      (['dataset','news','project','monitoring','report'].includes(type)?'&type='+type:'');
+  }
   if(command.kind==='assistant') {
     const current=currentHash.replace(/^#/,'');
     const params=current.split('?')[0]==='/assistant'?new URLSearchParams(current.split('?')[1]||''):new URLSearchParams();
