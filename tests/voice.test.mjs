@@ -70,6 +70,11 @@ test('Geoanalytics voice controls retain the other panel when changing the main 
  const layers=[{id:'regional-budgets',title:'Бюджеты регионов',metrics:[{label:'Доходы бюджета',value:'revenue'}]}];
  const resolve=(phrase,hash)=>commandHash(parse(phrase,'auto',{filters:{layers}}),hash);
  assert.equal(resolve('Открой Геоаналитику','#/'),'#/geoanalytics');
+ assert.equal(resolve('Открой аналитическую платформу','#/'),'#/geoanalytics');
+ assert.equal(resolve('Перейди на аналитическую платформу АТРЭ','#/'),'#/geoanalytics');
+ assert.equal(resolve('Сбрось фильтры аналитической платформы','#/geoanalytics?view=table'),'#/geoanalytics');
+ assert.equal(resolve('Открой консалтинг','#/'),'#/topics');
+ assert.equal(resolve('Открой направления','#/'),'#/topics');
  const current='#/geoanalytics?dataset=regional-budgets&period=2026&beside=sport-spending&beside-period=2025';
  const result=new URLSearchParams(resolve('Показатель доходы бюджета',current).split('?')[1]);
  assert.equal(result.get('columns'),'revenue');

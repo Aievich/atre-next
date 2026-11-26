@@ -55,6 +55,11 @@
 .hero-slide-head .carousel-icon:hover { background: #26728a; }
 .hero-slide-count { font-size: .8125rem; font-variant-numeric: tabular-nums; }
 .carousel-slides { display: grid; }
+.carousel-progress { height: 4px; background: #14597633; overflow: hidden; }
+.carousel-progress span { display: block; height: 100%; background: #145976; transform: scaleX(0); transform-origin: left; }
+:is(.hero-data,.practice-showcase,.consulting-services) > .carousel-progress { background: #fff3; }
+:is(.hero-data,.practice-showcase,.consulting-services) > .carousel-progress span { background: #f8bc93; }
+.current-materials:has(> .carousel-progress) { grid-template-rows: auto 1fr auto; }
 .carousel-slides > [data-carousel-slide] {
   grid-area: 1 / 1;
   visibility: hidden;
@@ -114,7 +119,7 @@
   padding: 10px 14px;
   border-bottom: 1px solid #d1dedd;
 }
-.current-header h2 {
+.current-header :is(h2,h3) {
   margin: 0;
   padding: 6px 10px;
   background: #edf3f2;

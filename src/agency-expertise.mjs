@@ -68,6 +68,11 @@ const practiceShowcase = {
   }
 };
 
+export function practiceArtStyle(id) {
+  const art = practiceShowcase[id]?.art ?? 0;
+  return `--art-x:${art%3*50}%;--art-y:${Math.floor(art/3)*50}%`;
+}
+
 export function renderPracticeShowcase(practices) {
   if (!practices.length) return '';
   return `<section class="practice-showcase" id="hero-practices-panel" role="tabpanel" aria-labelledby="hero-practices-tab" hidden data-carousel data-interval="7000">
@@ -77,9 +82,9 @@ export function renderPracticeShowcase(practices) {
     </div>
     <div class="carousel-slides" data-carousel-slides aria-live="off">
       ${practices.map((practice,index)=>{
-        const {description,art}=practiceShowcase[practice.id]||{description:practice.directions[0]?.description,art:0};
+        const description = practiceShowcase[practice.id]?.description || practice.directions[0]?.description;
         return `<article class="practice-showcase-slide" ${slideAttributes(index)}>
-          <div class="practice-art" aria-hidden="true" style="--art-x:${art%3*50}%;--art-y:${Math.floor(art/3)*50}%"></div>
+          <div class="practice-art" aria-hidden="true" style="${practiceArtStyle(practice.id)}"></div>
           <div class="practice-showcase-copy">
             <h2>${e(practice.title)}</h2>
             ${description?`<p>${e(description)}</p>`:''}
@@ -205,7 +210,7 @@ export function directionsPage(main,corpus,data,projects,mode) {
         <p class="caption">Проектов: ${matchProjects(projects,{practice:p.id}).length}</p></article>`).join('')}</div>`;
   const selected = ['sectors','themes'].includes(mode)?mode:'practices';
   main.innerHTML = `<div class="container agency-page">
-    ${heading('Направления','Выберите практику по задаче или сектор по отрасли.')}
+    ${heading('Консалтинг','Выберите практику по задаче или сектор по отрасли.')}
     ${directionsNav(selected)}${grouping}</div>`;
 }
 
@@ -217,7 +222,7 @@ export function expertisePage(main,corpus,data,projects,type,id,renderStudies) {
   const research = corpus.materials.filter(m=>practice ? researchPractices[m.id]?.includes(id) : matchesTaxonomy(corpus,m,{sector:id}));
   const relatedPractices = practice ? [] : unique(rows.flatMap(p=>p.practices));
   main.innerHTML = `<div class="container agency-page">
-    ${link(practice?'#/topics':'#/topics?view=sectors','← Направления','breadcrumb')}
+    ${link(practice?'#/topics':'#/topics?view=sectors','← Консалтинг','breadcrumb')}
     ${heading(title)}
     ${practice?`<section><h2>Основные направления</h2><div class="agency-grid">${practice.directions.map(d=>
       `<article class="agency-panel"><h3>${e(d.title)}</h3><p>${e(d.description)}</p></article>`).join('')}</div>

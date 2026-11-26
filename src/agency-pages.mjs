@@ -34,6 +34,66 @@ const team = [
 
 const day = new Intl.DateTimeFormat('ru-RU',{dateStyle:'long',timeZone:'UTC'});
 
+const requestKinds = new Map([
+  ['question','Задать вопрос'],['consulting','Заказать консультационную работу'],['research','Заказать исследование']
+]);
+
+export function consultingRequestPage(main,params,question='') {
+  main.innerHTML = `<div class="container agency-page">
+    <header class="page-heading"><div><h1>Спросить АТРЭ</h1><p class="lead">Задайте вопрос или опишите работу, которую хотите заказать.</p></div></header>
+    <div class="agency-split">
+      <section class="agency-panel"><h2>Контакты</h2><p><a href="mailto:info@agencytde.ru">info@agencytde.ru</a></p><p>${phone}</p>
+        <p><a href="#/topics">Практики АТРЭ</a> · <a href="#/about/projects">Проектный опыт</a></p></section>
+      <section class="agency-panel"><h2>Направить запрос</h2>
+        <form id="consulting-request" class="consulting-request-form">
+          <label>Тип обращения<select name="kind">${[...requestKinds].map(([id,label])=>`<option value="${id}"${id===params.get('kind')?' selected':''}>${label}</option>`).join('')}</select></label>
+          <label>Ваше имя<input name="name" required maxlength="100" autocomplete="name"></label>
+          <label>Организация (необязательно)<input name="organization" maxlength="120" autocomplete="organization"></label>
+          <label>Электронная почта для ответа<input name="email" type="email" required maxlength="254" autocomplete="email"></label>
+          <label>Тема<input name="subject" required maxlength="120"></label>
+          <label>Вопрос или описание задачи<textarea name="question" rows="5" required maxlength="1800">${e(question)}</textarea></label>
+          <label>Желаемый срок (необязательно)<input name="deadline" maxlength="100"></label>
+          <div class="actions"><button type="submit" class="button dark">Отправить запрос</button>
+            <button type="button" data-consulting-mail class="button secondary">Открыть шаблон письма</button></div>
+          <p class="caption">В локальной версии форма сохраняет обращение в журнале сервера. Для отправки по электронной почте откройте шаблон и отправьте письмо из почтовой программы.</p>
+          <p role="status" data-consulting-status></p>
+        </form>
+      </section>
+    </div>
+  </div>`;
+  const form = main.querySelector('#consulting-request');
+  const status = form.querySelector('[data-consulting-status]');
+  form.querySelector('[data-consulting-mail]').onclick = () => {
+    const {kind,name,organization,email,subject,question,deadline} = Object.fromEntries(new FormData(form));
+    const body = [requestKinds.get(kind),name,organization,email,question,deadline&&'Желаемый срок: '+deadline].filter(Boolean);
+    location.href = 'mailto:info@agencytde.ru?'+new URLSearchParams({subject:subject||'Обращение в АТРЭ',body:body.join('\r\n\r\n')}).toString().replaceAll('+','%20');
+  };
+  form.onsubmit = async event => {
+    event.preventDefault();
+    const button = form.querySelector('[type="submit"]');
+    button.disabled = true;
+    status.textContent = 'Сохраняем запрос…';
+    try {
+      const response = await fetch(new URL('api/consulting-requests',document.baseURI),{
+        method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(form)))
+      });
+      if (response.status===400) {
+        status.textContent = 'Проверьте обязательные поля и адрес для ответа.';
+        return;
+      }
+      if (response.status!==201) throw Error('Request unavailable');
+      const {id} = await response.json();
+      if (!id) throw Error('Missing request number');
+      form.reset();
+      status.textContent = 'Запрос сохранён на локальном сервере. Номер: '+id;
+    } catch {
+      status.textContent = 'Форма сейчас не может сохранить запрос. Введённые данные остались на странице. Можно открыть шаблон письма.';
+    } finally {
+      button.disabled = false;
+    }
+  };
+}
+
 export function pressRequestHref(data) {
   const value = key=>String(data.get(key)||'').trim();
   const subject = 'Запрос СМИ: '+value('subject');
@@ -45,7 +105,10 @@ export function pressRequestHref(data) {
 export function mediaPage(main) {
   main.innerHTML = `<div class="container agency-page">
     <header class="page-heading"><div><h1>Для СМИ</h1><p class="lead">Экспертные комментарии, интервью и публикации АТРЭ.</p></div></header>
-    <div class="agency-split">
+    <section class="media-publications"><h2>АТРЭ в СМИ</h2><div class="agency-grid">
+    ${media.map(([date,source,title,note,url])=>`<article class="agency-panel"><p class="eyebrow">${source} · <time datetime="${date}">${day.format(new Date(date))}</time></p><h3>${outbound(url,title)}</h3><p>${note}</p></article>`).join('')}
+    </div><p>${outbound('https://agencytde.ru/media/','Архив публикаций на сайте АТРЭ')}</p></section>
+    <div class="agency-split media-contacts">
       <section class="agency-panel"><h2>Пресс-служба</h2><p><a href="mailto:${pressEmail}">${pressEmail}</a></p><p>${phone}</p>
         <p>Укажите вопрос, название редакции и срок, к которому нужен комментарий.</p></section>
       <section class="agency-panel"><h2>Запросить мнение АТРЭ</h2>
@@ -62,9 +125,6 @@ export function mediaPage(main) {
         </form>
       </section>
     </div>
-    <section class="section compact"><h2>АТРЭ в СМИ</h2><div class="agency-grid">
-    ${media.map(([date,source,title,note,url])=>`<article class="agency-panel"><p class="eyebrow">${source} · <time datetime="${date}">${day.format(new Date(date))}</time></p><h3>${outbound(url,title)}</h3><p>${note}</p></article>`).join('')}
-    </div><p>${outbound('https://agencytde.ru/media/','Архив публикаций на сайте АТРЭ')}</p></section>
   </div>`;
   const form = main.querySelector('#press-request');
   const status = form.querySelector('[data-press-status]');
@@ -128,8 +188,8 @@ function renderPartners(groups) {
       <h2 id="agency-partners-title"><a href="#/about/partners">Клиенты и партнёры</a></h2>
       <button type="button" class="text-button" data-partner-pause aria-controls="agency-partner-ticker">Пауза</button>
     </div>
-    <div class="agency-logo-window" id="agency-partner-ticker">
-      <div class="agency-logo-track" style="--partner-cycle:${logos.length*4}s">
+    <div class="agency-logo-window" id="agency-partner-ticker" style="--partner-cycle:${logos.length*4}s">
+      <div class="agency-logo-track">
         <ul aria-label="Клиенты и партнёры">${row}</ul>
         <ul aria-hidden="true" inert>${row}</ul>
       </div>

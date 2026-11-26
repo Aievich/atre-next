@@ -27,7 +27,10 @@ const datasetKeywords = {
   'tobacco-countries-h1-2026':['сигареты в России и Казахстане','табачные изделия','Россия и Казахстан']
 };
 
-function catalogDatasets(C, subscribed = false) {
+const catalogIds = new Set(['regional-budgets','territories','polymers-countries-2024',
+  'kz-price-indices','ru-cigarettes-2026','tobacco-countries-h1-2026',investmentId]);
+
+function workspaceDatasets(C, subscribed = false) {
   return [budget,...datasets(C),demoInvestmentDataset(subscribed)];
 }
 
@@ -41,7 +44,7 @@ function datasetViews(d, columns) {
 }
 
 export function geoVoiceLayers(C, legacyNames = []) {
-  return catalogDatasets(C,demoSubscriptionActive()).map(d=>{
+  return workspaceDatasets(C,demoSubscriptionActive()).map(d=>{
     const budgetSet = isBudget(d);
     const columns = budgetSet ? budgetMetrics.map(([name,label])=>({name,label})) : numericColumns(d);
     const legacyId = d.id==='territories' ? 'cod' : d.id;
@@ -59,7 +62,7 @@ export function geoVoiceLayers(C, legacyNames = []) {
 }
 
 export function geoDatasetSearchEntries(C) {
-  return catalogDatasets(C).map(item=>{
+  return workspaceDatasets(C).filter(item=>catalogIds.has(item.id)).map(item=>{
     const columns=item.id===budget.id ? budgetMetrics.map(([,label])=>label) : item.columns.map(column=>column.label);
     const names=item.id==='territories' ? C.atlas.territories.flatMap(territory=>[territory.name,territory.short]) : [];
     return {
@@ -265,13 +268,15 @@ function renderPanel(host,d,slice,side,params) {
 }
 
 export function geoanalyticsPage(C,G,params,main,focusId) {
-  const items = catalogDatasets(C,demoSubscriptionActive()).map(item=>({...item,access:item.access||'open'}));
+  const allItems = workspaceDatasets(C,demoSubscriptionActive()).map(item=>({...item,access:item.access||'open'}));
+  const items = allItems.filter(item=>catalogIds.has(item.id));
   const investment = items.find(item=>item.id===investmentId);
   const scope = {sector:params.get('sector'),topic:params.get('topic')};
   const access = params.get('access') || '';
   const available = items.filter(d=>(!access||d.access===access)&&matchesTaxonomy(C,d,scope));
   const requested = canonicalDataset(params.get('dataset'));
-  const first = available.find(d=>d.id===requested) || available[0];
+  const retained = id => !catalogIds.has(id) && allItems.find(d=>d.id===id&&(!access||d.access===access)&&matchesTaxonomy(C,d,scope));
+  const first = available.find(d=>d.id===requested) || retained(requested) || available[0];
   if (first && first.id!==params.get('dataset') && (requested || scope.sector || scope.topic || access)) {
     params = new URLSearchParams(params);
     params.set('dataset',first.id);
@@ -281,7 +286,10 @@ export function geoanalyticsPage(C,G,params,main,focusId) {
     history.replaceState(null,'','#'+geoRoute+'?'+params);
   }
   const peers = available.filter(d=>isOpen(d)&&d.id!==first?.id);
-  const second = isOpen(first||{}) ? peers.find(d=>d.id===params.get('beside')) : null;
+  const beside = canonicalDataset(params.get('beside'));
+  const retainedPeer = beside!==first?.id && retained(beside);
+  if (retainedPeer && isOpen(retainedPeer)) peers.push(retainedPeer);
+  const second = isOpen(first||{}) ? peers.find(d=>d.id===beside) : null;
   const navigate = next => { location.hash = geoRoute+(next.size?'?'+next:''); };
   const update = (key,value) => {
     const next = new URLSearchParams(params);
@@ -290,7 +298,7 @@ export function geoanalyticsPage(C,G,params,main,focusId) {
     navigate(next);
   };
   main.innerHTML = `<div class="container geoanalytics">
-    <header class="page-heading"><div><h1>Геоаналитика</h1><p class="lead">Данные исследований и платформы АТРЭ на картах, графиках и в таблицах.</p></div></header>
+    <header class="page-heading"><div><h1>Аналитическая платформа</h1><p class="lead">Сравнивайте данные из исследований АТРЭ и других источников на картах, графиках и в таблицах.</p><a class="button secondary" href="#/geoanalytics-preview?${e(new URLSearchParams({return:geoRoute+(params.size?'?'+params:'')}))}">Открыть пробную версию ↗</a></div></header>
     <div class="geo-layout">
       <aside class="geo-catalog" aria-label="Каталог наборов данных"><h2>Наборы данных</h2>
         <div class="geo-filters"><label>Доступ<select id="geo-access" data-geo-scope="access">

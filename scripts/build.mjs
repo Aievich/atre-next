@@ -12,7 +12,7 @@ await mkdir('dist/data',{recursive:true});
 await copyFile('src/publications.mjs','dist/publications.mjs');
 await copyFile('src/publications.css','dist/publications.css');
 await copyFile('data/news.json','dist/data/news.json');
-for(const module of ['agency-pages','agency-expertise','regional-budgets','taxonomy','geoanalytics','demo-subscription'])await copyFile('src/'+module+'.mjs','dist/'+module+'.mjs');
+for(const module of ['agency-pages','agency-expertise','regional-budgets','taxonomy','geoanalytics','geo-preview','demo-subscription'])await copyFile('src/'+module+'.mjs','dist/'+module+'.mjs');
 await copyFile('src/geoanalytics.css','dist/geoanalytics.css');
 await copyFile('src/agency.css','dist/agency.css');
 await copyFile('data/agency-expertise.json','dist/data/agency-expertise.json');

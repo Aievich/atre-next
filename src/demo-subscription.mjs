@@ -14,6 +14,13 @@ export function activateDemoSubscription(storage = globalThis.localStorage) {
   } catch { return false; }
 }
 
+export function cancelDemoSubscription(storage = globalThis.localStorage) {
+  try {
+    storage.removeItem(subscriptionKey);
+    return storage.getItem(subscriptionKey)!=='active';
+  } catch { return false; }
+}
+
 export function demoInvestmentDataset(active) {
   const sourceHref = '#/client';
   const columns = [
@@ -53,16 +60,18 @@ export function bindDemoSubscription(root) {
   const status = root.querySelector('[data-demo-subscription-status]');
   function render() {
     actions.innerHTML = demoSubscriptionActive() ?
-      `<a class="button dark" href="${investmentHref}">Открыть набор</a>` :
+      `<a class="button dark" href="${investmentHref}">Открыть набор</a>
+        <button type="button" data-demo-cancel class="button secondary">Отменить демоподписку</button>` :
       '<button type="button" class="button dark">Купить подписку (демо)</button>';
-    actions.querySelector('button')?.addEventListener('click',()=>{
-      if (!activateDemoSubscription()) {
-        status.textContent = 'Подписку не удалось сохранить. Проверьте настройки хранилища браузера.';
+    actions.querySelector('button')?.addEventListener('click',event=>{
+      const cancel = event.currentTarget.hasAttribute('data-demo-cancel');
+      if (!(cancel ? cancelDemoSubscription() : activateDemoSubscription())) {
+        status.textContent = 'Статус подписки не удалось изменить. Проверьте настройки хранилища браузера.';
         return;
       }
       render();
-      status.textContent = 'Демонстрационная подписка активна.';
-      actions.querySelector('a').focus();
+      status.textContent = cancel ? 'Демоподписка отменена. Доступ к набору закрыт.' : 'Демонстрационная подписка активна.';
+      actions.querySelector('a,button').focus();
     });
   }
   render();

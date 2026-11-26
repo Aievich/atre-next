@@ -47,13 +47,15 @@ const featuredReports = [
   }
 ];
 
-export function renderFeaturedReports(materials) {
+export function renderFeaturedReports(materials, headingLevel=2) {
+  const heading = headingLevel===3 ? 'h3' : 'h2';
+  const slideHeading = headingLevel===3 ? 'h4' : 'h3';
   const slides = featuredReports.flatMap(({id, cover, findings}) => {
     const material = materials.find(item => item.id === id);
     return material ? [{material, cover: cover || material.coverHref, findings}] : [];
   });
   return `<section class="featured-reports" data-carousel data-interval="5000" aria-labelledby="featured-reports-title">
-    <h2 id="featured-reports-title">Исследования</h2>
+    <${heading} id="featured-reports-title">Исследования</${heading}>
     <div class="featured-panel">
       <div class="featured-tools">
         <a class="carousel-icon" href="#/studies" aria-label="Все материалы" title="Все материалы">${carouselIcons.catalog}</a>
@@ -63,7 +65,7 @@ export function renderFeaturedReports(materials) {
       ${slides.map(({material, cover, findings}, index) => `<article class="featured-report" ${slideAttributes(index)}>
         <img src="${e(cover)}" alt="Обложка доклада «${e(material.shortTitle)}»"${index ? ' loading="lazy"' : ''}>
         <div>
-          <h3>${e(material.title)}</h3>
+          <${slideHeading}>${e(material.title)}</${slideHeading}>
           <ul>${findings.map(finding => `<li>${e(finding)}</li>`).join('')}</ul>
           <a class="button dark" href="#/study/${e(material.id)}">Читать доклад</a>
         </div>
@@ -107,7 +109,8 @@ function renderDate(item, formatter = longDate) {
   return date ? `<time datetime="${e(date)}">${e(formatter.format(new Date(date)))}</time>` : '';
 }
 
-export function renderCurrentMaterials(news, materials) {
+export function renderCurrentMaterials(news, materials, headingLevel=2) {
+  const heading = headingLevel===3?'h3':'h2';
   const articles = news.items.slice(0, 3);
   const reports = materials.filter(item => item.type === 'report' && !featuredReports.some(report=>report.id===item.id))
     .sort((a, b) => (b.date || '').localeCompare(a.date || '')).slice(0, 2);
@@ -121,7 +124,7 @@ export function renderCurrentMaterials(news, materials) {
   const number = n => String(n).padStart(2, '0');
   return `<section class="current-materials" data-carousel data-interval="4500" aria-labelledby="current-materials-title">
     <div class="current-header">
-      <h2 id="current-materials-title" tabindex="-1">Актуальное</h2>
+      <${heading} id="current-materials-title" tabindex="-1">Актуальное</${heading}>
       ${carouselControls('Предыдущий материал', 'Следующий материал', slides.length)}
     </div>
     <div class="carousel-slides" data-carousel-slides aria-live="off">
@@ -144,6 +147,50 @@ export function enhancePageCarousels(main) {
   return () => cleanups.forEach(cleanup => cleanup());
 }
 
+export function carouselClock(host, region, interval, canPlay, advance) {
+  const track = host.querySelector(':scope > .carousel-progress') || document.createElement('div');
+  track.className = 'carousel-progress';
+  track.setAttribute('aria-hidden','true');
+  const fill = track.firstElementChild || track.appendChild(document.createElement('span'));
+  host.append(track);
+  let animation;
+  let visible = false;
+  let stopped = false;
+  const sync = () => {
+    if (stopped) return;
+    if (!visible || document.hidden || host.matches(':hover') || region.matches(':focus-within') || !canPlay()) {
+      if (animation?.playState==='running') animation.pause();
+      return;
+    }
+    if (!animation) {
+      animation = fill.animate([{transform:'scaleX(0)'},{transform:'scaleX(1)'}],{duration:interval,fill:'forwards'});
+      animation.onfinish = () => { advance(); reset(); };
+    } else if (animation.playState==='paused') animation.play();
+  };
+  function reset() {
+    animation?.cancel();
+    animation = undefined;
+    sync();
+  }
+  const events = ['pointerenter','pointerleave','focusin','focusout'];
+  const defer = () => queueMicrotask(sync);
+  for (const event of events) host.addEventListener(event,defer);
+  const observer = new IntersectionObserver(([entry])=>{
+    visible = entry.isIntersecting;
+    host.toggleAttribute('data-carousel-in-view',visible);
+    sync();
+  });
+  observer.observe(region);
+  document.addEventListener('visibilitychange',sync);
+  return {track,sync,reset,stop(){
+    stopped = true;
+    observer.disconnect();
+    animation?.cancel();
+    for (const event of events) host.removeEventListener(event,defer);
+    document.removeEventListener('visibilitychange',sync);
+  }};
+}
+
 function enhanceCarousel(section) {
   const slides = [...section.querySelectorAll('[data-carousel-slide]')];
   if (slides.length < 2) return () => {};
@@ -152,8 +199,7 @@ function enhanceCarousel(section) {
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let active = 0;
   let playing = !motion.matches;
-  let visible = false;
-  let timer;
+  const clock = carouselClock(section,region,Number(section.dataset.interval),()=>playing,()=>show(1));
 
   function setActive(slide, value) {
     slide.toggleAttribute('data-active', value);
@@ -167,13 +213,6 @@ function enhanceCarousel(section) {
     setActive(slides[active], true);
   }
 
-  function schedule() {
-    clearInterval(timer);
-    if (playing && visible && !region.matches(':hover, :focus-within') && !document.hidden) {
-      timer = setInterval(() => show(1), Number(section.dataset.interval));
-    }
-  }
-
   function setPlaying(value) {
     playing = value;
     pause.innerHTML = playing ? carouselIcons.pause : carouselIcons.play;
@@ -181,7 +220,7 @@ function enhanceCarousel(section) {
     pause.setAttribute('aria-label', label);
     pause.title = label;
     region.setAttribute('aria-live', playing ? 'off' : 'polite');
-    schedule();
+    clock.sync();
   }
 
   pause.onclick = () => setPlaying(!playing);
@@ -189,26 +228,27 @@ function enhanceCarousel(section) {
     button.onclick = () => {
       setPlaying(false);
       show(Number(button.dataset.carouselStep));
+      clock.reset();
     };
   });
-  for (const event of ['pointerenter', 'pointerleave', 'focusin', 'focusout']) {
-    region.addEventListener(event, () => queueMicrotask(schedule));
-  }
-  const observer = new IntersectionObserver(([entry]) => {
-    visible = entry.isIntersecting;
-    schedule();
-  });
-  observer.observe(region);
   const updateMotion = () => setPlaying(!motion.matches);
-  motion.addEventListener('change', updateMotion);
-  document.addEventListener('visibilitychange', schedule);
+  motion.addEventListener('change',updateMotion);
   setPlaying(playing);
   return () => {
-    clearInterval(timer);
-    observer.disconnect();
-    motion.removeEventListener('change', updateMotion);
-    document.removeEventListener('visibilitychange', schedule);
+    clock.stop();
+    motion.removeEventListener('change',updateMotion);
   };
+}
+
+export function renderNewsCards(items, headingLevel=2, leading='') {
+  const heading = headingLevel===3 ? 'h3' : 'h2';
+  return `<div class="news-grid">${leading}${items.map(item => `<article class="news-card">
+    <a class="news-card-link" href="${e(newsHref(item))}" aria-labelledby="news-title-${e(item.id)}">
+      ${renderDate(item)}
+      <${heading} id="news-title-${e(item.id)}">${e(item.title)}</${heading}>
+      <p>${e(item.summary)}</p>
+    </a>
+  </article>`).join('')}</div>`;
 }
 
 export function renderNews({items, archive}) {
@@ -216,13 +256,7 @@ export function renderNews({items, archive}) {
     <div><h1>Новости АТРЭ</h1></div>
     <a class="button secondary" href="${e(archive)}" target="_blank" rel="noopener noreferrer">Архив на сайте АТРЭ</a>
   </header>
-  <div class="news-grid">${items.map(item => `<article class="news-card">
-    <a class="news-card-link" href="${e(newsHref(item))}" aria-labelledby="news-title-${e(item.id)}">
-      ${renderDate(item)}
-      <h2 id="news-title-${e(item.id)}">${e(item.title)}</h2>
-      <p>${e(item.summary)}</p>
-    </a>
-  </article>`).join('')}</div></div>`;
+  ${renderNewsCards(items)}</div>`;
 }
 
 export function renderNewsArticle(item) {

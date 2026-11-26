@@ -6,16 +6,16 @@ const destinations = [
   [/^(?:для сми|сми|пресс-служба|пресс служба)$/, '/media', 'Для СМИ'],
   [/^(?:об атрэ|о компании|о нас)$/, '/about', 'Об АТРЭ'],
   [/^(?:геоэкономика|бюджеты регионов)$/, '/atlas?layer=regional-budgets', 'Бюджеты регионов'],
-  [/^геоаналитик[ау](?: атрэ)?$/, '/geoanalytics', 'Геоаналитика'],
+  [/^(?:аналитическ(?:ая|ую) платформ[ау]|геоаналитик[ау])(?: атрэ)?$/, '/geoanalytics', 'Аналитическая платформа'],
   [/^(?:новости|лента новостей)$/, '/news', 'Новости'],
   [/^актуальное$/, '/?section=actual', 'Актуальное'],
   [/^(?:каталог(?: исследований| публикаций)?|исследования|публикации|доклады)$/, '/studies', 'Исследования'],
-  [/^(?:атлас(?: данных)?|карт[ау])$/, '/atlas', 'Атлас данных'],
-  [/^конструктор(?: данных)?$/, '/constructor', 'Конструктор данных'],
+  [/^(?:атлас(?: данных)?|карт[ау])$/, '/atlas', 'Аналитическая платформа'],
+  [/^конструктор(?: данных)?$/, '/constructor', 'Аналитическая платформа'],
   [/^(?:проект[ыа]|проектный опыт)$/, '/about/projects', 'Проектный опыт'],
   [/^(?:наша команда|команд[ау](?: атрэ)?)$/, '/about/team', 'Команда АТРЭ'],
   [/^(?:клиенты и партн[её]ры|партн[её]ры атрэ)$/, '/about/partners', 'Клиенты и партнёры'],
-  [/^направления$/, '/topics', 'Направления'],
+  [/^(?:консалтинг|направления)$/, '/topics', 'Консалтинг'],
   [/^практики(?: атрэ)?$/, '/topics', 'Практики АТРЭ'],
   [/^(?:секторы|отрасли)(?: атрэ)?$/, '/topics?view=sectors', 'Секторы'],
   [/^темы исследований$/, '/topics?view=themes', 'Темы исследований'],
@@ -72,8 +72,8 @@ function voiceDate(text) {
 function parseVoiceFilter(nav, {topics = [], layers = [], sectors = [], practices = []} = {}) {
   const catalog = values => ({kind:'filter',route:'/studies',values,label:'Фильтры исследований'});
   const atlas = values => ({kind:'filter',route:'/atlas',values,label:'Фильтры атласа'});
-  const geo = values => ({...atlas(values),route:'/geoanalytics',label:'Фильтры Геоаналитики'});
-  if (/^сбрось(?:те)? фильтры геоаналитики$/u.test(nav)) return {...geo({}),reset:true};
+  const geo = values => ({...atlas(values),route:'/geoanalytics',label:'Фильтры аналитической платформы'});
+  if (/^сбрось(?:те)? фильтры (?:аналитической платформы|геоаналитики)$/u.test(nav)) return {...geo({}),reset:true};
   if (/^сбрось(?:те)? фильтры атласа$/u.test(nav)) return {...atlas({}),reset:true};
   if (/^сбрось(?:те)? фильтры(?: исследований| каталога)?$/u.test(nav)) {
     return {...catalog({}),reset:true,currentSection:nav.endsWith('фильтры')};
@@ -138,7 +138,7 @@ export function parseVoiceCommand(input, mode='auto', content) {
   if(tag) return {kind:'navigate',route:'/studies?tag='+encodeURIComponent(tag),label:tag};
   const item=content?.routes?.get(norm(nav.replace(/^(?:новость|статью|доклад|публикацию)\s+(?:про |о |об |по )?/,'')));
   if(item) return item;
-  if(mode==='navigate') return {kind:'unknown',label:'Не удалось определить раздел. Укажите его название, например «Атлас данных».'};
+  if(mode==='navigate') return {kind:'unknown',label:'Не удалось определить раздел. Укажите его название, например «Аналитическая платформа».'};
   const search=text.match(/^(?:найди(?:те)?|найти|ищи|поиск(?: по материалам)?|поищи)\s*[:—-]?\s+(.+)$/iu);
   if(search){
     const inNews=search[1].match(/^(?:новость|новости|в новостях)\s+(?:про |о |об )?(.+)$/iu);
@@ -232,6 +232,7 @@ export function commandHash(command,currentHash='') {
   if(command.kind==='assistant') {
     const current=currentHash.replace(/^#/,'');
     const params=current.split('?')[0]==='/assistant'?new URLSearchParams(current.split('?')[1]||''):new URLSearchParams();
+    params.delete('mode');
     params.set('question',command.query);
     return '#/assistant?'+params;
   }

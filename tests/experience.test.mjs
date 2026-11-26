@@ -4,7 +4,8 @@ import {mkdtemp,readFile,rm} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {tmpdir} from 'node:os';
 import path from 'node:path';
-import {renderHome,parseAtlasState,allMetricsCsv,citationText} from '../src/experience.mjs';
+import {Readable} from 'node:stream';
+import {renderHome,renderHomeSwitch,renderConsultingHome,parseAtlasState,allMetricsCsv,citationText} from '../src/experience.mjs';
 import {filterPublications,renderCurrentMaterials,renderNews,renderNewsArticle,renderTags} from '../src/publications.mjs';
 import {buildSearchIndex,search} from '../src/lib.mjs';
 import {bindBudgetRegions,budgetValue} from '../src/regional-budgets.mjs';
@@ -14,11 +15,28 @@ import {datasets} from '../src/annotations.mjs';
 import {geoDatasetSearchEntries,geoVoiceLayers,workspaceParams,workspaceSlice} from '../src/geoanalytics.mjs';
 import {commandHash,parseVoiceCommand} from '../src/voice-commands.mjs';
 import {agencyProjects,matchProjects,projectHref} from '../src/agency-expertise.mjs';
-import {activateDemoSubscription,demoInvestmentDataset,demoSubscriptionActive} from '../src/demo-subscription.mjs';
-import {pressFields,savePressRequest} from '../scripts/press-inbox.mjs';
+import {activateDemoSubscription,cancelDemoSubscription,demoInvestmentDataset,demoSubscriptionActive} from '../src/demo-subscription.mjs';
+import {consultingFields,handlePressRequest,pressFields,savePressRequest} from '../scripts/press-inbox.mjs';
 const C=JSON.parse(await readFile(new URL('../data/source-corpus.json',import.meta.url),'utf8'));
 const news=JSON.parse(await readFile(new URL('../data/news.json',import.meta.url),'utf8'));
 const agency=JSON.parse(await readFile(new URL('../data/agency-expertise.json',import.meta.url),'utf8'));
+
+test('home variants have shareable addresses and consulting links to existing pages',()=>{
+ assert.match(renderHomeSwitch(false),/href="#\/" aria-current="page"/);
+ assert.match(renderHomeSwitch(true),/href="#\/\?view=consulting" aria-current="page"/);
+ const markup=renderConsultingHome(agency.practices,C.materials,news);
+ const practices=[...markup.matchAll(/href="#\/topics\/practice\/([^"]+)"/g)].map(([,id])=>id);
+ assert.deepEqual(practices,agency.practices.map(practice=>practice.id));
+ assert.match(markup,/href="#\/about\/projects"[^>]*>Посмотреть проекты/);
+ assert.doesNotMatch(markup,/Примеры проектов/);
+ assert.doesNotMatch(markup,/consulting-proof/);
+ assert.match(markup,/class="consulting-analytics"[\s\S]*class="featured-report"[\s\S]*class="hero-data"/);
+ assert.match(markup,/class="section consulting-news"[\s\S]*href="#\/news\/lotus-platform"/);
+ assert.match(markup,/class="hero consulting-hero"[\s\S]*id="consulting-services"[\s\S]*data-carousel-progress[\s\S]*<\/section>\s*<\/section>/);
+ assert.doesNotMatch(markup,/Посмотреть услуги/);
+ assert.ok(markup.includes('href="#/request?kind=consulting"'));
+ assert.ok(markup.includes('href="#/request"'));
+});
 
 test('the home hero shares one showcase for maps and nine illustrated practice slides',()=>{
  const home=renderHome(C,news,agency.practices);
@@ -39,7 +57,8 @@ test('the home hero shares one showcase for maps and nine illustrated practice s
 
 test('typed and spoken keyword queries return direct links to the same datasets',()=>{
  const entries=geoDatasetSearchEntries(C);
- assert.equal(entries.length,datasets(C).length+2);
+ assert.deepEqual(entries.map(entry=>entry.id),['regional-budgets','territories','kz-price-indices',
+  'ru-cigarettes-2026','polymers-countries-2024','tobacco-countries-h1-2026','investment-preview']);
  assert.equal(new Set(entries.map(entry=>entry.href)).size,entries.length);
  const index=[...buildSearchIndex(C,news.items),...entries];
  const result=search(index,'потребление электроэнергии')[0];
@@ -77,13 +96,35 @@ test('the four partner groups include all 32 entries and their exact media in th
 });
 
 test('a local demo subscription unlocks the investment dataset without payment',()=>{
- const values=new Map(),storage={getItem:key=>values.get(key),setItem:(key,value)=>values.set(key,value)};
+ const values=new Map(),storage={getItem:key=>values.get(key),setItem:(key,value)=>values.set(key,value),removeItem:key=>values.delete(key)};
  assert.equal(demoInvestmentDataset(demoSubscriptionActive(storage)).rows.length,0);
  assert.equal(activateDemoSubscription(storage),true);
  const data=demoInvestmentDataset(demoSubscriptionActive(storage));
  assert.equal(data.access,'open');
  assert.equal(data.rows.length,3);
  assert.ok(data.records.every(record=>record.status==='demo'));
+ assert.equal(cancelDemoSubscription(storage),true);
+ const locked=demoInvestmentDataset(demoSubscriptionActive(storage));
+ assert.equal(locked.access,'paid');
+ assert.equal(locked.rows.length,0);
+});
+
+test('consulting requests accept only known types and return a receipt after local storage',async()=>{
+ const sample={name:'Тест',email:'test@example.test',subject:'Исследование',question:'Описание задачи',kind:'research'};
+ assert.equal(consultingFields({...sample,kind:'unknown'}),null);
+ const folder=await mkdtemp(path.join(tmpdir(),'atre-consulting-test-'));
+ try {
+  const request=Readable.from([Buffer.from(JSON.stringify(sample))]);
+  request.method='POST';
+  request.headers={'content-type':'application/json'};
+  let code,body;
+  const response={writeHead(status){code=status;},end(value){body=JSON.parse(value);}};
+  await handlePressRequest(request,response,folder,consultingFields);
+  assert.equal(code,201);
+  const record=JSON.parse(await readFile(path.join(folder,body.id+'.json'),'utf8'));
+  assert.equal(record.kind,'research');
+  assert.equal(record.email,sample.email);
+ } finally { await rm(path.join(folder),{recursive:true,force:true}); }
 });
 
 test('the local press inbox validates requests and persists a receipt with the reply email',async()=>{

@@ -97,7 +97,7 @@ export function budgetMap(geo,rows,metric,cap,bins) {
 export function renderRegionalBudgets(main, params, picker) {
   const year = Object.hasOwn(periods,params.get('period')) ? params.get('period') : '2025';
   main.innerHTML = `<div class="container atlas agency-page">
-    <header class="page-heading"><div><p class="eyebrow">Геоаналитика · Региональные бюджеты</p>
+    <header class="page-heading"><div><p class="eyebrow">Аналитическая платформа · Региональные бюджеты</p>
       <h1>Бюджеты регионов</h1><p class="lead">Доходы, расходы и бюджетный баланс по данным Федерального казначейства.</p></div>
       <a class="button secondary" href="${source}" target="_blank" rel="noopener noreferrer">Портал «АТРЭ ГеоЭкономика»</a>
     </header>
